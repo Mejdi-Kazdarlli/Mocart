@@ -146,7 +146,7 @@ loader.setDRACOLoader(loaderDRACO);
             _thisScene.add(SceneGLB)
             // Extract wall objects from scene
 
-             SceneGLB.traverse(function async (child) {
+             SceneGLB.traverse(function (child) {
                 if (child.isMesh) {
                   if(child.name.includes("Shield"))
                   {
