@@ -138,39 +138,39 @@ var loaderDRACO = new DRACOLoader();
 loaderDRACO.setDecoderPath('./js/decoder/');
 loader.setDRACOLoader(loaderDRACO);
 
- async function LoadModel(model, _thisScene,_thisrenderer,_thiscamera,wallBoundingBoxes) {
+async function LoadModel(model, _thisScene, _thisrenderer, _thiscamera, wallBoundingBoxes) {
     return new Promise((resolve, reject) => {
         loader.load('asset/' + model, async function (object) {
             var SceneGLB = object.scene;
-            SceneGLB.position.set(0,0,0)
-            _thisScene.add(SceneGLB)
-            // Extract wall objects from scene
-
-             SceneGLB.traverse(function (child) {
-                if (child.isMesh) {
-                  if(child.name.includes("Shield"))
-                  {
-                    child.visible = false
-                    child.material.side=THREE.DoubleSide
-                    const box = new THREE.Box3().setFromObject(child)
-                    wallBoundingBoxes.push(box);
-                  }
-                }
-            })
+            SceneGLB.position.set(0, 0, 0);
+            _thisScene.add(SceneGLB);
             
-            await loadEnvironmentHDR(_thisrenderer,_thisScene, 'urban_courtyard_02_1k.hdr')
-            resolve()
+            // Extract wall objects from scene
+            SceneGLB.traverse(function (child) {
+                if (child.isMesh) {
+                    if (child.name.includes("Shield")) {
+                        child.visible = false;
+                        child.material.side = THREE.DoubleSide;
+                        const box = new THREE.Box3().setFromObject(child);
+                        wallBoundingBoxes.push(box);
+                    }
+                }
+            });
+            
+            await loadEnvironmentHDR(_thisrenderer, _thisScene, 'urban_courtyard_02_1k.hdr');
+            resolve();
         },
         xhr => {
-          console.log(`Load Model ${Math.floor((xhr.loaded / xhr.total) * 100)}% loaded`);
-          _("loadertxt").innerText = Math.floor((xhr.loaded / xhr.total) * 100) + "%"
+            const percentageLoaded = Math.floor((xhr.loaded / xhr.total) * 100);
+            console.log(`Load Model ${percentageLoaded}% loaded`);
+            _("loadertxt").innerText = percentageLoaded + "%";
         },
         err => {
-          reject(new Error(err));
-        }
-        )
-    })
+            reject(new Error(err));
+        });
+    });
 }
+
 
 async function loadEnvironmentHDR(renderer, scene, hdr) {
     return new Promise((resolve, reject) => {
