@@ -86,8 +86,9 @@ async function NewScene(Newscene,glb){
     break;
     case "superMarket":
       bokehPass.uniforms.aperture.value= 0.0001
-      Newscene.renderer.toneMappingExposure = 2.5;
+      Newscene.renderer.toneMappingExposure = 3.5;
       Newscene.camera.fov = 60
+      console.log(Newscene)
     break;
     default:
       bokehPass.uniforms.aperture.value= 0.0005
