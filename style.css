@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital@1&family=Edu+NSW+ACT+Foundation&family=Inter&family=Lato:ital@0;1&family=Montserrat+Alternates&family=Open+Sans&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  font-family: "Montserrat Alternates";
+}
+
+body {
+  background-color: grey;
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.6s;
+  background-color: transparent;
+  z-index: 5555;
+  padding: 40px 100px;
+}
+nav .logo {
+  position: relative;
+  transition: 0.6s;
+  width: 140px;
+  height: auto;
+}
+nav ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul li {
+  position: relative;
+  list-style-type: none;
+}
+nav ul li a {
+  cursor: pointer;
+  position: relative;
+  margin: 0 15px;
+  color: white !important;
+}
+
+#contactEL {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.sticky {
+  padding: 20px 100px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.sticky ul a,
+.sticky #contactEL {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.clipbgpurple {
+  background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, #022859, #022859);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+header {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10%;
+  background-attachment: fixed;
+}
+header .textone {
+  font-family: Montserrat Alternates;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+header .texttwo {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 2rem;
+}
+header button {
+  font-family: Montserrat Alternates;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: transparent;
+  color: #fff;
+  padding: 2px 12%;
+  border-radius: 4px;
+  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+header button:hover {
+  background: #323232;
+}
+
+.header2 {
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 40px 100px;
+  background: black;
+  background-size: cover;
+  background-position: right;
+}
+.header2 .textone {
+  font-size: 90px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 5rem 0;
+}
+.header2 .texttwo {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 5rem 0;
+}
+
+.platform {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 100px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.platformLeft {
+  width: 40%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.platformLeftTitle {
+  font-family: Montserrat Alternates;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.platformLeftText {
+  font-family: Montserrat Alternates;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: 2px;
+  text-align: left;
+  margin: 2rem 0;
+}
+.platformLeft button {
+  font-family: Montserrat Alternates;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: transparent;
+  color: #fff;
+  padding: 2px 12%;
+  border-radius: 4px;
+  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.platformLeft button:hover {
+  background: #323232;
+}
+.platformRight {
+  width: 20%;
+  height: 400px;
+  background-image: url("./images/Prototype.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.ourClients {
+  width: 100%;
+  height: auto;
+  padding: 40px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  flex-direction: column;
+}
+.ourClientsTitle {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #000;
+}
+.ourClientsItems {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.ourClientsItemsItem {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.ourClientsItemsItem h4 {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 46px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #000;
+}
+
+.ourMission {
+  height: auto;
+  width: 100%;
+  padding: 40px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.ourMissionTitle {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.ourMissionTextone {
+  width: 80%;
+  font-family: Montserrat Alternates;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 2;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 10vh 0;
+}
+.ourMissionTexttwo {
+  font-family: Montserrat Alternates;
+  font-size: 39px;
+  font-weight: 500;
+  width: 80%;
+  line-height: 2;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.counter {
+  display: flex;
+  width: 100%;
+  height: auto;
+  min-height: 40vh;
+  padding: 40px 100px;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/header2cover.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.counterItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.counterItemNumber {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 95px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.counterItemText {
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 41px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.devices {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 100px;
+  background-color: #fff;
+}
+.devicesTitle {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 52px;
+  color: #000;
+  text-align: center;
+}
+.devicesItems {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 4% 0 0;
+}
+.devicesItemsItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.devicesItemsItemDes {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000;
+  margin-top: 2%;
+}
+
+.carrousel {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  color: #000;
+  padding: 40px 100px;
+}
+.carrouselTitle {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.carrouselItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2% 0 0;
+}
+.carrouselItemLeft {
+  width: 30%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.carrouselItemLeft1 {
+  font-family: Montserrat Alternates;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.carrouselItemLeft2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.carrouselItemRight {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  height: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #EAEAEA;
+  padding: 4% 100px;
+  color: #000;
+}
+.footerLeft {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footerLeft1 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.footerLeft2 {
+  margin: 5% 0 0;
+}
+.footerLeft2 input {
+  width: Fixed 264px;
+  height: Hug 56px;
+  padding: 16px 20px 16px 20px;
+  border-radius: 4px;
+  gap: 10px;
+  border: none;
+}
+.footerLeft2 button {
+  width: Hug 110px;
+  height: Hug 56px;
+  padding: 16px 32px 16px 32px;
+  border-radius: 4px;
+  gap: 10px;
+  background-color: #022859;
+  margin: 0 0 0 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.footerRight {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+}
+.footerRight ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+}
+.footerRight ul li a {
+  font-family: Montserrat Alternates;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.footerRightIcons {
+  margin-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 60%;
+}/*# sourceMappingURL=style.css.map */
