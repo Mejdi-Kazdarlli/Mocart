@@ -5,7 +5,29 @@
   box-sizing: border-box !important;
   font-family: "Montserrat Alternates";
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+.list_container::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #384fcd;
+  border-radius: 5px;
+  height: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9d60db;
+}
 body {
   background-color: grey;
   color: #fff;
@@ -71,7 +93,7 @@ nav ul li a {
 }
 
 header {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
+  /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg"); */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -82,6 +104,26 @@ header {
   justify-content: flex-end;
   padding: 10%;
   background-attachment: fixed;
+}
+.header-vid{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media(min-aspect-ratio:16/9)
+{
+  .header-vid{
+    width: 100%;
+    height: auto;
+  }
+}
+@media(max-aspect-ratio:16/9)
+{
+  .header-vid{
+    width: auto;
+    height: 100%;
+  }
 }
 header .textone {
   font-family: Montserrat Alternates;
