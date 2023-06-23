@@ -250,7 +250,25 @@ header button:hover {
   background-position: center;
   background-size: cover;
 }
-
+#loadingProduct{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:20%;
+  height:400px;
+  }
+  #loadertxt{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+    font-size: medium;
+    color: white;
+    }
 .ourClients {
   width: 100%;
   height: auto;

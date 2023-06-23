@@ -44,7 +44,7 @@
            <button>Learn more</button>
 
             </div>
-            <div class="platformRight"></div>
+            <div id="viewer" class="platformRight"><div id="loadingProduct"><span id="loadertxt">0%</span></div></div>
         </div>
 
 <div class="ourClients">
@@ -72,9 +72,7 @@
 <div class="ourMissionTitle">Our <span class="clipbgpurple">Mission</span></div>
 <div class="ourMissionTextone">We empower <span class="clipbgpurple">Businesses</span> by leveraging the potential of <span class="clipbgpurple"> 3D Technology</span>.</div>
 <div class="ourMissionTexttwo">Our mission is to provide businesses the necessary tools and resources to captivate your users audiences through immersive visual experiences.</div>
-
 </div>
-
 <div class="counter">
 <div class="counterItem">
     <div class="counterItemNumber">+400%</div>
@@ -93,8 +91,6 @@
     <div class="counterItemText">More shoppers</div>
 </div>
 </div>
-
-
 <div class="carrousel">
 <div class="carrouselTitle">Our Clients say
 </div>
@@ -104,14 +100,12 @@
         </div>
         <div class="carrouselItemLeft2">Lorem Ipsum, CEO Dolo Sir Ament
         </div>
-
     </div>
     <div class="carrouselItemRight">
         <img src="./images/ceo.png"/>
     </div>
 </div>
 </div>
-
 <div class="devices">
 <div class="devicesTitle">We are available on all devices</div>
 <div class="devicesItems">
@@ -136,40 +130,33 @@
         <div class="footerLeft2">
              <input/>
              <button> Send</button>
-        
         </div>
-
     </div>
    <div class="footerRight">
     <ul>
         <li><a>Platform</a></li>
         <li><a>Industries</a></li>
         <li><a>About us</a></li>
-      
     </ul>
     <div class="footerRightIcons">
-
         <div><img src="./images/tw.png"/></div>
-
         <div><img src="./images/facebook.png"/></div>
         <div><img src="./images/twitch.png"/></div>
         <div><img src="./images/youtube.png"/></div>
         <div><img src="./images/instagram.png"/></div>
-
     </div>
    </div>
 </footer>
     <script>
         // navbar scrolling function
-          window.addEventListener("scroll",function(){
-      var nav = document.querySelector("nav");
-      nav.classList.toggle("sticky",window.scrollY > 200)
-  })
+        window.addEventListener("scroll",function(){
+        var nav = document.querySelector("nav");
+        nav.classList.toggle("sticky",window.scrollY > 200)
+        })
     </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-      </script>
+    <script>AOS.init();</script>
+    <script type="module" src="js/Viewer.js" ></script>
   </body>
   
 </html>
