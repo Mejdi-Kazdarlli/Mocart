@@ -1,162 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" type="text/css" href="game.css">
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  </head>
-  <body>
-    <nav>
-        <a href="#" ><img style="width:145px" height="auto" src="./images/logo2.png"></img></a>
-        <ul>
-            <li  ><a>Home</a></li>
-            <li  ><a>Platform</a></li>
-            <li ><a>Industries</a></li>
-            <li  ><a>About us</a></li>
-        </ul>
-        <div id="contactEL">
-            <a>Contact us</a>
-        </div>
-     
-    </nav>
-    <header>
-      <video autoplay loop muted plays-inline class="header-vid"><source src="images/header-vid-1.mp4" type="video/mp4"></video>
-        <div class="textone"><span class="clipbgpurple">Elevate your business </span> with 3D<br> virtual store</div>
-        <h3 class="texttwo">Unleash the Potential of Visual experience</h3>
-        <button>Let's talk</button>
-    </header>
-    <div class="header2">
-        <div data-aos-duration="1500" data-aos="fade-up" class="textone"><span class="clipbgpurple">Virtualized Retail </span> Stores        </div>
-        <div data-aos-duration="1500" class="textone" data-aos="fade-up">  3D Product Modeling              </div>
-        <div data-aos-duration="1500" class="textone" data-aos="fade-up">  Limitless Consulting        </div>
-        <div data-aos-duration="1500" class="texttwo" data-aos="fade-up">  we can help you <span class="clipbgpurple">improve your business </span>       </div>
-
-
-        </div>
-        <div class="platform">
-            <div class="platformLeft">
-          <div class="platformLeftTitle">Our <span class="clipbgpurple">Platform</span> </div>
-           <div class="platformLeftText" >The platform is admin area for clients where they can build their own 3D environment, 3D assets and ads Easily integrated with existing e-commerce platforms, allowing retailers create 3D shop in 3 clicks   </div>
-           <button>Learn more</button>
-
-            </div>
-            <div id="viewer" class="platformRight"><div id="loadingProduct"><span id="loadertxt">0%</span></div></div>
-        </div>
-
-<div class="ourClients">
-    <div class="ourClientsTitle">Our  <span class="clipbgpurple">Clients </span></div>
-<div class="ourClientsItems">
-    <div class="ourClientsItemsItem" >
-        <img src="images/b1.png"/>
-        <h4>intel</h4>
-        </div>
-        <div class="ourClientsItemsItem" >
-            <img src="images/b2.png"/>
-            <h4>intel</h4>
-            </div>
-            <div class="ourClientsItemsItem" >
-                <img src="images/b3.png"/>
-                <h4>intel</h4>
-                </div>
-                <div class="ourClientsItemsItem" >
-                    <img src="images/b4.png"/>
-                    <h4>intel</h4>
-                    </div>
-        </div>
-</div>
-<div class="ourMission">
-<div class="ourMissionTitle">Our <span class="clipbgpurple">Mission</span></div>
-<div class="ourMissionTextone">We empower <span class="clipbgpurple">Businesses</span> by leveraging the potential of <span class="clipbgpurple"> 3D Technology</span>.</div>
-<div class="ourMissionTexttwo">Our mission is to provide businesses the necessary tools and resources to captivate your users audiences through immersive visual experiences.</div>
-</div>
-<div class="counter">
-<div class="counterItem">
-    <div class="counterItemNumber">+400%</div>
-    <div class="counterItemText">Enagement time</div>
-</div>
-<div class="counterItem">
-    <div class="counterItemNumber">+250%</div>
-    <div class="counterItemText">Subscription Sign up</div>
-</div>
-<div class="counterItem">
-    <div class="counterItemNumber">+30%</div>
-    <div class="counterItemText">E-commerce Sales</div>
-</div>
-<div class="counterItem">
-    <div class="counterItemNumber">40%</div>
-    <div class="counterItemText">More shoppers</div>
-</div>
-</div>
-<div class="carrousel">
-<div class="carrouselTitle">Our Clients say
-</div>
-<div class="carrouselItem">
-    <div class="carrouselItemLeft">
-        <div class="carrouselItemLeft1">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore”
-        </div>
-        <div class="carrouselItemLeft2">Lorem Ipsum, CEO Dolo Sir Ament
-        </div>
-    </div>
-    <div class="carrouselItemRight">
-        <img src="./images/ceo.png"/>
-    </div>
-</div>
-</div>
-<div class="devices">
-<div class="devicesTitle">We are available on all devices</div>
-<div class="devicesItems">
-    <div  class="devicesItemsItem">
-         <div class="devicesItemsItemImg">  <img src="./images/d1.png"/></div>
-         <div class="devicesItemsItemDes">Mobile</div>
-    </div>
-    <div  class="devicesItemsItem">
-        <div class="devicesItemsItemImg">  <img src="./images/d2.png"/></div>
-        <div class="devicesItemsItemDes">Desktop</div>
-   </div>
-   <div  class="devicesItemsItem">
-    <div class="devicesItemsItemImg">  <img src="./images/d3.png"/></div>
-    <div class="devicesItemsItemDes">VR Headset</div>
-</div>
-</div>
-</div>
-<footer class="footer">
-    <div class="footerLeft">
-     <div class="footerLeft1">Let’s stay connected! <br>
-        send us an email and we will talk<br> to you shortly</div>
-        <div class="footerLeft2">
-             <input/>
-             <button> Send</button>
-        </div>
-    </div>
-   <div class="footerRight">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <a href="#"><img style="width:145px" height="auto" src="./images/logo2.png"></img></a>
     <ul>
-        <li><a>Platform</a></li>
-        <li><a>Industries</a></li>
-        <li><a>About us</a></li>
+      <li><a>Home</a></li>
+      <li><a>Platform</a></li>
+      <li><a>Industries</a></li>
+      <li><a>About us</a></li>
     </ul>
-    <div class="footerRightIcons">
-        <div><img src="./images/tw.png"/></div>
-        <div><img src="./images/facebook.png"/></div>
-        <div><img src="./images/twitch.png"/></div>
-        <div><img src="./images/youtube.png"/></div>
-        <div><img src="./images/instagram.png"/></div>
+    <div id="contactEL">
+      <a>Contact us</a>
     </div>
-   </div>
-</footer>
-    <script>
-        // navbar scrolling function
-        window.addEventListener("scroll",function(){
-        var nav = document.querySelector("nav");
-        nav.classList.toggle("sticky",window.scrollY > 200)
-        })
+  </nav>
+  <header>
+    <video autoplay loop muted plays-inline class="header-vid">
+      <source src="images/header-vid-1.mp4" type="video/mp4">
+    </video>
+    <div class="textone"><span class="clipbgpurple">Elevate your business </span> with 3D<br> virtual store</div>
+    <h3 class="texttwo">Unleash the Potential of Visual experience</h3>
+    <button>Let's talk</button>
+  </header>
+  <div class="parralax">
+    <div class="header2">
+      <div data-aos="fade-up" class="textone"><span class="clipbgpurple">Virtualized Retail </span> Stores </div>
+      <div data-aos="fade-up" class="textone"> 3D Product Modeling </div>
+      <div data-aos="fade-up" class="textone"> Limitless Consulting </div>
+      <div data-aos="fade-up" class="texttwo"> we can help you <span class="clipbgpurple">improve your business </span>
+      </div>
+    </div>
+    <div class="platform">
+      <div class="platformLeft">
+        <div class="platformLeftTitle">Our <span class="clipbgpurple">Platform</span> </div>
+        <div class="platformLeftText">The platform is admin area for clients where they can build their own 3D
+          environment, 3D assets and ads Easily integrated with existing e-commerce platforms, allowing retailers create
+          3D shop in 3 clicks </div>
+        <button>Learn more</button>
+      </div>
+      <div id="viewer" class="platformRight">
+        <div id="loadingProduct"><span id="loadertxt">0%</span></div>
+      </div>
+    </div>
+    <div class="ourClients">
+      <div class="ourClientsTitle">Our <span class="clipbgpurple">Clients </span></div>
+      <div class="ourClientsItems">
+        <div class="ourClientsItemsItem">
+          <img src="images/b1.png" />
+        </div>
+        <div class="ourClientsItemsItem">
+          <img src="images/b2.png" />
+        </div>
+        <div class="ourClientsItemsItem">
+          <img src="images/b3.png" />
+        </div>
+        <div class="ourClientsItemsItem">
+          <img src="images/b4.png" />
+        </div>
+      </div>
+    </div>
+    <div class="ourMission">
+      <div class="ourMissionTitle">Our <span class="clipbgpurple">Mission</span></div>
+      <!-- first text -->
+      <div class="ourMissionTextone text1">We empower <span class="clipbgpurple">Businesses</span> by leveraging the
+        potential of <span class="clipbgpurple"> 3D Technology</span>.</div>
+      <div class="ourMissionTexttwo text1">Our mission is to provide businesses the necessary tools and resources to
+        captivate your users audiences through immersive visual experiences.</div>
+      <!-- second text -->
+      <div class="ourMissionTextone text2"> We create <span class="clipbgpurple">immersive and engaging 3D
+          experiences</span> that elevate the customer journey.</div>
+      <div class="ourMissionTexttwo text2"> delivering high-quality visual presentations that leave a lasting impression
+        on customers
+      </div>
+      <!-- third text -->
+      <div class="ourMissionTextone text3"> <span class="clipbgpurple">Innovation is at the core of our mission as we
+          constantly push boundaries in the realm.</span> </div>
+      <div class="ourMissionTexttwo text3"> We are dedicated to pioneering new approaches and techniques to
+        revolutionize how people shop online.
+      </div>
+      <div class="ourMissionSidebar">
+        <div class="ourMissionSidebarItem">
+          <div class="ourMissionSidebarItemText">inovation</div>
+          <div id="button1" onclick="side('inovation')" class="ourMissionSidebarItemButton"></div>
+        </div>
+        <div class="ourMissionSidebarItem">
+          <div class="ourMissionSidebarItemText">Empoyer</div>
+          <div id="button2" onclick="side('empoyer')" class="ourMissionSidebarItemButton"></div>
+        </div>
+        <div class="ourMissionSidebarItem">
+          <div class="ourMissionSidebarItemText">Text 3</div>
+          <div id="button3" onclick="side('text3')" class="ourMissionSidebarItemButton"></div>
+        </div>
+      </div>
+    </div>
+    <div class="counter" id="counter">
+      <div class="counterItem">
+        <div class="counterItemNumber ">+<span class="num" data-val="400">000</span>%</div>
+        <div class="counterItemText">Enagement time</div>
+      </div>
+      <div class="counterItem">
+        <div class="counterItemNumber ">+<span class="num" data-val="250">000</span>%</div>
+        <div class="counterItemText">Subscription Sign up</div>
+      </div>
+      <div class="counterItem">
+        <div class="counterItemNumber ">+<span class="num" data-val="30">000</span>%</div>
+        <div class="counterItemText">E-commerce Sales</div>
+      </div>
+      <div class="counterItem">
+        <div class="counterItemNumber "><span class="num" data-val="40">000</span>%</div>
+        <div class="counterItemText">More shoppers</div>
+      </div>
+    </div>
+    <div class="carrousel">
+      <div class="carrouselTitle">Our Clients say
+      </div>
+      <div id="carouselExample" class="carousel slide pointer-event">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carrouselItem">
+              <div class="carrouselItemLeft">
+                <div class="carrouselItemLeft1">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore”
+                </div>
+                <div class="carrouselItemLeft2">Lorem Ipsum, CEO Dolo Sir Ament</div>
+              </div>
+              <div class="carrouselItemRight">
+                <img src="./images/ceo.png" />
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="carrouselItem">
+              <div class="carrouselItemLeft">
+                <div class="carrouselItemLeft1">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                  tempor incididunt ut labore”
+                </div>
+                <div class="carrouselItemLeft2">Lorem Ipsum, CEO Dolo Sir Ament</div>
+              </div>
+              <div class="carrouselItemRight">
+                <img src="./images/ceo.png" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="devices">
+      <div class="devicesTitle">We are available on all devices</div>
+      <div class="devicesItems">
+        <div class="devicesItemsItem">
+          <div class="devicesItemsItemImg"> <img src="./images/d1.png" /></div>
+          <div class="devicesItemsItemDes">Mobile</div>
+        </div>
+        <div class="devicesItemsItem">
+          <div class="devicesItemsItemImg"> <img src="./images/d2.png" /></div>
+          <div class="devicesItemsItemDes">Desktop</div>
+        </div>
+        <div class="devicesItemsItem">
+          <div class="devicesItemsItemImg"> <img src="./images/d3.png" /></div>
+          <div class="devicesItemsItemDes">VR Headset</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footerLeft">
+        <div class="footerLeft1">Let’s stay connected! <br>
+          send us an email and we will talk<br> to you shortly</div>
+        <div class="footerLeft2">
+          <input />
+          <button> Send</button>
+        </div>
+      </div>
+      <div class="footerRight">
+        <ul>
+          <li><a>Platform</a></li>
+          <li><a>Industries</a></li>
+          <li><a>About us</a></li>
+        </ul>
+        <div class="footerRightIcons">
+          <div><img src="./images/tw.png" /></div>
+          <div><img src="./images/facebook.png" /></div>
+          <div><img src="./images/twitch.png" /></div>
+          <div><img src="./images/youtube.png" /></div>
+          <div><img src="./images/instagram.png" /></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/index.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
     </script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
-    <script type="module" src="js/Viewer.js" ></script>
-  </body>
-  
+  <script type="module" src="js/Viewer.js"></script>
+</body>
+
 </html>

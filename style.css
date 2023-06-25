@@ -5,6 +5,11 @@
   box-sizing: border-box !important;
   font-family: "Montserrat Alternates";
 }
+
+body {
+  background-color: grey;
+  color: #fff !important;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -28,11 +33,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #9d60db;
 }
-body {
-  background-color: grey;
-  color: #fff;
-}
-
 nav {
   position: fixed;
   top: 0;
@@ -103,7 +103,9 @@ header {
   flex-direction: column;
   justify-content: flex-end;
   padding: 10%;
-  background-attachment: fixed;
+  z-index: -5;
+  position: fixed;
+  top: 0%;
 }
 .header-vid{
   position: absolute;
@@ -161,6 +163,7 @@ header button:hover {
 }
 
 .header2 {
+  background-color: black;
   height: auto;
   display: flex;
   align-items: flex-start;
@@ -170,6 +173,7 @@ header button:hover {
   background: black;
   background-size: cover;
   background-position: right;
+  color: #fff;
 }
 .header2 .textone {
   font-size: 90px;
@@ -195,7 +199,7 @@ header button:hover {
   align-items: center;
   justify-content: space-between;
   padding: 40px 100px;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
+  background-color: #000;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -215,6 +219,7 @@ header button:hover {
   line-height: 52px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 5%;
 }
 .platformLeftText {
   font-family: Montserrat Alternates;
@@ -244,7 +249,7 @@ header button:hover {
   background: #323232;
 }
 .platformRight {
-  width: 20%;
+  width: 35%;
   height: 400px;
   background-image: url("./images/Prototype.png");
   background-position: center;
@@ -252,25 +257,7 @@ header button:hover {
   border-radius: 20px;
   border: 1px solid white;
 }
-#loadingProduct{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width:20%;
-  height:400px;
-  }
-  #loadertxt{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 11;
-    font-size: medium;
-    color: white;
-    }
+
 .ourClients {
   width: 100%;
   height: auto;
@@ -292,14 +279,15 @@ header button:hover {
 }
 .ourClientsItems {
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 .ourClientsItemsItem {
   width: auto;
   height: auto;
   display: flex;
+  width: 25%;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
@@ -316,14 +304,17 @@ header button:hover {
 .ourMission {
   height: auto;
   width: 100%;
+  min-height: 100vh;
   padding: 40px 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-color: #000;
+  z-index: 5555;
+  position: relative;
+  color: white;
 }
 .ourMissionTitle {
   font-size: 40px;
@@ -351,18 +342,44 @@ header button:hover {
   letter-spacing: 0em;
   text-align: center;
 }
+.ourMissionSidebar {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.ourMissionSidebarItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 6px;
+}
+.ourMissionSidebarItemText {
+  width: 80%;
+  height: 20px;
+}
+.ourMissionSidebarItemButton {
+  width: 16px;
+  background-color: white;
+  height: 16px;
+  margin-left: 8px;
+  border-radius: 100%;
+  cursor: pointer;
+}
 
 .counter {
   display: flex;
   width: 100%;
   height: auto;
-  min-height: 40vh;
-  padding: 40px 100px;
+  padding: 4% 100px;
   align-items: center;
   justify-content: space-between;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/header2cover.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 .counterItem {
   display: flex;
@@ -441,6 +458,7 @@ header button:hover {
   line-height: 70px;
   letter-spacing: 0em;
   text-align: center;
+  margin-bottom: 1%;
 }
 .carrouselItem {
   width: 100%;
@@ -554,4 +572,47 @@ header button:hover {
   align-items: center;
   justify-content: space-around;
   width: 60%;
+}
+
+.parralax {
+  margin-top: 100vh;
+  z-index: 55555;
+}
+
+.text2, .text3 {
+  display: none;
+}
+
+.text1 {
+  transition: display 1s ease-in !important;
+}
+
+#button1 {
+  background-color: purple;
+}
+
+#button1:hover, #button2:hover, #button3:hover {
+  background-color: #883de7;
+}
+
+.text1, .text2, .text3 {
+  animation: hideandshow 0.3s ease-in;
+}
+
+@keyframes hideandshow {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.carousel-control-next, .carousel-control-prev {
+  filter: invert(100%);
 }/*# sourceMappingURL=style.css.map */
