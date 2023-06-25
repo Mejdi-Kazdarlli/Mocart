@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:ital@1&family=Edu+NSW+ACT+Foundation&family=Inter&family=Lato:ital@0;1&family=Montserrat+Alternates&family=Open+Sans&family=Roboto&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,7 @@ body {
   background-color: grey;
   color: #fff !important;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -18,6 +20,7 @@ body {
 ::-webkit-scrollbar-track {
   background: black;
 }
+
 .list_container::-webkit-scrollbar-track {
   background: white;
 }
@@ -33,6 +36,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #9d60db;
 }
+
 nav {
   position: fixed;
   top: 0;
@@ -45,22 +49,26 @@ nav {
   z-index: 5555;
   padding: 40px 100px;
 }
+
 nav .logo {
   position: relative;
   transition: 0.6s;
   width: 140px;
   height: auto;
 }
+
 nav ul {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 nav ul li {
   position: relative;
   list-style-type: none;
 }
+
 nav ul li a {
   cursor: pointer;
   position: relative;
@@ -79,6 +87,7 @@ nav ul li a {
   padding: 20px 100px;
   background-color: rgba(255, 255, 255, 0.95);
 }
+
 .sticky ul a,
 .sticky #contactEL {
   color: #000 !important;
@@ -107,26 +116,28 @@ header {
   position: fixed;
   top: 0%;
 }
-.header-vid{
+
+.header-vid {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: -1;
 }
-@media(min-aspect-ratio:16/9)
-{
-  .header-vid{
+
+@media(min-aspect-ratio:16/9) {
+  .header-vid {
     width: 100%;
     height: auto;
   }
 }
-@media(max-aspect-ratio:16/9)
-{
-  .header-vid{
+
+@media(max-aspect-ratio:16/9) {
+  .header-vid {
     width: auto;
     height: 100%;
   }
 }
+
 header .textone {
   font-family: Montserrat Alternates;
   font-size: 56px;
@@ -135,6 +146,7 @@ header .textone {
   letter-spacing: 0em;
   text-align: center;
 }
+
 header .texttwo {
   font-size: 32px;
   font-weight: 400;
@@ -143,6 +155,7 @@ header .texttwo {
   text-align: center;
   margin: 2rem;
 }
+
 header button {
   font-family: Montserrat Alternates;
   font-size: 20px;
@@ -158,6 +171,7 @@ header button {
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
+
 header button:hover {
   background: #323232;
 }
@@ -175,6 +189,7 @@ header button:hover {
   background-position: right;
   color: #fff;
 }
+
 .header2 .textone {
   font-size: 90px;
   font-weight: 700;
@@ -183,6 +198,7 @@ header button:hover {
   text-align: left;
   margin: 5rem 0;
 }
+
 .header2 .texttwo {
   font-size: 40px;
   font-weight: 700;
@@ -204,6 +220,7 @@ header button:hover {
   background-size: cover;
   background-attachment: fixed;
 }
+
 .platformLeft {
   width: 40%;
   height: auto;
@@ -212,6 +229,7 @@ header button:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .platformLeftTitle {
   font-family: Montserrat Alternates;
   font-size: 40px;
@@ -221,6 +239,7 @@ header button:hover {
   text-align: left;
   margin-bottom: 5%;
 }
+
 .platformLeftText {
   font-family: Montserrat Alternates;
   font-size: 24px;
@@ -230,6 +249,7 @@ header button:hover {
   text-align: left;
   margin: 2rem 0;
 }
+
 .platformLeft button {
   font-family: Montserrat Alternates;
   font-size: 20px;
@@ -245,10 +265,13 @@ header button:hover {
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
+
 .platformLeft button:hover {
   background: #323232;
 }
+
 .platformRight {
+  position: relative;
   width: 35%;
   height: 400px;
   background-image: url("./images/Prototype.png");
@@ -256,6 +279,36 @@ header button:hover {
   background-size: cover;
   border-radius: 20px;
   border: 1px solid white;
+}
+
+#viewer {
+  position: relative;
+  width: 35%;
+  height: 400px;
+}
+
+#loadingProduct {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 0px;
+  z-index: 4;
+}
+
+#loadertxt {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+  font-size: 30px;
+  font-family: "Montserrat Alternates";
+  color: white;
 }
 
 .ourClients {
@@ -268,6 +321,7 @@ header button:hover {
   background-color: #fff;
   flex-direction: column;
 }
+
 .ourClientsTitle {
   font-size: 40px;
   font-weight: 800;
@@ -277,12 +331,14 @@ header button:hover {
   margin-bottom: 2rem;
   color: #000;
 }
+
 .ourClientsItems {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
+
 .ourClientsItemsItem {
   width: auto;
   height: auto;
@@ -292,6 +348,7 @@ header button:hover {
   justify-content: space-around;
   flex-direction: column;
 }
+
 .ourClientsItemsItem h4 {
   font-size: 26px;
   font-weight: 800;
@@ -316,6 +373,7 @@ header button:hover {
   position: relative;
   color: white;
 }
+
 .ourMissionTitle {
   font-size: 40px;
   font-weight: 800;
@@ -323,6 +381,7 @@ header button:hover {
   letter-spacing: 0em;
   text-align: left;
 }
+
 .ourMissionTextone {
   width: 80%;
   font-family: Montserrat Alternates;
@@ -333,6 +392,7 @@ header button:hover {
   text-align: center;
   margin: 10vh 0;
 }
+
 .ourMissionTexttwo {
   font-family: Montserrat Alternates;
   font-size: 39px;
@@ -342,6 +402,7 @@ header button:hover {
   letter-spacing: 0em;
   text-align: center;
 }
+
 .ourMissionSidebar {
   position: absolute;
   top: 50%;
@@ -350,16 +411,19 @@ header button:hover {
   flex-direction: column;
   justify-content: space-around;
 }
+
 .ourMissionSidebarItem {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 6px;
 }
+
 .ourMissionSidebarItemText {
   width: 80%;
   height: 20px;
 }
+
 .ourMissionSidebarItemButton {
   width: 16px;
   background-color: white;
@@ -381,12 +445,14 @@ header button:hover {
   background-position: center;
   background-attachment: fixed;
 }
+
 .counterItem {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
+
 .counterItemNumber {
   font-size: 72px;
   font-weight: 700;
@@ -394,6 +460,7 @@ header button:hover {
   letter-spacing: 0em;
   text-align: left;
 }
+
 .counterItemText {
   font-size: 31px;
   font-weight: 500;
@@ -412,6 +479,7 @@ header button:hover {
   padding: 40px 100px;
   background-color: #fff;
 }
+
 .devicesTitle {
   font-size: 40px;
   font-weight: 800;
@@ -419,18 +487,21 @@ header button:hover {
   color: #000;
   text-align: center;
 }
+
 .devicesItems {
   display: flex;
   justify-content: space-around;
   width: 100%;
   margin: 4% 0 0;
 }
+
 .devicesItemsItem {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
 }
+
 .devicesItemsItemDes {
   font-size: 32px;
   font-weight: 500;
@@ -452,6 +523,7 @@ header button:hover {
   color: #000;
   padding: 40px 100px;
 }
+
 .carrouselTitle {
   font-size: 40px;
   font-weight: 800;
@@ -460,6 +532,7 @@ header button:hover {
   text-align: center;
   margin-bottom: 1%;
 }
+
 .carrouselItem {
   width: 100%;
   display: flex;
@@ -467,6 +540,7 @@ header button:hover {
   align-items: center;
   margin: 2% 0 0;
 }
+
 .carrouselItemLeft {
   width: 30%;
   height: auto;
@@ -475,6 +549,7 @@ header button:hover {
   justify-content: space-around;
   flex-direction: column;
 }
+
 .carrouselItemLeft1 {
   font-family: Montserrat Alternates;
   font-size: 32px;
@@ -483,6 +558,7 @@ header button:hover {
   letter-spacing: 0em;
   text-align: center;
 }
+
 .carrouselItemLeft2 {
   font-size: 20px;
   font-weight: 300;
@@ -490,6 +566,7 @@ header button:hover {
   letter-spacing: 0em;
   text-align: center;
 }
+
 .carrouselItemRight {
   display: flex;
   justify-content: space-around;
@@ -508,12 +585,14 @@ header button:hover {
   padding: 4% 100px;
   color: #000;
 }
+
 .footerLeft {
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+
 .footerLeft1 {
   font-size: 18px;
   font-weight: 400;
@@ -521,9 +600,11 @@ header button:hover {
   letter-spacing: 0px;
   text-align: left;
 }
+
 .footerLeft2 {
   margin: 5% 0 0;
 }
+
 .footerLeft2 input {
   width: Fixed 264px;
   height: Hug 56px;
@@ -532,6 +613,7 @@ header button:hover {
   gap: 10px;
   border: none;
 }
+
 .footerLeft2 button {
   width: Hug 110px;
   height: Hug 56px;
@@ -544,6 +626,7 @@ header button:hover {
   border: none;
   cursor: pointer;
 }
+
 .footerRight {
   width: 30%;
   display: flex;
@@ -552,12 +635,14 @@ header button:hover {
   align-items: center;
   justify-content: space-between;
 }
+
 .footerRight ul {
   display: flex;
   justify-content: space-between;
   width: 100%;
   list-style-type: none;
 }
+
 .footerRight ul li a {
   font-family: Montserrat Alternates;
   font-size: 18px;
@@ -566,6 +651,7 @@ header button:hover {
   letter-spacing: 0px;
   text-align: left;
 }
+
 .footerRightIcons {
   margin-top: 20%;
   display: flex;
@@ -579,7 +665,8 @@ header button:hover {
   z-index: 55555;
 }
 
-.text2, .text3 {
+.text2,
+.text3 {
   display: none;
 }
 
@@ -591,11 +678,15 @@ header button:hover {
   background-color: purple;
 }
 
-#button1:hover, #button2:hover, #button3:hover {
+#button1:hover,
+#button2:hover,
+#button3:hover {
   background-color: #883de7;
 }
 
-.text1, .text2, .text3 {
+.text1,
+.text2,
+.text3 {
   animation: hideandshow 0.3s ease-in;
 }
 
@@ -603,16 +694,23 @@ header button:hover {
   0% {
     opacity: 0;
   }
+
   20% {
     opacity: 0.4;
   }
+
   80% {
     opacity: 0.8;
   }
+
   100% {
     opacity: 1;
   }
 }
-.carousel-control-next, .carousel-control-prev {
+
+.carousel-control-next,
+.carousel-control-prev {
   filter: invert(100%);
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
