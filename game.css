@@ -20,7 +20,7 @@
   justify-content: center;
   padding-top: 50px;
   padding-bottom: 20px;
-  background-color: var(--DG);
+  background-color: black;
   border-bottom: solid var(--LG) 1px;
 }
 .info{
@@ -350,7 +350,17 @@ z-index: 4;
   }
 }
 
-
+.card {
+  display: none;
+  position: absolute;
+  align-items: center;
+  height: fit-content;
+  width:fit-content;
+  margin: 0 auto;
+  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 2%;
+  z-index: 5;
+}
 .card h3 {
   color: #ffffff;
   font-family: "muli";
@@ -474,18 +484,7 @@ z-index: 4;
   color: #2a2f40;
 }
 
-.card {
-  position: absolute;
-  display: none;
-  align-items: center;
-  height: fit-content;
-  width:fit-content;
-  margin: 0 auto;
-  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
-  margin-top: 2%;
-  z-index: 5;
-  background-color: transparent;
-}
+
 
 .card .left {
   content: "";
@@ -619,6 +618,7 @@ bottom: 10px;
 flex-direction: column;
 width: 100%;
 padding-right: 10px;
+color: black;
 }
 .list_Product .global-total-row .total-row{
 display: flex;

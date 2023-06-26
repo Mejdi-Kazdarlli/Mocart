@@ -4,7 +4,32 @@ import { TWEEN } from '../THREE/tween.module.min.js';
 import {OutlinePass} from '../THREE/OutlinePass.js';
 import { product3d} from '../productScene.js';
 import {productRow} from './productrow.js';
+window.addEventListener("scroll", function () {
+  var nav = document.querySelector("nav");
+  nav.classList.toggle("sticky", window.scrollY > 200)
+})
 function _(elm){return document.getElementById(elm)}
+window.addEventListener('scroll', preventScroll, { passive: false });
+window.addEventListener('wheel', preventScroll, { passive: false });
+window.addEventListener('keydown', preventScroll, { passive: false });
+
+function preventScroll(event) {
+  const target = event.target;
+  const sceneElement = document.querySelector('.game');
+  const list_container = document.querySelector('.list_container');
+
+  if (
+    sceneElement.contains(target) &&
+    !list_container.contains(target)
+  ) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+}
+function isArrowKey(event) {
+  const arrowKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+  return arrowKeys.includes(event.key);
+}
 window.customElements.define("panel-row",productRow);
 
 var productName;
@@ -209,7 +234,8 @@ skateScene.orbit.enableZoom = false;
 const tabHelpContents = document.querySelectorAll('.helpItem___2Tob5');
 info.addEventListener('pointerdown',async function(e){
   if( e.button == 0 )
-  {infoPanel.style.display="block"
+  {
+    infoPanel.style.display="block"
   tabHelpContents.forEach((HelpContent) => {
     HelpContent.classList.remove('active___126Ku');
     if(isMobile && HelpContent.classList.contains("help-touche"))
@@ -220,7 +246,8 @@ info.addEventListener('pointerdown',async function(e){
     {
       HelpContent.classList.add('active___126Ku');
     }
-  });}
+  });
+}
 });
 closeinfo.addEventListener('pointerdown',function(e){if( e.button == 0 ) {infoPanel.style.display="none"}});
 function onDocumentTouchClick(event) {
@@ -315,7 +342,7 @@ async function OnClickProduct(event)
   }
 function updateData()
 {
-  fetch("js/skatepark/data.json")
+  fetch("js/game/data.json")
               .then(response => response.json())
               .then(obj => {
                 Object.keys(obj).forEach(product => {
@@ -387,7 +414,7 @@ function updateData()
 }
 function updateDataOnhover(productName)
 {
-  fetch("js/skatepark/data.json")
+  fetch("js/game/data.json")
               .then(response => response.json())
               .then(obj => {
                 Object.keys(obj).forEach(product => {
@@ -524,7 +551,7 @@ async function Row(productName)
     const productRow = document.createElement("panel-row");
     const row = productRow.shadowRoot.querySelector('.row');
     list_container.insertBefore(productRow, list_container.firstChild);
-    fetch("js/skatepark/data.json")
+    fetch("js/game/data.json")
     .then(response => response.json())
     .then(obj => {
       Object.keys(obj).forEach(product => {

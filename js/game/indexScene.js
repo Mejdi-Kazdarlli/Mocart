@@ -43,11 +43,6 @@ export class skate3d {
         this.camera.layers.enable(0)
         this.camera.layers.enable(1)
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
-        // this.fpControls = new FirstPersonControls(this.camera, this.renderer.domElement)
-        // this.fpControls.lookVertical = true
-        // this.fpControls.constrainVertical = true;
-        // this.fpControls.verticalMin = Math.PI/1.7;
-        // this.fpControls.verticalMax = Math.PI/2.3;
         this.orbit = new OrbitControls(this.camera, this.renderer.domElement);
         this.orbit.minPolarAngle = Math.PI/2.8;
         this.orbit.maxPolarAngle = Math.PI/2.02;
@@ -95,15 +90,12 @@ export class skate3d {
     animate() {
         delta += clock.getDelta();
         requestAnimationFrame(this.animate.bind(this));
-        //this.fpControls.update(0.01)
         if (delta > interval) {
             this.render();
             delta = delta % interval;
             this.composer.render();
             updateCameraBoundingSphere(this.cameraBoundingSphere,this.camera)
-           
         }
-        
     }
     onWindowResize() {
         this.camera.aspect = this.container.offsetWidth / this.container.offsetHeight;
