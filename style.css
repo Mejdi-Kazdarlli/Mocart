@@ -45,9 +45,9 @@ nav {
   display: flex;
   justify-content: space-between;
   transition: 0.6s;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.35);
   z-index: 5555;
-  padding: 40px 100px;
+  padding: 20px 100px;
 }
 
 nav .logo {
@@ -67,6 +67,7 @@ nav ul {
 nav ul li {
   position: relative;
   list-style-type: none;
+ 
 }
 
 nav ul li a {
@@ -75,15 +76,33 @@ nav ul li a {
   margin: 0 15px;
   color: white !important;
   text-decoration: none !important;
+  border-radius: 4px;
+  padding: 10px 40px;
+  margin: 0px 10px;
+  transition: all 0.3s ease-out;
+  background: transparent;
 }
-
+nav ul li a:hover {
+  color: white !important;
+  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
+}
 #contactEL {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
+  padding: 10px 40px;
+  margin: 0px 10px;
+  transition: all 0.3s ease-out;
+  background: transparent;
+  border-radius: 4px;
+  text-decoration: none !important;
 }
-
+#contactEL:hover{
+  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
+  cursor: pointer;
+  color: white !important;
+}
 .sticky {
   padding: 20px 100px;
   background-color: rgba(255, 255, 255, 0.95);
