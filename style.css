@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Rubik:ital@1&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box !important;
   font-family: "Montserrat Alternates";
 }
-
+:root{
+  --extraBold:'Montserrat Alternates', sans-serif;
+}
 body {
   background-color: grey;
   color: #fff !important;
@@ -505,7 +508,7 @@ header button:hover {
 }
 
 .ourMission {
-  height: auto;
+  height: 660px;
   width: 100%;
   padding: 2% 4%;
   display: flex;
@@ -519,14 +522,15 @@ header button:hover {
   color: white;
 }
 .ourMissionTitle {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 800;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: left;
+  /* font-family: var(--extraBold); */
 }
 .ourMissionTextone {
-  width: 90%;
+  width: 100%;
   font-family: Montserrat Alternates;
   font-size: 48px;
   font-weight: bold;
@@ -534,15 +538,26 @@ header button:hover {
   letter-spacing: 0em;
   text-align: center;
   margin: 10vh 0;
+  text-transform: capitalize;
 }
 .ourMissionTexttwo {
   font-family: Montserrat Alternates;
   font-size: 32px;
   font-weight: 500;
-  width: 90%;
+  width: 100%;
   line-height: 2;
   letter-spacing: 0em;
   text-align: center;
+  text-transform: capitalize;
+  flex-direction: column;
+}
+.ourMissionTexttwo div{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.ourMissionTexttwo div span{
+  padding: 0px 100px;
 }
 .ourMissionSidebar {
   position: absolute;
@@ -576,13 +591,20 @@ header button:hover {
   .ourMissionTextone, .ourMissionTexttwo {
     /* Adjust the font size or any other styles as needed */
     font-size: 14px;
+    margin: 10% 0%;
+  }
+  .ourMissionTexttwo div span
+  {
+    padding: 0px 20px;
   }
   .ourMissionSidebar {
-    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
     left: 50%;
-    display: none;
-    transform: translate(-50%,-50%);
+    display: flex;
+    transform: translate(-50%,0%);
     flex-direction: row;
+    bottom: 0px;
+    position: relative;
   }
   .ourMissionTexttwo, .ourMissionTextone {
     width: 100%;
@@ -597,9 +619,11 @@ header button:hover {
 }
 /* Styles for large screens */
 @media (min-width: 1025px) {
-  .ourMissionTextone, .ourMissionTexttwo {
-    /* Adjust the font size or any other styles as needed */
-    font-size: 30px;
+  .ourMissionTextone{
+    font-size: 45px;
+  }
+  .ourMissionTexttwo {
+    font-size: 27px;
   }
 }
 .counter {
@@ -810,7 +834,7 @@ header button:hover {
   align-items: flex-start;
   width: 100%;
   height: auto;
-  background-color: #fff;
+  background-color: #EAEAEA;
   padding: 2% 4%;
   color: #000;
 }
@@ -992,12 +1016,14 @@ header button:hover {
   color: #fff;
   padding: 2px 12%;
   border-radius: 4px;
-  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
+  background: #323232;
+  /* background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%); */
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
 .video_section button:hover {
-  background: #323232;
+  /* background: #323232; */
+  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
 }
 
 .parallele {
@@ -1112,6 +1138,9 @@ header button:hover {
   }
   #viewer {
     width: 90%;
+  }
+  .ourMission{
+    height: 100%;
   }
 }
 .our_technology {

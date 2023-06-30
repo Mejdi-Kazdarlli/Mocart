@@ -96,32 +96,60 @@ window.side = (keyword) => {
   const btn = document.getElementById("button1")
   const btn2 = document.getElementById("button2")
   const btn3 = document.getElementById("button3")
-
-  if (keyword == "inovation") {
-    btn.style.backgroundColor = "purple"
-    btn2.style.backgroundColor = "white"
-    btn3.style.backgroundColor = "white"
-
-    for (const el of els) {el.style.display = 'block';}
-    for (const el2 of els2) {el2.style.display = 'none';}
-    for (const el3 of els3) {el3.style.display = 'none';}
-  } else if (keyword == "empoyer") {
-    btn.style.backgroundColor = "white"
-    btn2.style.backgroundColor = "purple"
-    btn3.style.backgroundColor = "white"
-
-    for (const el of els) {el.style.display = 'none';}
-    for (const el2 of els2) {el2.style.display = 'block';}
-    for (const el3 of els3) {el3.style.display = 'none';}
-  } else {
-    btn.style.backgroundColor = "white"
-    btn2.style.backgroundColor = "white"
-    btn3.style.backgroundColor = "purple"
-
-    for (const el of els) {el.style.display = 'none';}
-    for (const el2 of els2) {el2.style.display = 'none';}
-    for (const el3 of els3) {el3.style.display = 'block';}
+  switch (keyword) {
+    case "inovation":
+        btn.style.backgroundColor = "white"
+        btn2.style.backgroundColor = "white"
+        btn3.style.backgroundColor = "purple"
+    
+        for (const el of els) {el.style.display = 'none';}
+        for (const el2 of els2) {el2.style.display = 'none';}
+        for (const el3 of els3) {el3.style.display = 'flex';}
+      break;
+      case "empoyer":
+        btn.style.backgroundColor = "purple"
+        btn2.style.backgroundColor = "white"
+        btn3.style.backgroundColor = "white"
+    
+        for (const el of els) {el.style.display = 'block';}
+        for (const el2 of els2) {el2.style.display = 'none';}
+        for (const el3 of els3) {el3.style.display = 'none';}
+      break;
+      case "experiences":
+        btn.style.backgroundColor = "white"
+        btn2.style.backgroundColor = "purple"
+        btn3.style.backgroundColor = "white"
+    
+        for (const el of els) {el.style.display = 'none';}
+        for (const el2 of els2) {el2.style.display = 'block';}
+        for (const el3 of els3) {el3.style.display = 'none';}
   }
+
+  // if (keyword == "inovation") {
+  //   btn.style.backgroundColor = "purple"
+  //   btn2.style.backgroundColor = "white"
+  //   btn3.style.backgroundColor = "white"
+
+  //   for (const el of els) {el.style.display = 'block';}
+  //   for (const el2 of els2) {el2.style.display = 'none';}
+  //   for (const el3 of els3) {el3.style.display = 'none';}
+  // } else if (keyword == "empoyer") {
+  //   btn.style.backgroundColor = "white"
+  //   btn2.style.backgroundColor = "purple"
+  //   btn3.style.backgroundColor = "white"
+
+  //   for (const el of els) {el.style.display = 'none';}
+  //   for (const el2 of els2) {el2.style.display = 'block';}
+  //   for (const el3 of els3) {el3.style.display = 'none';}
+  // } else {
+  //   btn.style.backgroundColor = "white"
+  //   btn2.style.backgroundColor = "white"
+  //   btn3.style.backgroundColor = "purple"
+
+  //   for (const el of els) {el.style.display = 'none';}
+  //   for (const el2 of els2) {el2.style.display = 'none';}
+  //   for (const el3 of els3) {el3.style.display = 'block';}
+  // }
 }
 
 
