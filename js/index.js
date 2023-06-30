@@ -1,7 +1,18 @@
 // navbar scrolling function
 window.addEventListener("scroll", function () {
   var nav = document.querySelector("nav");
+  var myimg = document.getElementById("logoimg")
   nav.classList.toggle("sticky", window.scrollY > 200)
+
+
+  if(window.scrollY > 200){
+    myimg.src = "./images/mocartlogoblack.png";
+
+  }else{
+    myimg.src = "./images/mocartlogo.png";
+
+  }
+
 })
 
 let isFunctionExecuted = false;
@@ -36,6 +47,47 @@ const counting = () => {
 }
 
 // mission side bar fucntion
+//window.addEventListener("scroll", function(event) {preventScroll(event);}, { passive: false });
+//window.addEventListener("wheel", function(event) {preventScroll(event);}, { passive: false });
+
+let previousScrollPosition = window.scrollY || document.documentElement.scrollTop;
+let wheelCounter = 0;
+function preventScroll(event) {
+  const div = document.querySelector(".ourMission");
+  const rect = div.getBoundingClientRect();
+  const currentScrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+  if (currentScrollPosition > previousScrollPosition) {
+    if (rect.bottom >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+      if(wheelCounter<3)
+      {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      if (wheelCounter === 0) {
+        side('inovation')
+      } else if (wheelCounter === 1) {
+        side('empoyer')
+      } else if (wheelCounter === 2) {
+        side('experiences')
+      }
+      wheelCounter = (wheelCounter + 1) % 3;
+      return false;
+    }
+  } 
+  // else {
+  //   if (rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)-100) {
+  //     console.log("Scrolling up");
+  //     event.preventDefault();
+  //     event.stopPropagation();
+      
+  //     return false;
+  //   }
+  // }
+  previousScrollPosition = currentScrollPosition;
+}
+
+
 window.side = (keyword) => {
   const els = document.getElementsByClassName("text1")
   const els2 = document.getElementsByClassName("text2")
@@ -73,5 +125,37 @@ window.side = (keyword) => {
 }
 
 
+window.showpopup = ()=>{
+  const el = document.getElementById("popup");
+  el.style.opacity = "1"
+  el.style.display = "block"
+
+}
+
+window.hidepopup = ()=>{
+  const el = document.getElementById("popup");
+  el.style.opacity = "1"
+  el.style.display = "none"
+
+}
 
 
+
+
+
+function togglenav() {
+  var x = document.getElementById("resnav");
+  var nav = document.querySelector("nav");
+    var myimg = document.getElementById("logoimg")
+  nav.classList.add("sticky")
+  console.log(x.style.display)
+  if (x.style.display == "none") {
+    x.style.display = "flex";
+  
+  
+ 
+  } else if (x.style.display == "flex") {
+
+    x.style.display = "none";
+  }
+}

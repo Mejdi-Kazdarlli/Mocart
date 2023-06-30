@@ -1,11 +1,11 @@
 :root{
-  --primary-color: #f46d32;
+  --primary-color: #9d60db;
   --bg-color : #1c1b19;
   --B: #000;
   --DG: #1F201B;
   --W: #ffffff;
   --LG: #F2F2F2;
-  --O: #f46d32;
+  --O: #9d60db;
 }
 #skatepark{
   cursor: none;
@@ -95,7 +95,7 @@ margin-top: 50px;
 }
 .tab-link {
   padding: 10px;
-  background-color: #353530;
+  background-color: #384fcd;
   cursor: pointer;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -104,7 +104,7 @@ margin-top: 50px;
 }
 .tab-link.current {
   background-color: var(--primary-color);
-  color: var(--bg-color);
+  color: var(--W);
 }
 .tab-content {
   display: none;
@@ -744,7 +744,7 @@ opacity: 0.9;
   width: 100vw;
 }
 .game {
-  width: 90%;
+  width: 95%;
 }
 .card{
   width: fit-content;

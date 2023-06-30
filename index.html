@@ -10,26 +10,41 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
   <nav>
-    <a href="#"><img style="width:145px" height="auto" src="./images/logo2.png"></img></a>
+    <a href="/index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
     <ul>
-      <li><a>Home</a></li>
-      <li><a>Platform</a></li>
+      <li><a href="our_platform.html">Platform</a></li>
       <li><a href="industries.html">Industries</a></li>
       <li><a>About us</a></li>
     </ul>
     <div id="contactEL">
       <a>Contact us</a>
     </div>
+    <div onclick="togglenav()" id="hamburger">
+      <diV></diV>
+      <diV></diV>
+      <diV></diV>
+    </div>
   </nav>
+  <div id="resnav" class="resnav" style="display: none;">
+    <ul>
+      <li><a href="our_platform.html">Platform</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a>About us</a></li>
+    </ul>
+    <div id="contactEL">
+      <a>Contact us</a>
+    </div>
+  </div>
   <header>
     <video autoplay loop muted plays-inline poster="images/header-img.png" class="header-vid">
       <source src="images/header-vid-1.mp4" type="video/mp4">
     </video>
     <div class="textone"><span class="clipbgpurple">Elevate your business </span> with 3D<br> virtual store</div>
     <h3 class="texttwo">Unleash the Potential of Visual experience</h3>
-    <button>Let's talk</button>
+    <button onclick="showpopup()">Let's talk</button>
   </header>
   <div class="parralax">
     <div class="header2">
@@ -39,16 +54,19 @@
       <div data-aos="fade-up" class="texttwo"> we can help you <span class="clipbgpurple">improve your business </span>
       </div>
     </div>
-    <div class="platform">
-      <div class="platformLeft">
-        <div class="platformLeftTitle">Our <span class="clipbgpurple">Platform</span> </div>
-        <div class="platformLeftText">The platform is admin area for clients where they can build their own 3D
-          environment, 3D assets and ads Easily integrated with existing e-commerce platforms, allowing retailers create
-          3D shop in 3 clicks </div>
-        <button>Learn more</button>
-      </div>
-      <div id="viewer" class="platformRight">
-        <div id="loadingProduct"><span id="loadertxt">0%</span></div>
+    <div class="parallele" style="background-color: black;">
+      <div class="parallele_item">
+        <div class="parallele_item_left">
+          <div class="parallele_item_left_title clipbgpurple">Our <span class="clipbgpurple">Platform</span> </div>
+          <div class="parallele_item_left_text" style="color: white;">The platform is admin area for clients where they
+            can build their own 3D
+            environment, 3D assets and ads Easily integrated with existing e-commerce platforms, allowing retailers
+            create 3D shop in 3 clicks </div>
+          <button>Learn more</button>
+        </div>
+        <div style="height: 500px" id="viewer" class="parallele_item_right">
+          <div id="loadingProduct"><span id="loadertxt">0%</span></div>
+        </div>
       </div>
     </div>
     <div class="ourClients">
@@ -70,34 +88,34 @@
     </div>
     <div class="ourMission">
       <div class="ourMissionTitle">Our <span class="clipbgpurple">Mission</span></div>
-      <!-- first text -->
-      <div class="ourMissionTextone text1">We empower <span class="clipbgpurple">Businesses</span> by leveraging the
-        potential of <span class="clipbgpurple"> 3D Technology</span>.</div>
-      <div class="ourMissionTexttwo text1">Our mission is to provide businesses the necessary tools and resources to
-        captivate your users audiences through immersive visual experiences.</div>
-      <!-- second text -->
-      <div class="ourMissionTextone text2"> We create <span class="clipbgpurple">immersive and engaging 3D
-          experiences</span> that elevate the customer journey.</div>
-      <div class="ourMissionTexttwo text2"> delivering high-quality visual presentations that leave a lasting impression
-        on customers
-      </div>
-      <!-- third text -->
-      <div class="ourMissionTextone text3"> <span class="clipbgpurple">Innovation is at the core of our mission as we
-          constantly push boundaries in the realm.</span> </div>
-      <div class="ourMissionTexttwo text3"> We are dedicated to pioneering new approaches and techniques to
-        revolutionize how people shop online.
+      <div>
+        <div class="ourMissionTextone text1">We empower <span class="clipbgpurple">Businesses</span> by leveraging the
+          potential of <span class="clipbgpurple"> 3D Technology</span>.</div>
+        <div class="ourMissionTexttwo text1">Our mission is to provide businesses the necessary tools and resources to
+          captivate your users audiences through immersive visual experiences.</div>
+        <div class="ourMissionTextone text2"> We create <span class="clipbgpurple">immersive and engaging 3D
+            experiences</span> that elevate the customer journey.</div>
+        <div class="ourMissionTexttwo text2"> delivering high-quality visual presentations that leave a lasting
+          impression
+          on customers
+        </div>
+        <div class="ourMissionTextone text3"> <span class="clipbgpurple">Innovation is at the core of our mission as we
+            constantly push boundaries in the realm.</span> </div>
+        <div class="ourMissionTexttwo text3"> We are dedicated to pioneering new approaches and techniques to
+          revolutionize how people shop online.
+        </div>
       </div>
       <div class="ourMissionSidebar">
         <div class="ourMissionSidebarItem">
-          <div class="ourMissionSidebarItemText">inovation</div>
+          <div class="ourMissionSidebarItemText">Empoyer</div>
           <div id="button1" onclick="side('inovation')" class="ourMissionSidebarItemButton"></div>
         </div>
         <div class="ourMissionSidebarItem">
-          <div class="ourMissionSidebarItemText">Empoyer</div>
+          <div class="ourMissionSidebarItemText">Experiences</div>
           <div id="button2" onclick="side('empoyer')" class="ourMissionSidebarItemButton"></div>
         </div>
         <div class="ourMissionSidebarItem">
-          <div class="ourMissionSidebarItemText">Text 3</div>
+          <div class="ourMissionSidebarItemText">inovation</div>
           <div id="button3" onclick="side('text3')" class="ourMissionSidebarItemButton"></div>
         </div>
       </div>
@@ -105,19 +123,19 @@
     <div class="counter" id="counter">
       <div class="counterItem">
         <div class="counterItemNumber ">+<span class="num" data-val="400">000</span>%</div>
-        <div class="counterItemText">Enagement time</div>
+        <div style="color: white;" class="counterItemText">Enagement time</div>
       </div>
       <div class="counterItem">
         <div class="counterItemNumber ">+<span class="num" data-val="250">000</span>%</div>
-        <div class="counterItemText">Subscription Sign up</div>
+        <div style="color: white;" class="counterItemText">Subscription Sign up</div>
       </div>
       <div class="counterItem">
         <div class="counterItemNumber ">+<span class="num" data-val="30">000</span>%</div>
-        <div class="counterItemText">E-commerce Sales</div>
+        <div style="color: white;" class="counterItemText">E-commerce Sales</div>
       </div>
       <div class="counterItem">
         <div class="counterItemNumber "><span class="num" data-val="40">000</span>%</div>
-        <div class="counterItemText">More shoppers</div>
+        <div style="color: white;" class="counterItemText">More shoppers</div>
       </div>
     </div>
     <div class="carrousel">
@@ -179,7 +197,22 @@
         </div>
       </div>
     </div>
-
+    <div id="popup" class="popup">
+      <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
+      <div class="demo_form">
+        <div class="demo_form_row">
+          <input id="fname" name="fname" placeholder="Full name" />
+          <input id="cname" name="cname" placeholder="Company name" />
+        </div>
+        <div class="demo_form_row">
+          <input id="email" name="email" placeholder="Email" />
+        </div>
+        <div class="demo_form_row">
+          <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button>
+    </div>
     <footer class="footer">
       <div class="footerLeft">
         <div class="footerLeft1">Let’s stay connected! <br>
@@ -205,7 +238,6 @@
       </div>
     </footer>
   </div>
-
   <script src="js/index.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>

@@ -4,9 +4,16 @@ import { TWEEN } from '../THREE/tween.module.min.js';
 import {OutlinePass} from '../THREE/OutlinePass.js';
 import { product3d} from '../productScene.js';
 import {productRow} from './productrow.js';
+import { ShaderPass } from '../THREE/ShaderPass.js';
 window.addEventListener("scroll", function () {
   var nav = document.querySelector("nav");
+  var myimg = document.getElementById("logoimg")
   nav.classList.toggle("sticky", window.scrollY > 200)
+  if(window.scrollY > 200){
+    myimg.src = "./images/mocartlogoblack.png";
+  }else{
+    myimg.src = "./images/mocartlogo.png";
+  }
 })
 function _(elm){return document.getElementById(elm)}
 window.addEventListener('scroll', preventScroll, { passive: false });
@@ -62,14 +69,43 @@ var distanceTOproduct;
 
 
 
-skateScene = new skate3d(_("skatepark"));
-skateScene.initScene("skate_park.glb");
-skateScene.animate();
-skateScene.render = function() {
+gameScene = new skate3d(_("skatepark"));
+gameScene.initScene("superMarket.glb");
+gameScene.animate();
+const contrastluminosity=  new ShaderPass({
+  uniforms: {
+    tDiffuse: { value: null },
+    contrast: { value: 0.78 }, // Increase or decrease contrast by modifying this value
+    luminosity: { value: 1.1 } // Increase or decrease luminosity by modifying this value
+  },
+  vertexShader:`
+      varying vec2 vUv;
+      void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }`,
+  fragmentShader: `
+    uniform sampler2D tDiffuse;
+    uniform float contrast;
+    uniform float luminosity;
+    varying vec2 vUv;
+    void main() {
+      vec4 color = texture2D(tDiffuse, vUv);
+      color.rgb = (color.rgb - 0.5) * contrast + 0.5; // Adjust contrast
+      color.rgb *= luminosity; // Adjust luminosity
+      gl_FragColor = color;
+    }`
+});
+
+gameScene.render = function() {
   TWEEN.update()
-  skateScene.renderer.render(skateScene.scene, skateScene.camera);
+  gameScene.renderer.render(gameScene.scene, gameScene.camera);
 }
-let rect = skateScene.renderer.domElement.getBoundingClientRect();
+setTimeout(() => {
+  
+  console.log(gameScene.composer.passes)
+}, 1000);
+let rect = gameScene.renderer.domElement.getBoundingClientRect();
 async function removescene(currentScene){
   _("loading").style.display = "flex";
   _("loadingbtn").style.opacity=1
@@ -99,20 +135,27 @@ async function NewScene(Newscene,glb){
   outlinePass.renderToScreen = true;
   Newscene.composer.addPass(Newscene.renderPass);
   Newscene.composer.addPass(outlinePass);
+  Newscene.composer.addPass(contrastluminosity);
   Newscene.composer.addPass(Newscene.bokehPass);
   const passes = Newscene.composer.passes
-  const bokehPass = passes[2];
+  const bokehPass = passes[3];
   let scene = glb.split('.')[0]
   switch (scene) {
     case "skate_park":
       bokehPass.uniforms.aperture.value= 0.0005
       Newscene.renderer.toneMappingExposure = 1.5;
       Newscene.camera.fov = 50
+      contrastluminosity.uniforms.luminosity.value = 1.2
+      contrastluminosity.uniforms.contrast.value = 1.0
+
     break;
     case "superMarket":
       bokehPass.uniforms.aperture.value= 0.0001
       Newscene.renderer.toneMappingExposure = 3.5;
       Newscene.camera.fov = 60
+      contrastluminosity.uniforms.luminosity.value = 1.2
+      contrastluminosity.uniforms.contrast.value = 1.0
+
       console.log(Newscene)
     break;
     default:
@@ -131,8 +174,8 @@ tabLinks.forEach((link) => {
     });
     clickedLink.classList.add('current');
     const targetglb = clickedLink.dataset.glb;
-   await removescene(skateScene)
-   await NewScene(skateScene,targetglb)
+   await removescene(gameScene)
+   await NewScene(gameScene,targetglb)
    _("loadingbtn").style.opacity=0
    setTimeout(() => {
     _("loadingbtn").style.display = "none";
@@ -155,7 +198,7 @@ const material = new THREE.MeshBasicMaterial( {map: LoadTextures("marker_b.png",
 const plane = new THREE.Mesh( geometry, material );
 plane.rotation.x = -Math.PI / 2;
 plane.layers.set(1)
-skateScene.scene.add( plane );
+gameScene.scene.add( plane );
 function LoadTextures(texture, repeat) {
     var tex = new THREE.TextureLoader().load('img/' + texture);
     tex.encoding = THREE.sRGBEncoding;
@@ -180,7 +223,7 @@ if (
 _("skatepark").style.touchAction = 'none';
   if (isMobile)
   {
-    skateScene.orbit.enableZoom = true;
+    gameScene.orbit.enableZoom = true;
     _("skatepark").onpointerdown = function(event)
     {
         firstTouch = true; 
@@ -217,7 +260,7 @@ _("skatepark").style.touchAction = 'none';
   }
   else {
 //desktop behavior
-skateScene.orbit.enableZoom = false;
+gameScene.orbit.enableZoom = false;
     _("skatepark").onpointerdown = (event) => {
         isSwiping = false;
         startX = event.pageX;
@@ -252,28 +295,29 @@ info.addEventListener('pointerdown',async function(e){
 closeinfo.addEventListener('pointerdown',function(e){if( e.button == 0 ) {infoPanel.style.display="none"}});
 function onDocumentTouchClick(event) {
   //event.preventDefault();
-  skateScene.scene.updateMatrixWorld();
-  const rect = skateScene.renderer.domElement.getBoundingClientRect();
+  gameScene.scene.updateMatrixWorld();
+  const rect = gameScene.renderer.domElement.getBoundingClientRect();
   mouse.x = ( ( event.clientX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
   mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
-  raycaster.setFromCamera(mouse, skateScene.camera);
-  intersects = raycaster.intersectObject(skateScene.scene.children);
+  raycaster.setFromCamera(mouse, gameScene.camera);
+  intersects = raycaster.intersectObject(gameScene.scene.children);
 
   if (intersects.length > 0 && firstTouch === false) {
     firstTouch = true; 
     evaluateRaycast("Floor");
   } 
 }
-var outlinePass = new OutlinePass(new THREE.Vector2(rect.width, rect.height), skateScene.scene, skateScene.camera);
+var outlinePass = new OutlinePass(new THREE.Vector2(rect.width, rect.height), gameScene.scene, gameScene.camera);
 outlinePass.edgeStrength = 2.5; // Change the strength of the outline
 outlinePass.edgeGlow = 1; // Change the Glow of the outline
 outlinePass.pulsePeriod = 2; // Change the pulsePeriod of the outline
 outlinePass.visibleEdgeColor.set('#ffffff'); // Change the color of the visible edges
 outlinePass.hiddenEdgeColor.set('#000000'); // Change the color of the hidden edges
 outlinePass.renderToScreen = true;
-skateScene.composer.addPass(skateScene.renderPass);
-skateScene.composer.addPass(outlinePass);
-skateScene.composer.addPass(skateScene.bokehPass);
+gameScene.composer.addPass(gameScene.renderPass);
+gameScene.composer.addPass(outlinePass);
+gameScene.composer.addPass(gameScene.bokehPass);
+gameScene.composer.addPass(contrastluminosity)
 function updateScreenPosition(renderer,camera,vec) {
   const rect = renderer.domElement.getBoundingClientRect();
    const vector = new THREE.Vector3();
@@ -309,12 +353,12 @@ async function OnClickProduct(event)
     {
       if(isMobile){distanceTOproduct = 2.5}else{distanceTOproduct = 10000}
       cartgame.style.zIndex = "5"
-      skateScene.scene.updateMatrixWorld();
-      const rect = skateScene.renderer.domElement.getBoundingClientRect();
+      gameScene.scene.updateMatrixWorld();
+      const rect = gameScene.renderer.domElement.getBoundingClientRect();
       mouse.x = ( ( event.clientX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
       mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
-      raycaster.setFromCamera(mouse, skateScene.camera);
-      intersects = raycaster.intersectObjects(skateScene.scene.children, true)
+      raycaster.setFromCamera(mouse, gameScene.camera);
+      intersects = raycaster.intersectObjects(gameScene.scene.children, true)
       if (intersects.length > 0 && carthover===false && cartOpen===false)
       {
         
@@ -380,12 +424,16 @@ function updateData()
                                 }
                               }
                             }
-                            for (let e = 0; e < value.length; e++) {
-                              let li = document.createElement("li")
-                              li.classList.add('bg')
-                              li.innerHTML = value[e]
-                              Size.appendChild(li)
-                                }
+                            if(value!=null)
+                            {
+
+                              for (let e = 0; e < value.length; e++) {
+                                let li = document.createElement("li")
+                                li.classList.add('bg')
+                                li.innerHTML = value[e]
+                                Size.appendChild(li)
+                              }
+                            }
                           break;
                           case prop=="Color":
                             let col = document.querySelector(".Color")
@@ -398,13 +446,16 @@ function updateData()
                                 }
                               }
                             }
-                            for (let e = 0; e < value.length; e++) {
-                              let li = document.createElement("li")
-                              li.classList.add('col')
-                              li.style.backgroundColor = value[e]
-                              li.style.cursor="pointer"
-                              col.appendChild(li)
-                                }
+                            if(value!=null)
+                            {
+                              for (let e = 0; e < value.length; e++) {
+                                let li = document.createElement("li")
+                                li.classList.add('col')
+                                li.style.backgroundColor = value[e]
+                                li.style.cursor="pointer"
+                                col.appendChild(li)
+                              }
+                            }
                           break;
                         }
                       });
@@ -443,34 +494,34 @@ function updateDataOnhover(productName)
 }
 function onDocumentMouseMove(event)
   {
-    skateScene.scene.updateMatrixWorld();
-    const rect = skateScene.renderer.domElement.getBoundingClientRect();
+    gameScene.scene.updateMatrixWorld();
+    const rect = gameScene.renderer.domElement.getBoundingClientRect();
     mouse.x = ( ( event.clientX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
     mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
-    raycaster.setFromCamera(mouse, skateScene.camera);
-    intersects = raycaster.intersectObjects(skateScene.scene.children, true)
+    raycaster.setFromCamera(mouse, gameScene.camera);
+    intersects = raycaster.intersectObjects(gameScene.scene.children, true)
     if (intersects.length > 0)
     {
       switch (true) {
         case intersects[0].object.name.includes("Floor"):
-          skateScene.container.style.cursor="none";
+          gameScene.container.style.cursor="none";
           plane.position.set(intersects[0].point.x,intersects[0].point.y+0.01,intersects[0].point.z)  
         break;
         case intersects[0].object.name.includes("MocartProduct") && intersects[0].distance<1.5:
           outlinePass.selectedObjects = [intersects[0].object];
           annotation.style.display="flex";
-          skateScene.container.style.cursor="pointer";
+          gameScene.container.style.cursor="pointer";
           annotationPreviousPosition.copy(intersects[0].object.position)
-          updateScreenPosition(skateScene.renderer,skateScene.camera,annotationPreviousPosition)
+          updateScreenPosition(gameScene.renderer,gameScene.camera,annotationPreviousPosition)
           updateDataOnhover(intersects[0].object.name.split('_')[1])
         break;
         case intersects[0].object.name.includes("MocartProduct"):
           outlinePass.selectedObjects = [intersects[0].object];
-          skateScene.container.style.cursor="pointer";
+          gameScene.container.style.cursor="pointer";
         break;
         default :
         outlinePass.selectedObjects = []
-        skateScene.container.style.cursor="default";
+        gameScene.container.style.cursor="default";
         annotation.style.display="none";
         break
       }
@@ -479,12 +530,12 @@ function onDocumentMouseMove(event)
 function onDocumentMouseClick(event) {
     //event.preventDefault();
     if (!isSwiping) {
-    skateScene.scene.updateMatrixWorld();
-    const rect = skateScene.renderer.domElement.getBoundingClientRect();
+    gameScene.scene.updateMatrixWorld();
+    const rect = gameScene.renderer.domElement.getBoundingClientRect();
     mouse.x = ( ( event.clientX - rect.left ) / ( rect.right - rect.left ) ) * 2 - 1;
     mouse.y = - ( ( event.clientY - rect.top ) / ( rect.bottom - rect.top) ) * 2 + 1;
-    raycaster.setFromCamera(mouse, skateScene.camera);
-    intersects = raycaster.intersectObjects(skateScene.scene.children, true)
+    raycaster.setFromCamera(mouse, gameScene.camera);
+    intersects = raycaster.intersectObjects(gameScene.scene.children, true)
     if (intersects.length > 0) {evaluateRaycast("Floor");}
     }
     isSwiping = false;
@@ -495,18 +546,18 @@ async function evaluateRaycast(obj)
     if(intersects[0].object.name.includes(obj))
     {
       plane.position.set(intersects[0].point.x,intersects[0].point.y+0.001,intersects[0].point.z)
-      new TWEEN.Tween(skateScene.camera.position)
+      new TWEEN.Tween(gameScene.camera.position)
           .to({x:intersects[0].point.x,z:intersects[0].point.z},1000)
           .easing(TWEEN.Easing.Quadratic.InOut)
           .start()
 
-      new TWEEN.Tween(skateScene.orbit.target)
+      new TWEEN.Tween(gameScene.orbit.target)
           .to({x:intersects[0].point.x+0.001,z:intersects[0].point.z+0.001},1000)
           .easing(TWEEN.Easing.Quadratic.InOut)
-          .onUpdate(()=>{skateScene.orbit.enabled = false})
-          .onComplete(()=>{skateScene.orbit.enabled = true;skateScene.camera.getWorldDirection( lookDirection);
-            skateScene.orbit.enableRotate = true;
-              skateScene.orbit.target.copy( skateScene.camera.position ).add( lookDirection.multiplyScalar(2))})
+          .onUpdate(()=>{gameScene.orbit.enabled = false})
+          .onComplete(()=>{gameScene.orbit.enabled = true;gameScene.camera.getWorldDirection( lookDirection);
+            gameScene.orbit.enableRotate = true;
+              gameScene.orbit.target.copy( gameScene.camera.position ).add( lookDirection.multiplyScalar(2))})
            .start()
     }
 }
@@ -673,66 +724,66 @@ function onScroll(event) {
 function Move_up()
 {
   const cameraDirection = new THREE.Vector3(0,0,0.1);
-    skateScene.camera.getWorldDirection(cameraDirection);
+    gameScene.camera.getWorldDirection(cameraDirection);
     cameraDirection.multiplyScalar(MOVEMENT_SPEED);
-    const newPosition = skateScene.camera.position.clone().add(cameraDirection);
+    const newPosition = gameScene.camera.position.clone().add(cameraDirection);
     newPosition.y = THREE.MathUtils.clamp(newPosition.y, minY, maxY);
-    new TWEEN.Tween(skateScene.camera.position)
+    new TWEEN.Tween(gameScene.camera.position)
     .to(newPosition, TWEEN_DURATION)
     .easing(TWEEN.Easing.Quadratic.InOut)
-    .onUpdate(()=>{skateScene.orbit.enabled = false})
-    .onComplete(()=>{skateScene.orbit.enabled = true;skateScene.camera.getWorldDirection( cameraDirection);
-    skateScene.orbit.enableRotate = true;
-    skateScene.orbit.target.copy( skateScene.camera.position ).add( cameraDirection.multiplyScalar(2))})
+    .onUpdate(()=>{gameScene.orbit.enabled = false})
+    .onComplete(()=>{gameScene.orbit.enabled = true;gameScene.camera.getWorldDirection( cameraDirection);
+    gameScene.orbit.enableRotate = true;
+    gameScene.orbit.target.copy( gameScene.camera.position ).add( cameraDirection.multiplyScalar(2))})
     .start();
 }
 function Move_back()
 {
   const cameraDirectionBackward = new THREE.Vector3(0,0,0.1);
-  skateScene.camera.getWorldDirection(cameraDirectionBackward);
+  gameScene.camera.getWorldDirection(cameraDirectionBackward);
   cameraDirectionBackward.multiplyScalar(-1 * MOVEMENT_SPEED);
-  const newPosition = skateScene.camera.position.clone().add(cameraDirectionBackward);
+  const newPosition = gameScene.camera.position.clone().add(cameraDirectionBackward);
   newPosition.y = THREE.MathUtils.clamp(newPosition.y, minY, maxY);
-  new TWEEN.Tween(skateScene.camera.position)
+  new TWEEN.Tween(gameScene.camera.position)
   .to(newPosition, TWEEN_DURATION)
   .easing(TWEEN.Easing.Quadratic.InOut)
-  .onUpdate(()=>{skateScene.orbit.enabled = false})
-    .onComplete(()=>{skateScene.orbit.enabled = true;skateScene.camera.getWorldDirection( cameraDirectionBackward);
-    skateScene.orbit.enableRotate = true;
-    skateScene.orbit.target.copy( skateScene.camera.position ).add( cameraDirectionBackward.multiplyScalar(2))})
+  .onUpdate(()=>{gameScene.orbit.enabled = false})
+    .onComplete(()=>{gameScene.orbit.enabled = true;gameScene.camera.getWorldDirection( cameraDirectionBackward);
+    gameScene.orbit.enableRotate = true;
+    gameScene.orbit.target.copy( gameScene.camera.position ).add( cameraDirectionBackward.multiplyScalar(2))})
   .start();
 }
 
 function Move_Left(){
     const cameraLeft = new THREE.Vector3(-1, 0, 0.1);
-    cameraLeft.applyQuaternion(skateScene.camera.quaternion);
+    cameraLeft.applyQuaternion(gameScene.camera.quaternion);
     cameraLeft.multiplyScalar(MOVEMENT_SPEED);
-    const newPosition = skateScene.camera.position.clone().add(cameraLeft);
+    const newPosition = gameScene.camera.position.clone().add(cameraLeft);
     newPosition.y = THREE.MathUtils.clamp(newPosition.y, minY, maxY);
-    new TWEEN.Tween(skateScene.camera.position)
+    new TWEEN.Tween(gameScene.camera.position)
     .to(newPosition, TWEEN_DURATION)
     .easing(TWEEN.Easing.Quadratic.InOut)
-    .onUpdate(()=>{skateScene.orbit.enabled = false})
-    .onComplete(()=>{skateScene.orbit.enabled = true;skateScene.camera.getWorldDirection( cameraLeft);
-    skateScene.orbit.enableRotate = true;
-    skateScene.orbit.target.copy( skateScene.camera.position ).add( cameraLeft.multiplyScalar(2))})
+    .onUpdate(()=>{gameScene.orbit.enabled = false})
+    .onComplete(()=>{gameScene.orbit.enabled = true;gameScene.camera.getWorldDirection( cameraLeft);
+    gameScene.orbit.enableRotate = true;
+    gameScene.orbit.target.copy( gameScene.camera.position ).add( cameraLeft.multiplyScalar(2))})
     .start();
 }
 
 function Move_Right()
 {
     const cameraRight = new THREE.Vector3(1, 0, 0);
-    cameraRight.applyQuaternion(skateScene.camera.quaternion);
+    cameraRight.applyQuaternion(gameScene.camera.quaternion);
     cameraRight.multiplyScalar(MOVEMENT_SPEED);
-    const newPosition = skateScene.camera.position.clone().add(cameraRight);
+    const newPosition = gameScene.camera.position.clone().add(cameraRight);
     newPosition.y = THREE.MathUtils.clamp(newPosition.y, minY, maxY);
-    new TWEEN.Tween(skateScene.camera.position)
+    new TWEEN.Tween(gameScene.camera.position)
     .to(newPosition, TWEEN_DURATION)
     .easing(TWEEN.Easing.Quadratic.InOut)
-    .onUpdate(()=>{skateScene.orbit.enabled = false})
-    .onComplete(()=>{skateScene.orbit.enabled = true;skateScene.camera.getWorldDirection( cameraRight);
-    skateScene.orbit.enableRotate = true;
-    skateScene.orbit.target.copy( skateScene.camera.position ).add( cameraRight.multiplyScalar(2))})
+    .onUpdate(()=>{gameScene.orbit.enabled = false})
+    .onComplete(()=>{gameScene.orbit.enabled = true;gameScene.camera.getWorldDirection( cameraRight);
+    gameScene.orbit.enableRotate = true;
+    gameScene.orbit.target.copy( gameScene.camera.position ).add( cameraRight.multiplyScalar(2))})
     .start();
 }
 

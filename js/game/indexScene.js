@@ -9,7 +9,7 @@ import { RenderPass } from '../THREE/RenderPass.js';
 
 function _(elm) { return document.getElementById(elm) }
 export class skate3d {
-    constructor(container, camera, scene, orbit, renderer,fpControls,cameraBoundingSphere,wallBoundingBoxes) {
+    constructor(container, camera, scene, orbit, renderer,cameraBoundingSphere,wallBoundingBoxes) {
         this.container = container;
         this.camera = camera;
         this.scene = scene;
@@ -18,7 +18,7 @@ export class skate3d {
         this.composer = null;
         this.renderPass=null;
         this.bokehPass=null;
-        this.fpControls = fpControls;
+        this.contrastluminosity=null;
         this.cameraBoundingSphere=cameraBoundingSphere;
         this.wallBoundingBoxes = [];
     }
@@ -27,7 +27,7 @@ export class skate3d {
         this.scene.name = "skatepark-scene" 
         document.querySelector(".carousel").appendChild(this.container);
 
-        const fov =50;
+        const fov =60;
         const near = 0.01;
         const far = 100;
         this.camera = new THREE.PerspectiveCamera(fov, this.container.offsetWidth / this.container.offsetHeight, near, far);
@@ -55,23 +55,22 @@ export class skate3d {
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
         this.container.appendChild(this.renderer.domElement);
-        this.renderer.toneMappingExposure = 1.5;
+        this.renderer.toneMappingExposure = 3.5;
         this.renderer.outputEncoding = THREE.sRGBEncoding;
         this.renderer.physicallyCorrectLights = true;
         this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
 
 
-       this.composer = new EffectComposer(this.renderer);
-       this.renderPass = new RenderPass(this.scene, this.camera);
+        this.composer = new EffectComposer(this.renderer);
+        this.renderPass = new RenderPass(this.scene, this.camera);
        this.bokehPass = new BokehPass(this.scene, this.camera, {
          focus: 1, // Distance to focus point
-         aperture: 0.0005, // Camera aperture size
+         aperture: 0.0001, // Camera aperture size
          maxblur: 0.15 // Maximum blur radius
         });
-       
        await LoadModel(model, this.scene,this.renderer,this.camera,this.wallBoundingBoxes) 
 
-       const light = new THREE.AmbientLight( 0x404040,2 ); // soft white light
+       const light = new THREE.AmbientLight( 0x404040,1 ); // soft white light
         this.scene.add( light );
         window.addEventListener('resize', this.onWindowResize.bind(this), false);
         

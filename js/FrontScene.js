@@ -17,7 +17,7 @@ export class product3d {
       _("loadingProduct").style.display = "flex";
         this.scene = new THREE.Scene();
         this.scene.name = "product-scene" 
-        document.querySelector(".platform").appendChild(this.container);
+        document.querySelector(".parallele_item").appendChild(this.container);
 ////////////renderer setting
         this.renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true});
         this.renderer.setPixelRatio(window.devicePixelRatio);
@@ -33,7 +33,7 @@ export class product3d {
         const far = 10;
         this.camera = new THREE.PerspectiveCamera(fov, this.container.offsetWidth / this.container.offsetHeight, near, far);
         this.camera.name = "product-camera"
-        this.camera.position.set(1,0.15,2)
+        this.camera.position.set(1,0.4,2)
         this.camera.aspect = this.container.offsetWidth / this.container.offsetHeight;
         this.camera.updateProjectionMatrix();
         this.scene.add(this.camera);
@@ -52,9 +52,9 @@ export class product3d {
         // this.orbit.minDistance=20;
         // this.orbit.maxDistance=50;
         this.orbit.update();
-        await loadEnvironmentHDR(this.renderer,this.scene, 'urban_courtyard_02_1k.hdr')
+        await loadEnvironmentHDR(this.renderer,this.scene, 'forgotten_miniland_512.hdr')
         await LoadModel(product, this.scene,this.renderer) 
-       const light = new THREE.AmbientLight( 0x404040,1 ); // soft white light
+       const light = new THREE.AmbientLight( 0x404040,5 ); // soft white light
         this.scene.add( light );
         window.addEventListener('resize', this.onWindowResize.bind(this), false);                
     }

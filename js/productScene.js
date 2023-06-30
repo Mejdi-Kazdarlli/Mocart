@@ -52,7 +52,7 @@ export class product3d {
         // this.orbit.minDistance=20;
         // this.orbit.maxDistance=50;
         this.orbit.update();
-        await loadEnvironmentHDR(this.renderer,this.scene, 'urban_courtyard_02_1k.hdr')
+        await loadEnvironmentHDR(this.renderer,this.scene, 'urban_courtyard_02_512.hdr')
         await LoadModel(product, this.scene,this.renderer) 
        const light = new THREE.AmbientLight( 0x404040,1 ); // soft white light
         this.scene.add( light );
