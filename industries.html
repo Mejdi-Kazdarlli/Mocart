@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="game.css">
@@ -15,29 +15,72 @@
 
 <body>
     <nav>
-        <a href="/index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
+        <a href="/index.html"><img id="logoimg" style="width:145px" height="auto"
+                src="./images/mocartlogo.png"></img></a>
         <ul>
-          <li><a href="our_platform.html">Platform</a></li>
-          <li><a href="industries.html">Industries</a></li>
-          <li><a>About us</a></li>
+            <li><a href="our_platform.html">Platform</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="aboutus.html">About us</a></li>
         </ul>
         <div id="contactEL">
-          <a>Contact us</a>
+            <a>Contact us</a>
         </div>
-      </nav>
+        <div onclick="togglenav()" id="hamburger">
+            <diV></diV>
+            <diV></diV>
+            <diV></diV>
+        </div>
+    </nav>
+    <div id="resnav" class="resnav" style="display: none;">
+        <ul>
+            <li><a href="our_platform.html">Platform</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+        </ul>
+        <div id="contactEL">
+            <a>Contact us</a>
+        </div>
+    </div>
     <header>
-        <video autoplay loop muted plays-inline poster="images/header-img.png" class="header-vid">
-            <source src="images/header-vid-1.mp4" type="video/mp4">
-        </video>
-        <div class="textone"><span class="clipbgpurple">Elevate your business </span> with 3D<br> virtual store</div>
-        <h3 class="texttwo">Unleash the Potential of Visual experience</h3>
-        <button>Let's talk</button>
+        <div class="textone">Industries</div>
+        <h3 class="texttwo">But I Must Explain To You <span class="blue">How All This Mistaken Idea</span> Of denouncing
+            <br> Pleasure and Praising Pain Was Born And I Will</h3>
     </header>
     <div class="parralax">
+        <div class="stickyscroll">
+            <div class="stickyscrollLeft">
+                we know<br> best how<br> to make<br> it in
+            </div>
+            <div class="stickyscrollRight">
+                <div class="box">
+                    <div class="boxTitle">Supermarkets</div>
+                    <div class="boxText">a short explanation about the <br> product a short explanation about the
+                        product</div>
+                </div>
+                <div class="box mt-10">
+                    <div class="boxTitle">fashion</div>
+                    <div class="boxText">a short explanation about the <br> product a short explanation about the
+                        product</div>
+                </div>
+                <div class="box">
+                    <div class="boxTitle">hightech</div>
+                    <div class="boxText">a short explanation about the <br> product a short explanation about the
+                        product</div>
+                </div>
+                <div class="box mt-10">
+                    <div class="boxTitle">non-profit organiztions</div>
+                    <div class="boxText">a short explanation about the <br> product a short explanation about the
+                        product</div>
+                </div>
+            </div>
+        </div>
+        <div class="blackbar">
+            <h1 class="blackbarTitle">WE CONSTANTLY EXPAND OUR CATALOG</h1>
+        </div>
         <div class="game-container">
             <div class="game">
                 <ul class="tabs">
-                    <li class="tab-link current" data-tab="tab-2"  data-glb="superMarket.glb">Supermarket</li>
+                    <li class="tab-link current" data-tab="tab-2" data-glb="superMarket.glb">Supermarket</li>
                     <li class="tab-link " data-tab="tab-1" data-glb="skate_park.glb">Skate park</li>
                     <li class="tab-link" data-tab="tab-3">Museum</li>
                     <li class="tab-link" data-tab="tab-4">House</li>
@@ -230,7 +273,7 @@
                             <i class="fa badge fa-2x" value=0>&#xf07a;</i>
                         </div>
                         <div class="carousel">
-                            <div class="carouseldiv" id="skatepark">
+                            <div class="carouseldiv" id="gameScene">
                                 <div class="annotation">
                                     <h3 class="collection_hover"></h3>
                                     <h2 class="Product_Name_hover"></h2>
@@ -259,7 +302,8 @@
                                     </div>
                                 </div>
                                 <div class="carouseldiv" id="loadingbtn">
-                                    <a id="play-video" class="video-play-button"><img src="public/3d-icon.png"alt=""></a>
+                                    <a id="play-video" class="video-play-button"><img src="public/3d-icon.png"
+                                            alt=""></a>
                                 </div>
                                 <div class="carouseldiv" id="loading">
                                     <span id="loadertxt">0%</span>
@@ -272,6 +316,48 @@
                 <div id="tab-2" class="tab-content"></div>
                 <div id="tab-3" class="tab-content"></div>
                 <div id="tab-4" class="tab-content"></div>
+            </div>
+        </div>
+        <div class="impact">
+            <div class="impactTitle">Our impact</div>
+            <div class="impactDes">we Provide Your Business The Best Tools</div>
+            <div class="impactContainer">
+                <div class="impactContainerItem">
+                    <div class="impactContainerItemLeft"></div>
+                    <div class="impactContainerItemRight">
+                        Quick<br> development Time
+                    </div>
+                </div>
+                <div class="impactContainerItem">
+                    <div class="impactContainerItemLeft"></div>
+                    <div class="impactContainerItemRight">
+                        reducing<br>Retention 
+                    </div>
+                </div>
+                <div class="impactContainerItem">
+                    <div class="impactContainerItemLeft"></div>
+                    <div class="impactContainerItemRight">
+                        Increased<br>engagement
+                    </div>
+                </div>
+                <div class="impactContainerItem">
+                    <div class="impactContainerItemLeft"></div>
+                    <div class="impactContainerItemRight">
+                        easy uploading<br>products  
+                    </div>
+                </div>
+                <div class="impactContainerItem">
+                    <div class="impactContainerItemLeft"></div>
+                    <div class="impactContainerItemRight">
+                        unique user<br>experience 
+                    </div>
+                </div>
+                <div class="impactContainerItem">
+                    <div class="impactContainerItemLeft"></div>
+                    <div class="impactContainerItemRight">
+                        analytics<br>services 
+                    </div>
+                </div>
             </div>
         </div>
         <div class="carrousel">
@@ -320,24 +406,6 @@
                 </button>
             </div>
         </div>
-        <div class="devices">
-            <div class="devicesTitle">We are available on all devices</div>
-            <div class="devicesItems">
-                <div class="devicesItemsItem">
-                    <div class="devicesItemsItemImg"> <img src="./images/d1.png" /></div>
-                    <div class="devicesItemsItemDes">Mobile</div>
-                </div>
-                <div class="devicesItemsItem">
-                    <div class="devicesItemsItemImg"> <img src="./images/d2.png" /></div>
-                    <div class="devicesItemsItemDes">Desktop</div>
-                </div>
-                <div class="devicesItemsItem">
-                    <div class="devicesItemsItemImg"> <img src="./images/d3.png" /></div>
-                    <div class="devicesItemsItemDes">VR Headset</div>
-                </div>
-            </div>
-        </div>
-
         <footer class="footer">
             <div class="footerLeft">
                 <div class="footerLeft1">Let’s stay connected! <br>
@@ -349,9 +417,9 @@
             </div>
             <div class="footerRight">
                 <ul>
-                    <li><a>Platform</a></li>
-                    <li><a>Industries</a></li>
-                    <li><a>About us</a></li>
+                    <li><a href="our_platform.html">Platform</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
                 </ul>
                 <div class="footerRightIcons">
                     <div><img src="./images/tw.png" /></div>
@@ -363,7 +431,7 @@
             </div>
         </footer>
     </div>
-
+    <script src="js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
@@ -372,12 +440,12 @@
     <script> var gameScene;</script>
     <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
     <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.138.3/build/three.module.js"
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.138.3/build/three.module.js"
+                  }
               }
-          }
-    </script>
+        </script>
     <script type="module" src="js/game/index.js"></script>
 </body>
 

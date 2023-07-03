@@ -36,7 +36,7 @@
 .info:hover{
   cursor: pointer;
 }
-.game-container::before{
+/* .game-container::before{
   left: 0;
   top: 0;
   width: 100%;
@@ -51,7 +51,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.3;
-}
+} */
 .game{
   position: relative;
   width: 55%;
@@ -224,7 +224,7 @@ z-index: 4;
   background-color: #212121;
   margin-left: 0px;
   z-index: 4;
-  background-image: url("public/skatepark.jpg");
+  background-image: url("public/superMarket.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color:var(--bleu50);
@@ -281,7 +281,7 @@ z-index: 4;
     display: block;
     width: 80px;
     height: 80px;
-    background: #f56d1e;
+    background: var(--O);
     border-radius: 50%;
     animation: pulse-border 1500ms ease-out infinite;
   }
@@ -296,7 +296,7 @@ z-index: 4;
     display: block;
     width: 80px;
     height: 80px;
-    background: #f75c03;
+    background: var(--O);
     border-radius: 50%;
     transition: all 200ms;
   }
@@ -315,7 +315,7 @@ z-index: 4;
     display: block;
     width: 80px;
     height: 80px;
-    background: #f56d1e;
+    background: var(--O);
     border-radius: 50%;
     animation: pulse-border 1500ms ease-out infinite;
   }

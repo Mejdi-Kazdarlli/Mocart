@@ -12,22 +12,34 @@
 </head>
 <body>
     <nav>
-        <a href="/index.html"><img id="logoimg" style="width:145px" height="auto"
-            rc="./images/mocartlogo.png"></img>
-        </a>
+        <a href="/index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
         <ul>
-            <li><a href="our_platform.html">Platform</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a>About us</a></li>
+          <li><a href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a>About us</a></li>
         </ul>
         <div id="contactEL">
-            <a>Contact us</a>
+          <a>Contact us</a>
         </div>
-    </nav>
+        <div onclick="togglenav()" id="hamburger">
+          <diV></diV>
+          <diV></diV>
+          <diV></diV>
+        </div>
+      </nav>
+      <div id="resnav" class="resnav" style="display: none;">
+        <ul>
+          <li><a href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a>About us</a></li>
+        </ul>
+        <div id="contactEL">
+          <a>Contact us</a>
+        </div>
+      </div>
     <header>
         <div class="textone">Our<span class="clipbgpurple"> Platform</div>
-        <h3 class="texttwo">But I must explain to you how all this mistaken idea of denouncing<br> pleasure and praising
-            pain was born and I will
+        <h3 class="texttwo">the possibility to create your own 3D shop with easy and intuitive interface
         </h3>
     </header>
     <div class="platform_paralax">
@@ -143,9 +155,9 @@
         </div>
         <div class="footerRight">
             <ul>
-                <li><a>Platform</a></li>
-                <li><a>Industries</a></li>
-                <li><a>About us</a></li>
+                <li><a href="our_platform.html">Platform</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="aboutus.html">About us</a></li>
             </ul>
             <div class="footerRightIcons">
                 <div><img src="./images/tw.png" /></div>
@@ -156,8 +168,6 @@
             </div>
         </div>
     </footer>
-
-
     <div id="popup" class="popup">
         <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
         <div class="demo_form">
@@ -177,15 +187,6 @@
         </div>
         <button onclick="hidepopup()"id="popup_button"><span class="clipbgblue">Enter</span></button>
     </div>
-
-
-
-
-
-
-
-
-
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>

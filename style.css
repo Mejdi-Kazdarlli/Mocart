@@ -1,17 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Rubik:ital@1&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;800&family=Rubik&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box !important;
   font-family: "Montserrat Alternates";
 }
-:root{
-  --extraBold:'Montserrat Alternates', sans-serif;
-}
 body {
   background-color: grey;
   color: #fff !important;
+  text-transform: capitalize;
 }
 #viewer {
   position: relative;
@@ -109,6 +106,7 @@ nav ul {
 nav ul li {
   position: relative;
   list-style-type: none;
+  /* margin: 0px 2em; */
 }
 nav ul li a {
   cursor: pointer;
@@ -119,6 +117,7 @@ nav ul li a {
   color: white;
   display: flex;
   align-items: center;
+  font-weight: 400;
 }
 nav ul li a:hover {
   color: purple !important;
@@ -179,6 +178,7 @@ nav ul li a:hover {
     position: relative;
     width: -moz-fit-content;
     width: fit-content;
+    font-weight: 400;
   }
   #contactEL {
     display: none;
@@ -214,6 +214,7 @@ nav ul li a:hover {
   cursor: pointer;
   width: -moz-fit-content;
   width: fit-content;
+  font-weight: 400;
 }
 
 .sticky {
@@ -226,7 +227,7 @@ nav ul li a:hover {
 .sticky ul a,
 .sticky #contactEL {
   color: #000 !important;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .clipbgpurple {
@@ -266,6 +267,7 @@ header .texttwo {
   letter-spacing: 0em;
   text-align: center;
   margin: 4% 2%;
+  font-family: Rubik;
 }
 header button {
   font-family: Montserrat Alternates;
@@ -387,7 +389,7 @@ header button:hover {
     min-height: 80vh;
   }
   .header2 .textone {
-    font-size: 1.6em;
+    font-size: 1.7em;
     margin: 1rem 0;
   }
   .header2 .texttwo {
@@ -886,6 +888,7 @@ header button:hover {
   justify-content: space-around;
   width: 100%;
   list-style-type: none;
+  padding-left: 0px;
 }
 .footerRight ul li a {
   font-family: Montserrat Alternates;
@@ -894,6 +897,8 @@ header button:hover {
   line-height: 16px;
   letter-spacing: 0px;
   text-align: left;
+  text-decoration: none !important;
+  color: black;
 }
 .footerRightIcons {
   margin-top: 12%;
@@ -926,6 +931,7 @@ header button:hover {
 .parralax {
   margin-top: 100vh;
   z-index: 55555;
+  background-color: black !important;
 }
 
 .text2,
@@ -1038,7 +1044,7 @@ header button:hover {
   padding: 2% 4%;
 }
 .parallele_title {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 800;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -1192,6 +1198,7 @@ header button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  max-width: 100%;
 }
 .demo_form_row {
   width: 100%;
@@ -1210,10 +1217,12 @@ header button:hover {
   height: 2.5rem;
   padding: 10px;
   border-radius: 8px;
-  font-weight: bold;
+  font-size: 0.9em;
+  /* font-weight: bold; */
 }
 .demo_form_row textarea {
-  font-weight: bold;
+  font-size: 1em;
+  /* font-weight: bold; */
   padding: 10px;
   border: 0.5px solid #6c6c6c;
   border-radius: 8px;
@@ -1236,6 +1245,9 @@ header button:hover {
   background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, #022859, #022859);
   margin-top: 2%;
 }
+.demo_form_row button:hover{
+  background-color: red;
+}
 .demo #cemail {
   width: 100%;
 }
@@ -1246,18 +1258,20 @@ header button:hover {
 }
 
 .popup {
+  box-shadow: 5px 0px 23px 0px rgba(0,0,0,0.52);
+-webkit-box-shadow: 5px 0px 23px 0px rgba(0,0,0,0.52);
+-moz-box-shadow: 5px 0px 23px 0px rgba(0,0,0,0.52);
   display: none;
-  width: 550px;
+  width: 400px;
   height: auto;
-  transform: translateY(-100%);
-  position: fixed;
-  top: 100%;
+  top: 98%;
+  left: 1%;
   z-index: 55555555555555550;
-  background-color: purple;
+  /* background-color: purple; */
+  background: linear-gradient(180deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, #022859, #022859);
   padding: 2%;
   border-radius: 20px;
   position: fixed;
-  top: 100%;
   transform: translateY(-100%);
   opacity: 0;
   transition: all 0.3s linear;
@@ -1265,11 +1279,12 @@ header button:hover {
 }
 .popup_title {
   font-family: Montserrat Alternates;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 700;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: center;
+
 }
 
 #cemail, #email {
@@ -1306,3 +1321,391 @@ header button:hover {
 .show {
   display: flex;
 }/*# sourceMappingURL=style.css.map */
+
+
+
+
+/*************************** industries Page *****************************/
+.blue {
+  background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stickyscroll {
+  background-color: white;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2% 6%;
+  position: relative;
+  font-family: Montserrat Alternates;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 77px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.stickyscrollLeft {
+  width: 20%;
+  position: sticky;
+  top: 120px;
+  color: black;
+  font-family: Montserrat Alternates;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.stickyscrollRight {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.stickyscroll .box {
+  width: 400px;
+  margin: 0% 2%;
+  min-width: 33%;
+  height: 887px;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 2%;
+  justify-content: flex-start;
+  flex-direction: column;
+  color: black;
+  background-image: url("./images/fashion.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.stickyscroll .boxTitle {
+  font-family: Rubik;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 66px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.stickyscroll .boxText {
+  font-family: Rubik;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 100%;
+}
+.stickyscroll .mt-10 {
+  margin-top: 10%;
+}
+
+@media only screen and (max-width: 1240px) {
+  .stickyscroll .mt-10 {
+    margin-top: 0% !important;
+  }
+  .stickyscrollLeft {
+    width: 50%;
+  }
+  .stickyscrollRight .box {
+    margin-bottom: 2%;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 878px) {
+  .stickyscroll {
+    flex-direction: column;
+  }
+  .stickyscrollLeft, .stickyscrollRight {
+    width: 100%;
+    margin-bottom: 2%;
+    background-color: white;
+  }
+  .stickyscrollLeft {
+    top: 100px;
+  }
+  .blackbarTitle {
+    font-size: 32px !important;
+    width: 95%;
+  }
+}
+.blackbar {
+  background: linear-gradient(180deg, #000000 0%, rgba(85, 85, 85, 0.567535) 77.6%, rgba(196, 196, 196, 0) 99.96%, #C4C4C4 99.97%);
+  height: auto;
+  width: 100%;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+}
+.blackbarTitle {
+  font-family: Rubik;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  line-height: 2;
+  text-align: center;
+  margin: 0;
+}
+
+.impact {
+  background-color: white;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 6%;
+  flex-direction: column;
+  position: relative;
+  color: black;
+}
+.impactTitle {
+  font-family: Montserrat Alternates;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 3;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.impactDes {
+  font-family: Montserrat Alternates;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 2%;
+  color: #3C4657;
+}
+.impactContainer {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+.impactContainerItem {
+  margin: 2% 0;
+  width: 30%;
+  height: auto;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.impactContainerItemLeft {
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+  background: #D9D9D9;
+}
+.impactContainerItemRight {
+  width: auto;
+  font-family: Rubik;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.8;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .impactTitle {
+    font-size: 2rem;
+    line-height: 2.5;
+  }
+  .impactDes {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1%;
+  }
+  .impactContainerItem {
+    width: 45%;
+    padding: 1%;
+  }
+  .impactContainerItemRight {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-left: 10px;
+  }
+  .impact .impactContainerItemLeft {
+    width: 45px;
+    height: 45px;
+  }
+  .impact .impactContainerItemRight {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .impact .impactContainerItemLeft {
+    width: 38px;
+    height: 38px;
+  }
+  .impactTitle {
+    font-size: 1.8rem;
+    line-height: 2;
+  }
+  .impactDes {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 0.5%;
+  }
+  .impactContainerItem {
+    width: 90%;
+    padding: 1%;
+  }
+  .impactContainerItemRight {
+    font-size: 22px;
+    line-height: 1.3;
+    margin-left: 5px;
+  }
+}
+
+
+/****************************** About Us ******************************/
+
+.whoweare {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2% 2%;
+}
+.whoweareTitle {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.whoweareText {
+  font-family: Rubik;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  text-align: center;
+  width: 100%;
+}
+
+.whowearecarousel {
+  padding: 2% 20%;
+  background-color: white;
+}
+
+.ourvision {
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2% 4%;
+}
+.ourvisionTitle {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.ourvisionText {
+  font-family: Montserrat Alternates;
+  font-size: 1.8rem;
+  font-weight: 400 !important;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.theteam {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2% 0%;
+}
+.theteamTitle {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 70px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 2%;
+}
+.theteamrow1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.theteam .teambox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 280px;
+  padding: 2%;
+}
+.theteam .teambox1 {
+  height: 250px;
+  width: 100%;
+  background: #E6E6E6;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.theteam .teambox1circle {
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background: #C4C4C4;
+}
+.theteam .teambox2 {
+  font-family: Montserrat Alternates;
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  background: linear-gradient(268.12deg, #883DE7 4.53%, #9D60DB 48.08%, #00A3FF 92.55%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.theteam .teambox3 {
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 5px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin: 20px 0;
+}
+.theteam .teambox4 {
+  font-family: Montserrat Alternates;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.w-20 {
+  width: 280px !important;
+  padding: 2% !important;
+}

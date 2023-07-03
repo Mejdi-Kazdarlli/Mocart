@@ -43,7 +43,8 @@ var productName;
 var raycaster, mouse = { x : 0, y : 0 };
 raycaster = new THREE.Raycaster()
 var intersects = []
-var checkArray = []
+let glowColor = "#ffffff";
+let loadingbgSrc = "public/skatepark.jpg"
 let isSwiping = false;
 const delta = 1.5;
 let sogliaMove = 0;
@@ -69,7 +70,7 @@ var distanceTOproduct;
 
 
 
-gameScene = new skate3d(_("skatepark"));
+gameScene = new skate3d(_("gameScene"));
 gameScene.initScene("superMarket.glb");
 gameScene.animate();
 const contrastluminosity=  new ShaderPass({
@@ -110,7 +111,7 @@ async function removescene(currentScene){
   _("loading").style.display = "flex";
   _("loadingbtn").style.opacity=1
   _("loadingbtn").style.display = "flex";
-  _("skatepark").removeChild(_("skatepark").lastElementChild)
+  _("gameScene").removeChild(_("gameScene").lastElementChild)
   list_Product.querySelector('.subtotal').innerHTML = "..."
   list_Product.querySelector('.total').innerHTML = "..."
   cartIcon.setAttribute('value', "0");
@@ -147,7 +148,8 @@ async function NewScene(Newscene,glb){
       Newscene.camera.fov = 50
       contrastluminosity.uniforms.luminosity.value = 1.2
       contrastluminosity.uniforms.contrast.value = 1.0
-
+      glowColor = "#ffffff";
+      _('loadingbtn').style.backgroundImage = 'url("public/superMarket.jpg")'
     break;
     case "superMarket":
       bokehPass.uniforms.aperture.value= 0.0001
@@ -155,8 +157,8 @@ async function NewScene(Newscene,glb){
       Newscene.camera.fov = 60
       contrastluminosity.uniforms.luminosity.value = 1.2
       contrastluminosity.uniforms.contrast.value = 1.0
-
-      console.log(Newscene)
+      glowColor = "#ffffff"
+      _('loadingbtn').style.backgroundImage = 'url("public/superMarket.jpg")'
     break;
     default:
       bokehPass.uniforms.aperture.value= 0.0005
@@ -220,19 +222,18 @@ if (
 }
 
 //pointer event works better than touch event
-_("skatepark").style.touchAction = 'none';
+_("gameScene").style.touchAction = 'none';
   if (isMobile)
   {
     gameScene.orbit.enableZoom = true;
-    _("skatepark").onpointerdown = function(event)
+    _("gameScene").onpointerdown = function(event)
     {
         firstTouch = true; 
         startX = event.pageX;
         startY = event.pageY;
-
         isSwiping = false;
     }
-    _("skatepark").onpointermove = function(event)
+    _("gameScene").onpointermove = function(event)
       {
           if (firstTouch) {
               startX = event.pageX;
@@ -248,7 +249,7 @@ _("skatepark").style.touchAction = 'none';
           }
           isSwiping = true;
       }
-    _("skatepark").onpointerup = function(event)
+    _("gameScene").onpointerup = function(event)
       {
         const diffX = Math.abs(event.pageX - startX);
         const diffY = Math.abs(event.pageY - startY);
@@ -261,18 +262,18 @@ _("skatepark").style.touchAction = 'none';
   else {
 //desktop behavior
 gameScene.orbit.enableZoom = false;
-    _("skatepark").onpointerdown = (event) => {
+    _("gameScene").onpointerdown = (event) => {
         isSwiping = false;
         startX = event.pageX;
         startY = event.pageY;
       }
-    _("skatepark").onpointermove = (event)=>{onDocumentMouseMove(event);isSwiping = true;}
-    _("skatepark").onpointerup = (event) => {
+    _("gameScene").onpointermove = (event)=>{onDocumentMouseMove(event);isSwiping = true;}
+    _("gameScene").onpointerup = (event) => {
       const diffX = Math.abs(event.pageX - startX);
       const diffY = Math.abs(event.pageY - startY);
       if (diffX < delta && diffY < delta) {onDocumentMouseClick(event);}
       }
-    _("skatepark").addEventListener("contextmenu", e => e.preventDefault());
+    _("gameScene").addEventListener("contextmenu", e => e.preventDefault());
   }
 const tabHelpContents = document.querySelectorAll('.helpItem___2Tob5');
 info.addEventListener('pointerdown',async function(e){
@@ -311,7 +312,7 @@ var outlinePass = new OutlinePass(new THREE.Vector2(rect.width, rect.height), ga
 outlinePass.edgeStrength = 2.5; // Change the strength of the outline
 outlinePass.edgeGlow = 1; // Change the Glow of the outline
 outlinePass.pulsePeriod = 2; // Change the pulsePeriod of the outline
-outlinePass.visibleEdgeColor.set('#ffffff'); // Change the color of the visible edges
+outlinePass.visibleEdgeColor.set(glowColor); // Change the color of the visible edges
 outlinePass.hiddenEdgeColor.set('#000000'); // Change the color of the hidden edges
 outlinePass.renderToScreen = true;
 gameScene.composer.addPass(gameScene.renderPass);
@@ -328,7 +329,7 @@ function updateScreenPosition(renderer,camera,vec) {
    annotation.style.top = `${vector.y}px`;
    annotation.style.left = `${vector.x}px`;
 }
-_("skatepark").addEventListener('pointerdown', OnClickProduct);
+_("gameScene").addEventListener('pointerdown', OnClickProduct);
 let productLoader = document.createElement("div")
 productLoader.classList.add("carouseldiv")
 productLoader.id="loadingProduct"
@@ -413,49 +414,55 @@ function updateData()
                             document.querySelector(".FirtsPrice").innerHTML = value ;
                             document.querySelector(".FirtsPrice").appendChild(dollarb)
                           break;
+                          
                           case prop=="Size":
                             let Size = document.querySelector(".Size")
-                            if(Size.childNodes.length>2)
-                            {
-                              for (let i = Size.childNodes.length-1; i > 0; i--) {
-                                if(Size.childNodes[i].tagName  === "LI")
-                                {
-                                  Size.removeChild(Size.childNodes[i]);
-                                }
-                              }
-                            }
                             if(value!=null)
                             {
-
-                              for (let e = 0; e < value.length; e++) {
-                                let li = document.createElement("li")
-                                li.classList.add('bg')
-                                li.innerHTML = value[e]
-                                Size.appendChild(li)
-                              }
+                              Size.style.display='block';
+                              document.querySelector(".foot").style.marginTop = "80px";
+                              if(Size.childNodes.length>2)
+                                {
+                                  for (let i = Size.childNodes.length-1; i > 0; i--) {
+                                    if(Size.childNodes[i].tagName  === "LI")
+                                    {
+                                      Size.removeChild(Size.childNodes[i]);
+                                    }
+                                  }
+                                }
+                                for (let e = 0; e < value.length; e++) {
+                                  let li = document.createElement("li")
+                                  li.classList.add('bg')
+                                  li.innerHTML = value[e]
+                                  Size.appendChild(li)
+                                }
                             }
+                            else{Size.style.display='none'; document.querySelector(".foot").style.marginTop = "180px";}
                           break;
                           case prop=="Color":
                             let col = document.querySelector(".Color")
-                            if(col.childNodes.length>2)
-                            {
-                              for (let i = col.childNodes.length - 1; i > 0; i--) {
-                                if(col.childNodes[i].tagName  === "LI")
-                                {
-                                  col.removeChild(col.childNodes[i]);
-                                }
-                              }
-                            }
                             if(value!=null)
                             {
-                              for (let e = 0; e < value.length; e++) {
-                                let li = document.createElement("li")
-                                li.classList.add('col')
-                                li.style.backgroundColor = value[e]
-                                li.style.cursor="pointer"
-                                col.appendChild(li)
-                              }
+                              col.style.display='block';
+                              document.querySelector(".foot").style.marginTop = "80px";
+                              if(col.childNodes.length>2)
+                                {
+                                  for (let i = col.childNodes.length - 1; i > 0; i--) {
+                                    if(col.childNodes[i].tagName  === "LI")
+                                    {
+                                      col.removeChild(col.childNodes[i]);
+                                    }
+                                  }
+                                }
+                                for (let e = 0; e < value.length; e++) {
+                                  let li = document.createElement("li")
+                                  li.classList.add('col')
+                                  li.style.backgroundColor = value[e]
+                                  li.style.cursor="pointer"
+                                  col.appendChild(li)
+                                }
                             }
+                            else{col.style.display='none';document.querySelector(".foot").style.marginTop = "180px";}
                           break;
                         }
                       });
@@ -715,7 +722,7 @@ const TWEEN_DURATION = 500;
 const maxY = 1.5;
 const minY = 0.4;
 
-_("skatepark").addEventListener('wheel', onScroll);
+_("gameScene").addEventListener('wheel', onScroll);
 function onScroll(event) {
   const delta = event.deltaY;
   if (delta > 0) {Move_back()} else {Move_up()}

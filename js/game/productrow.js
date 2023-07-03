@@ -38,19 +38,20 @@ template.innerHTML = `
   }
 .row  .discription
   {
-    width: fit-content;
+    width: 30%;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    padding-left: 10%;
+    padding-left: 5%;
   }
 .row  .discription h3{
     font-size: 16px;
     margin: 0;
   }
 .row  .discription h2{
-    font-size: 10px;
+    font-size: 9px;
     margin: 0;
+    white-space: nowrap;
   }
 .row  .price
 {
