@@ -189,6 +189,8 @@ nav ul li a:hover {
   right: 0;
   bottom: 0;
   z-index: -1;
+  left: 0;
+  margin: auto;
 }
 
 @media (min-aspect-ratio: 16/9) {
