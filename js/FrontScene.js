@@ -41,14 +41,14 @@ export class product3d {
         this.camera.layers.enable(1)
 ////////////orbit setting
         this.orbit = new OrbitControls(this.camera, this.renderer.domElement);
-        this.orbit.minPolarAngle = Math.PI/2.8;
-        this.orbit.maxPolarAngle = Math.PI/2.02;
+        // this.orbit.minPolarAngle = Math.PI/2.8;
+        // this.orbit.maxPolarAngle = Math.PI/2.02;
         this.orbit.target.set(0,0,0);
         this.orbit.enableRotate = true;
         this.orbit.enableZoom = false;
         this.orbit.enablePan = false;
         this.orbit.autoRotate = true;
-        this.orbit.autoRotateSpeed = 3
+        this.orbit.autoRotateSpeed = 10
         // this.orbit.minDistance=20;
         // this.orbit.maxDistance=50;
         this.orbit.update();

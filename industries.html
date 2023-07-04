@@ -19,26 +19,26 @@
                 src="./images/mocartlogo.png"></img></a>
         <ul>
             <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
+            <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
             <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
         </ul>
         <div id="contactEL">
-            <a>Contact us</a>
+            <a onclick="showpopup()">Contact us</a>
         </div>
         <div onclick="togglenav()" id="hamburger">
-            <diV></diV>
-            <diV></diV>
-            <diV></diV>
-        </div>
+            <diV id="hamburger1"></diV>
+            <diV id="hamburger2"></diV>
+            <diV id="hamburger3"></diV>
+          </div>
     </nav>
     <div id="resnav" class="resnav" style="display: none;">
         <ul>
             <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
+            <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
             <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
         </ul>
         <div id="contactEL">
-            <a>Contact us</a>
+            <a onclick="showpopup()">Contact us</a>
         </div>
     </div>
     <header>
@@ -53,7 +53,7 @@
             </div>
             <div class="stickyscrollRight">
                 <div class="box">
-                    <div class="boxTitle">Supermarkets</div>
+                    <div class="boxTitle">Jewelry</div>
                     <div class="boxText">a short explanation about the <br> product a short explanation about the
                         product</div>
                 </div>
@@ -406,6 +406,24 @@
                 </button>
             </div>
         </div>
+        <div id="popup" class="popup">
+            <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
+            <div class="demo_form">
+              <div class="demo_form_row">
+                <input id="fname" name="fname" placeholder="Full name" />
+                <input id="cname" name="cname" placeholder="Company name" />
+              </div>
+              <div class="demo_form_row">
+                <input id="email" name="email" placeholder="Email" />
+              </div>
+              <div class="demo_form_row">
+                <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
+              </div>
+            </div>
+            <!-- <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
+            <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button>
+      
+          </div>
         <footer class="footer">
             <div class="footerLeft">
                 <div class="footerLeft1">Let’s stay connected! <br>

@@ -1378,7 +1378,7 @@ header {
           #9d60db 48.08%,
           #384fcd 92.55%
         ),
-        linear-gradient(0deg, #ffffff, #ffffff),
+       
         linear-gradient(0deg, #022859, #022859);
         margin-top: 2%;
       }
@@ -1459,4 +1459,5 @@ padding: 0;
 }
 .show{
   display: flex;
+  border-bottom: 1px solid purple !important;
 }

@@ -4,18 +4,27 @@
   padding: 0;
   box-sizing: border-box !important;
   font-family: "Montserrat Alternates";
+    -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 body {
   background-color: grey;
   color: #fff !important;
   text-transform: capitalize;
+    -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 #viewer {
   position: relative;
   width: 35%;
   height: 400px;
 }
-
+#carousel-indicators button{
+border: 10px solid white;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+}
 #loadingProduct {
   position: absolute;
   display: flex;
@@ -68,12 +77,15 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   transition: 0.6s;
   background-color: rgba(0, 0, 0, 0.35);
   z-index: 5555;
-  padding: 10px 100px;
+
+  align-items: center;
+  padding: 2% 6%;
 }
 nav #hamburger {
   display: none;
@@ -83,6 +95,11 @@ nav #hamburger {
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+#hamburger1,#hamburger2,#hamburger3{
+  transition: all 0.3s ease-in;
+
 }
 nav #hamburger div {
   width: 80%;
@@ -126,10 +143,10 @@ nav ul li a:hover {
 
 .resnav {
   transition: all 0.3s ease-in;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   width: 100%;
   position: fixed;
-  top: 60px;
+  top: 80px;
   background-color: white;
   z-index: 5555555555555555000000000000000000;
   display: none;
@@ -217,11 +234,16 @@ nav ul li a:hover {
   width: -moz-fit-content;
   width: fit-content;
   font-weight: 400;
-}
+  transition: all 0.2s ease-in;
 
+}
+#contactEL:hover{
+  background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #022859, #022859);
+  
+}
 .sticky {
   background-color: rgba(255, 255, 255, 0.95);
-  height: 60px;
+height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -233,10 +255,11 @@ nav ul li a:hover {
 }
 
 .clipbgpurple {
-  background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, #022859, #022859);
+  background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #022859, #022859);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  
 }
 
 header {
@@ -521,7 +544,7 @@ header button:hover {
   background-position: center;
   background-size: cover;
   background-color: #000;
-  z-index: 5555;
+  z-index: 1;
   position: relative;
   color: white;
 }
@@ -871,7 +894,7 @@ header button:hover {
   height: 42px;
   border-radius: 4px;
   background-color: #022859;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 0;
   color: white;
   border: none;
   cursor: pointer;
@@ -1329,7 +1352,7 @@ header button:hover {
 
 /*************************** industries Page *****************************/
 .blue {
-  background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%), linear-gradient(0deg, #FFFFFF, #FFFFFF);
+  background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1429,7 +1452,8 @@ header button:hover {
     background-color: white;
   }
   .stickyscrollLeft {
-    top: 100px;
+    top: 78px;
+    font-size: 22px;
   }
   .blackbarTitle {
     font-size: 32px !important;
@@ -1461,7 +1485,7 @@ header button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2% 6%;
+  padding: 2% 2%;
   flex-direction: column;
   position: relative;
   color: black;
@@ -1501,6 +1525,7 @@ header button:hover {
   align-items: center;
   justify-content: flex-start;
 }
+
 .impactContainerItemLeft {
   width: 65px;
   height: 65px;
@@ -1624,7 +1649,7 @@ header button:hover {
 }
 .ourvisionText {
   font-family: Montserrat Alternates;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 400 !important;
   line-height: 70px;
   letter-spacing: 0em;
@@ -1710,4 +1735,90 @@ header button:hover {
 .w-20 {
   width: 280px !important;
   padding: 2% !important;
+}
+
+
+
+/* some responsive fixes */
+@media screen and (max-width: 500px) {
+  .activeLINK{
+    color: black !important;
+  }
+
+header{
+  justify-content:center;
+}
+
+.textone,.texttwo{
+  text-align: center !important;
+}
+.whowearecarousel{
+  padding: 2%;
+}
+
+.parallele_item_left{
+  align-items: center;
+  text-align: center;
+}
+.parallele_item_left_text,.parallele_item_left_title {
+  text-align: center;
+}
+.devicesItemsItemImg img{
+  width: 60px;
+  height: auto;
+
+}
+.devicesItemsItemDes{
+  font-size: 20px;
+}
+.stickyscrollLeft{
+background-color: rgba(255,255,255,0.8);}
+/* .impact{
+  margin: 2%;
+} */
+.impactContainerItem{
+  width: 50%;
+}
+.impactContainerItemLeft{
+  width: 24px !important;
+  height: 24px !important;
+}
+.impactContainerItemRight{
+  font-size: 16px !important;
+  margin-left: 8px !important;
+}
+}
+
+@media screen and (max-width: 950px) {
+
+  .whowearecarousel{
+    padding: 4%;
+  }
+
+
+
+}
+
+
+.activeLINK{
+  color: white !important;
+  border-bottom: 1px solid purple !important;
+
+}
+
+
+@media screen and (max-width: 750PX) {
+  .activeLINK{
+    color: black !important;
+    border-bottom: none !important;
+  }
+
+  .popup{
+    left: 50%;
+    transform: translate(-50%,-100%);
+
+    top: 98%;
+  }
+
+
 }

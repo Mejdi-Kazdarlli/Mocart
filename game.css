@@ -22,6 +22,7 @@
   padding-bottom: 20px;
   background-color: black;
   border-bottom: solid var(--LG) 1px;
+  overflow: hidden;
 }
 .info{
   position: absolute;
@@ -101,6 +102,7 @@ margin-top: 50px;
   border-top-right-radius: 10px;
   width: 150px;
   margin-right: 3px;
+  font-size: 11px;
 }
 .tab-link.current {
   background-color: var(--primary-color);

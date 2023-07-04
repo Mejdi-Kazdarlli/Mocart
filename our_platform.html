@@ -14,27 +14,27 @@
     <nav>
         <a href="https://mejdikazdarlli.github.io/Mocart/index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
         <ul>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
+            <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
             <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
             <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
         </ul>
         <div id="contactEL">
-          <a>Contact us</a>
+            <a onclick="showpopup()">Contact us</a>
         </div>
         <div onclick="togglenav()" id="hamburger">
-          <diV></diV>
-          <diV></diV>
-          <diV></diV>
-        </div>
+            <diV id="hamburger1"></diV>
+            <diV id="hamburger2"></diV>
+            <diV id="hamburger3"></diV>
+          </div>
       </nav>
       <div id="resnav" class="resnav" style="display: none;">
         <ul>
-          <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
+          <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
           <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
           <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
         </ul>
         <div id="contactEL">
-          <a>Contact us</a>
+            <a onclick="showpopup()">Contact us</a>
         </div>
       </div>
     <header>
@@ -155,7 +155,7 @@
         </div>
         <div class="footerRight">
             <ul>
-                <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
+                <li><a class="active" href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
                 <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
                 <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
             </ul>
@@ -172,8 +172,8 @@
         <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
         <div class="demo_form">
             <div class="demo_form_row">
-                <input id="fname" name="fname" placeholder="Full name" />
-                <input id="cname" name="cname" placeholder="Company name" />
+                <input id="fname" name="fname" placeholder="Name" />
+                <input id="cname" name="cname" placeholder="Lastname" />
             </div>
             <div class="demo_form_row">
                 <input id="cemail" name="cemail" placeholder="Company name" />
