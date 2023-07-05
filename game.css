@@ -102,7 +102,6 @@ margin-top: 50px;
   border-top-right-radius: 10px;
   width: 150px;
   margin-right: 3px;
-  font-size: 11px;
 }
 .tab-link.current {
   background-color: var(--primary-color);
@@ -742,8 +741,11 @@ opacity: 0.9;
   fill: var(--O);
 }
 @media only screen and (max-width: 800px) {
+  .tab-link{
+    font-size: 11px;
+  }
 .game-container {
-  width: 100vw;
+  width: 100%;
 }
 .game {
   width: 95%;
