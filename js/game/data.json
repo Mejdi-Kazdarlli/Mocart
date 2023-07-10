@@ -175,6 +175,17 @@
             "Color":null
         }
     ],
+    "COCA-COLA-LIGHT":
+    [
+        {
+            "Collections":"Drink can",
+            "Product_Name":"COCA-COLA-LIGHT",
+            "Price":25,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
     "PEPSI":
     [
         {
@@ -191,6 +202,83 @@
         {
             "Collections":"Drink can",
             "Product_Name":"SPRITE",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "MANGO":
+    [
+        {
+            "Collections":"GREEN ICE TEA",
+            "Product_Name":"MANGO",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "LEMON":
+    [
+        {
+            "Collections":"RAINBOW ICE TEA",
+            "Product_Name":"LEMON",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "BANANA":
+    [
+        {
+            "Collections":"Dole Guatemala",
+            "Product_Name":"BANANA",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "ORANGE":
+    [
+        {
+            "Collections":"Valencia Oranges",
+            "Product_Name":"ORANGE",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "APPLE":
+    [
+        {
+            "Collections":"Golden Delicious",
+            "Product_Name":"APPLE",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "PINEAPPLE":
+    [
+        {
+            "Collections":"Antigua Black",
+            "Product_Name":"PINEAPPLE",
+            "Price":55,
+            "FirtsPrice":65,
+            "Size":null,
+            "Color":null
+        }
+    ],
+    "WATERMELON":
+    [
+        {
+            "Collections":"Crimson Sweet",
+            "Product_Name":"WATERMELON",
             "Price":55,
             "FirtsPrice":65,
             "Size":null,

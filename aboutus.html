@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
+  <title>MOCART - ABOUT US</title>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./images/logo.png">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -13,15 +17,18 @@
 </head>
 
 <body>
+  <div id="loadingpage">
+    <h1>Loading ... </h1>
+  </div>
   <nav>
-    <a href="https://mejdikazdarlli.github.io/Mocart/index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
+    <a href="index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
     <ul>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-      <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+      <li><a href="our_platform.html">Platform</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="aboutus.html">About us</a></li>
     </ul>
-    <div id="contactEL">
-      <a onclick="showpopup()">Contact us</a>
+    <div id="contactEL" >
+      <a  onclick="showpopup()">Contact us</a>
     </div>
     <div onclick="togglenav()" id="hamburger">
       <diV id="hamburger1"></diV>
@@ -31,12 +38,12 @@
   </nav>
   <div id="resnav" class="resnav" style="display: none;">
     <ul>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-      <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+      <li><a  href="our_platform.html">Platform</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="aboutus.html">About us</a></li>
     </ul>
     <div id="contactEL">
-      <a onclick="showpopup()">Contact us</a>
+      <a style="color: black;" onclick="showpopup()" >Contact us</a>
     </div>
   </div>
   <header>
@@ -58,11 +65,11 @@
   <div class="whowearecarousel">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators" id="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        <button type="button" data-bs-target="#carouselExampleIndicators" id="crsbutton" data-bs-slide-to="0" class="active"
           aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        <button type="button" data-bs-target="#carouselExampleIndicators" id="crsbutton" data-bs-slide-to="1"
           aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        <button type="button" data-bs-target="#carouselExampleIndicators"  id="crsbutton" data-bs-slide-to="2"
           aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
@@ -71,7 +78,7 @@
             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide"
             preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em">First
+            <rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">First
               slide</text>
           </svg>
         </div>
@@ -80,7 +87,7 @@
             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide"
             preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em">Second
+            <rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second
               slide</text>
           </svg>
         </div>
@@ -89,7 +96,7 @@
             xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide"
             preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" text-anchor="middle" fill="#fff" dy=".3em">Third
+            <rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Third
               slide</text>
           </svg>
         </div>
@@ -108,16 +115,17 @@
   </div>
   <div class="ourvision">
     <div class="ourvisionTitle"> Our vision</div>
-    <div class="ourvisionText">The new preferred method to traditional physical store <br>shopping lies within the
-      online shopping space. However,<br>this shift made consumers feel a loss for product choice<br>and made
-      retailers struggle selling new items.<br>This is where we step in.</div>
+    <div class="ourvisionText">Our vision is to empower businesses to stay relevant and <br>provide their customers an outstanding experience.</div>
   </div>
   <div class="theteam">
     <div class="theteamTitle clipbgpurple">Meet the team</div>
     <div class="theteamrow1">
       <div class="teambox">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/Royal.jpg"/>
+
+          </div>
         </div>
         <div class="teambox2">Royal-Lee Shimon</div>
         <div class="teambox3">Co-Founder & CEO</div>
@@ -125,7 +133,10 @@
       </div>
       <div class="teambox">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/yoav.jpg"/>
+
+          </div>
         </div>
         <div class="teambox2">Yoav Jaoui</div>
         <div class="teambox3">CTO/COO</div>
@@ -133,7 +144,10 @@
       </div>
       <div class="teambox">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/Gidon.jpg"/>
+
+          </div>
         </div>
         <div class="teambox2">Gidon Freedman</div>
         <div class="teambox3">Head of 3D</div>
@@ -146,7 +160,10 @@
 
       <div class="teambox w-20">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/zvi.jpg"/>
+
+          </div>
         </div>
         <div class="teambox2">Zvi Baida-Shufersal</div>
         <div class="teambox3">online CEO</div>
@@ -154,7 +171,9 @@
       </div>
       <div class="teambox w-20">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/Dana.jpg"/>
+          </div>
         </div>
         <div class="teambox2">Dana Tevet</div>
         <div class="teambox3">Phd Consume behavior</div>
@@ -162,7 +181,10 @@
       </div>
       <div class="teambox w-20">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/Dekel.jpg"/>
+
+          </div>
         </div>
         <div class="teambox2">Dekel Valtzer</div>
         <div class="teambox3">founder and CEO of Avo</div>
@@ -170,7 +192,10 @@
       </div>
       <div class="teambox w-20">
         <div class="teambox1">
-          <div class="teambox1circle"></div>
+          <div class="teambox1circle">
+            <img width="110%" height="auto" src="./images/shlomi.jpg"/>
+
+          </div>
         </div>
         <div class="teambox2">Shlomi Haybi</div>
         <div class="teambox3">Founder of Jeeng</div>
@@ -178,45 +203,29 @@
       </div>
     </div>
   </div>
-  <div id="popup" class="popup">
-    <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
-    <div class="demo_form">
-      <div class="demo_form_row">
-        <input id="fname" name="fname" placeholder="Full name" />
-        <input id="cname" name="cname" placeholder="Company name" />
-      </div>
-      <div class="demo_form_row">
-        <input id="email" name="email" placeholder="Email" />
-      </div>
-      <div class="demo_form_row">
-        <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
-      </div>
-    </div>
-    <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button>
-    <!-- <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
 
-  </div>
   <footer class="footer">
     <div class="footerLeft">
       <div class="footerLeft1">Let’s stay connected! <br>
         send us an email and we will talk<br> to you shortly</div>
       <div class="footerLeft2">
         <input />
-        <button> Send</button>
+        <button style="background-color: #0f488d;"> Send</button>
       </div>
     </div>
     <div class="footerRight">
       <ul>
-        <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-        <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-        <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+        <li><a href="our_platform.html">Platform</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="aboutus.html">About us</a></li>
       </ul>
       <div class="footerRightIcons">
-        <div><img src="./images/tw.png" /></div>
-        <div><img src="./images/facebook.png" /></div>
-        <div><img src="./images/twitch.png" /></div>
-        <div><img src="./images/youtube.png" /></div>
-        <div><img src="./images/instagram.png" /></div>
+        <!-- <div><img width="30px" height="auto" src="./images/tw.png" /></div>
+        <div><img width="30px" height="auto" src="./images/facebook.png" /></div>
+        <div><img width="30px" height="auto" src="./images/twitch.png" /></div>
+        <div><img width="30px" height="auto" src="./images/youtube.png" /></div> -->
+        <div><a href="https://www.linkedin.com/company/mocartvr/" target="_blank"><img width="110px" height="auto"
+              src="./images/LI-Logo.png" /></a></div>
       </div>
     </div>
   </footer>

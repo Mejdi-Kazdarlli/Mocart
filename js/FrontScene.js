@@ -13,7 +13,7 @@ export class product3d {
         this.orbit = orbit;
         this.renderer = renderer;
     }
-    async initScene(product) {
+    async initScene(product,hdrLight) {
       _("loadingProduct").style.display = "flex";
         this.scene = new THREE.Scene();
         this.scene.name = "product-scene" 
@@ -52,10 +52,10 @@ export class product3d {
         // this.orbit.minDistance=20;
         // this.orbit.maxDistance=50;
         this.orbit.update();
-        await loadEnvironmentHDR(this.renderer,this.scene, 'forgotten_miniland_512.hdr')
+        await loadEnvironmentHDR(this.renderer,this.scene, hdrLight)
         await LoadModel(product, this.scene,this.renderer) 
        const light = new THREE.AmbientLight( 0x404040,5 ); // soft white light
-        this.scene.add( light );
+        //this.scene.add( light );
         window.addEventListener('resize', this.onWindowResize.bind(this), false);                
     }
 

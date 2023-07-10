@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
+    <title>MOCART - INDUSTRIES</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -14,33 +17,35 @@
 </head>
 
 <body>
-    <nav>
-        <a href="https://mejdikazdarlli.github.io/Mocart/index.html"><img id="logoimg" style="width:145px" height="auto"
-                src="./images/mocartlogo.png"></img></a>
+    <div id="loadingpage">
+        <h1>Loading ... </h1>
+      </div>
+      <nav>
+        <a href="index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
         <ul>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-            <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+          <li><a href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="aboutus.html">About us</a></li>
         </ul>
-        <div id="contactEL">
-            <a onclick="showpopup()">Contact us</a>
+        <div id="contactEL" >
+          <a  onclick="showpopup()">Contact us</a>
         </div>
         <div onclick="togglenav()" id="hamburger">
-            <diV id="hamburger1"></diV>
-            <diV id="hamburger2"></diV>
-            <diV id="hamburger3"></diV>
-          </div>
-    </nav>
-    <div id="resnav" class="resnav" style="display: none;">
+          <diV id="hamburger1"></diV>
+          <diV id="hamburger2"></diV>
+          <diV id="hamburger3"></diV>
+        </div>
+      </nav>
+      <div id="resnav" class="resnav" style="display: none;">
         <ul>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-            <li><a class="activeLINK" href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-            <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+          <li><a  href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="aboutus.html">About us</a></li>
         </ul>
         <div id="contactEL">
-            <a onclick="showpopup()">Contact us</a>
+          <a style="color: black;" onclick="showpopup()" >Contact us</a>
         </div>
-    </div>
+      </div>
     <header>
         <div class="textone">Industries</div>
         <h3 class="texttwo">But I Must Explain To You <span class="blue">How All This Mistaken Idea</span> Of denouncing
@@ -54,23 +59,32 @@
             <div class="stickyscrollRight">
                 <div class="box">
                     <div class="boxTitle">Jewelry</div>
-                    <div class="boxText">a short explanation about the <br> product a short explanation about the
-                        product</div>
-                </div>
+                        <!-- <div class="boxText">a short explanation about the <br> product a short explanation about the
+                            product</div> -->
+                            <img src="./images/fashion.jpg" alt="Image">
+                            <div class="boxButton" onclick="window.open('https://share.arcware.cloud/share-20f7a8c1-94b0-4303-ba0b-edc286c985ac', '_blank');">Virtual Try ON</div>
+                        </div>
                 <div class="box mt-10">
                     <div class="boxTitle">fashion</div>
-                    <div class="boxText">a short explanation about the <br> product a short explanation about the
-                        product</div>
+                        <!-- <div class="boxText">a short explanation about the <br> product a short explanation about the
+                            product</div> -->
+                            <img src="./images/fashion.jpg" alt="Image">
+                            <div class="boxButton" onclick="window.open('https://share.arcware.cloud/share-16b342c7-8bcb-4aa4-b459-01915f3f2be0', '_blank');">Virtual Try ON</div>
+
                 </div>
                 <div class="box">
                     <div class="boxTitle">hightech</div>
-                    <div class="boxText">a short explanation about the <br> product a short explanation about the
-                        product</div>
+                        <!-- <div class="boxText">a short explanation about the <br> product a short explanation about the
+                            product</div> -->
+                            <img src="./images/fashion.jpg" alt="Image">
+                            <div class="boxButton" onclick="window.open('https://share.arcware.cloud/share-17177376-0d1e-49e3-9203-4ea1a9217be3', '_blank');">Virtual Try ON</div>
+
                 </div>
-                <div class="box mt-10">
+                <div href="https://share.arcware.cloud/share-20f7a8c1-94b0-4303-ba0b-edc286c985ac" class="box mt-10">
                     <div class="boxTitle">non-profit organiztions</div>
-                    <div class="boxText">a short explanation about the <br> product a short explanation about the
-                        product</div>
+                    <img  src="./images/fashion.jpg" alt="Image">
+                    <div class="boxButton" onclick="window.open('https://share.arcware.cloud/share-20f7a8c1-94b0-4303-ba0b-edc286c985ac', '_blank');">Virtual Try ON</div>
+
                 </div>
             </div>
         </div>
@@ -406,48 +420,55 @@
                 </button>
             </div>
         </div>
-        <div id="popup" class="popup">
-            <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
-            <div class="demo_form">
-              <div class="demo_form_row">
-                <input id="fname" name="fname" placeholder="Full name" />
-                <input id="cname" name="cname" placeholder="Company name" />
-              </div>
-              <div class="demo_form_row">
-                <input id="email" name="email" placeholder="Email" />
-              </div>
-              <div class="demo_form_row">
-                <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
-              </div>
-            </div>
-            <!-- <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
-            <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button>
-      
-          </div>
-        <footer class="footer">
-            <div class="footerLeft">
-                <div class="footerLeft1">Let’s stay connected! <br>
-                    send us an email and we will talk<br> to you shortly</div>
-                <div class="footerLeft2">
-                    <input />
-                    <button> Send</button>
+        <div id="popupparent" class="popupparent">
+            <div id="popup" class="popup">
+              <div onclick="hidepopup()" class="popup_x"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg></div>
+              <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
+              <div class="demo_form">
+                <div class="demo_form_row">
+                  <input id="fname" name="fname" placeholder="Full name" />
+                  <input id="cname" name="cname" placeholder="Company name" />
                 </div>
+                <div class="demo_form_row">
+                  <input id="email" name="email" placeholder="Email" />
+                </div>
+                <div class="demo_form_row">
+                  <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
+                </div>
+              </div>
+              <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button>
+              <!-- <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
+        
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="footerLeft">
+              <div class="footerLeft1">Let’s stay connected! <br>
+                send us an email and we will talk<br> to you shortly</div>
+              <div class="footerLeft2">
+                <input />
+                <button style="background-color: #0f488d;"> Send</button>
+              </div>
             </div>
             <div class="footerRight">
-                <ul>
-                    <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-                    <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-                    <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
-                </ul>
-                <div class="footerRightIcons">
-                    <div><img src="./images/tw.png" /></div>
-                    <div><img src="./images/facebook.png" /></div>
-                    <div><img src="./images/twitch.png" /></div>
-                    <div><img src="./images/youtube.png" /></div>
-                    <div><img src="./images/instagram.png" /></div>
-                </div>
+              <ul>
+                <li><a href="our_platform.html">Platform</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+              </ul>
+              <div class="footerRightIcons">
+                <!-- <div><img width="30px" height="auto" src="./images/tw.png" /></div>
+                <div><img width="30px" height="auto" src="./images/facebook.png" /></div>
+                <div><img width="30px" height="auto" src="./images/twitch.png" /></div>
+                <div><img width="30px" height="auto" src="./images/youtube.png" /></div> -->
+                <div><a href="https://www.linkedin.com/company/mocartvr/" target="_blank"><img width="110px" height="auto"
+                      src="./images/LI-Logo.png" /></a></div>
+              </div>
             </div>
-        </footer>
+          </footer>
     </div>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -465,6 +486,14 @@
               }
         </script>
     <script type="module" src="js/game/index.js"></script>
+    <script> window.addEventListener('load', function() {
+        setTimeout(function() {
+          var loadingElement = document.querySelector('#loading');
+          if (loadingElement) {
+            loadingElement.style.display = 'none';
+          }
+        }, 2000);
+      });</script>
 </body>
 
 </html>

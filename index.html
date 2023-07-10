@@ -2,22 +2,28 @@
 <html lang="en">
 
 <head>
+  <title>MOCART</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./images/logo.png">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
+  <div id="loadingpage">
+    <h1>Loading ... </h1>
+  </div>
   <nav>
     <a href="index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
     <ul>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+      <li><a href="our_platform.html">Platform</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="aboutus.html">About us</a></li>
     </ul>
     <div id="contactEL">
       <a onclick="showpopup()">Contact us</a>
@@ -30,12 +36,12 @@
   </nav>
   <div id="resnav" class="resnav" style="display: none;">
     <ul>
-      <li><a  href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-      <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+      <li><a href="our_platform.html">Platform</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="aboutus.html">About us</a></li>
     </ul>
     <div id="contactEL">
-      <a onclick="showpopup()" >Contact us</a>
+      <a style="color: black;" onclick="showpopup()">Contact us</a>
     </div>
   </div>
   <header>
@@ -46,7 +52,10 @@
     <h3 class="texttwo">Unleash the Potential of Visual experience</h3>
     <button onclick="showpopup()">Let's talk</button>
   </header>
+
   <div class="parralax">
+
+
     <div class="header2">
       <div data-aos="fade-up" class="textone"><span class="clipbgpurple">Virtualized Retail </span> Stores </div>
       <div data-aos="fade-up" class="textone"> 3D Product Modeling </div>
@@ -54,7 +63,7 @@
       <div data-aos="fade-up" class="texttwo"> we can help you <span class="clipbgpurple">improve your business </span>
       </div>
     </div>
-    <div class="parallele" style="background-color: black;">
+    <div id="platformhome3d" class="parallele" style="background-color: black;">
       <div class="parallele_item">
         <div class="parallele_item_left">
           <div class="parallele_item_left_title clipbgpurple">Our <span class="clipbgpurple">Platform</span> </div>
@@ -70,7 +79,7 @@
       </div>
     </div>
     <div class="ourClients">
-      <div class="ourClientsTitle">Our <span class="clipbgpurple">Clients </span></div>
+      <div class="ourClientsTitle clipbgpurple">Our Clients </div>
       <div class="ourClientsItems">
         <div class="ourClientsItemsItem">
           <img src="images/b1.png" />
@@ -87,7 +96,7 @@
       </div>
     </div>
     <div class="ourMission">
-      <div class="ourMissionTitle">Our <span class="clipbgpurple">Mission</span></div>
+      <div class="ourMissionTitle clipbgpurple">Our Mission</div>
       <div>
 
         <div class="ourMissionTextone text1">We empower <span class="clipbgpurple">Businesses</span> by leveraging <br>
@@ -96,18 +105,18 @@
           to captivate your users audiences through immersive visual experiences.</div>
 
         <div class="ourMissionTextone text2"> We create <span class="clipbgpurple">immersive and engaging <br>
-          3D experiences</span> that elevate the customer journey.</div>
+            3D experiences</span> that elevate the customer journey.</div>
         <div class="ourMissionTexttwo text2"> delivering high-quality visual presentations that leave <br>
           a lasting impression on customers
         </div>
 
 
         <div class="ourMissionTextone text3"> <span class="clipbgpurple">Innovation is at the core of our mission <br>
-          as we constantly push boundaries in the realm.</span></div>
+            as we constantly push boundaries in the realm.</span></div>
         <div class="ourMissionTexttwo text3"> We are dedicated to pioneering new approaches and techniques <br>
           to revolutionize how people shop online.
           <div><span>Convenience</span><span>AI Driven</span><span>Metaverse</span></div>
-          
+
         </div>
 
       </div>
@@ -144,7 +153,7 @@
         <div style="color: white;" class="counterItemText">More shoppers</div>
       </div>
     </div>
-    <div class="carrousel">
+
       <div class="carrouselTitle">Our Clients say
       </div>
       <div id="carouselExample" class="carousel slide pointer-event">
@@ -203,46 +212,55 @@
         </div>
       </div>
     </div>
-    <div id="popup" class="popup">
-      <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
-      <div class="demo_form">
-        <div class="demo_form_row">
-          <input id="fname" name="fname" placeholder="Full name" />
-          <input id="cname" name="cname" placeholder="Company name" />
+    <div id="popupparent" class="popupparent">
+      <div id="popup" class="popup">
+        <div onclick="hidepopup()" class="popup_x"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </svg></div>
+        <div class="popup_title">Book A Demo</div>
+        <div class="demo_form">
+          <div class="demo_form_row">
+            <input id="fname" name="fname" placeholder="Full name" />
+            <input id="cname" name="cname" placeholder="Company name" />
+          </div>
+          <div class="demo_form_row">
+            <input id="email" name="email" placeholder="Email" />
+          </div>
+          <div class="demo_form_row">
+            <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
+          </div>
         </div>
-        <div class="demo_form_row">
-          <input id="email" name="email" placeholder="Email" />
-        </div>
-        <div class="demo_form_row">
-          <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
-        </div>
-      </div>
-      <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button>
-      <!-- <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
+        <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button>
+        <!-- <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
 
+      </div>
     </div>
-    
+
     <footer class="footer">
       <div class="footerLeft">
         <div class="footerLeft1">Let’s stay connected! <br>
           send us an email and we will talk<br> to you shortly</div>
         <div class="footerLeft2">
-          <input/>
-          <button> Send</button>
+          <input />
+          <button style="background-color: #0f488d;"> Send</button>
         </div>
       </div>
       <div class="footerRight">
         <ul>
-          <li><a href="https://mejdikazdarlli.github.io/Mocart/our_platform.html">Platform</a></li>
-          <li><a href="https://mejdikazdarlli.github.io/Mocart/industries.html">Industries</a></li>
-          <li><a href="https://mejdikazdarlli.github.io/Mocart/aboutus.html">About us</a></li>
+          <li><a href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="aboutus.html">About us</a></li>
         </ul>
         <div class="footerRightIcons">
-          <div><img width="30px" height="auto" src="./images/tw.png" /></div>
+          <!-- <div><img width="30px" height="auto" src="./images/tw.png" /></div>
           <div><img width="30px" height="auto" src="./images/facebook.png" /></div>
           <div><img width="30px" height="auto" src="./images/twitch.png" /></div>
-          <div><img width="30px" height="auto" src="./images/youtube.png" /></div>
-          <div><img  width="30px" height="auto" src="./images/instagram.png" /></div>
+          <div><img width="30px" height="auto" src="./images/youtube.png" /></div> -->
+          <div><a href="https://www.linkedin.com/company/mocartvr/" target="_blank"><img width="110px" height="auto"
+                src="./images/LI-Logo.png" /></a></div>
         </div>
       </div>
     </footer>
@@ -253,7 +271,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
     integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
     </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 
@@ -262,38 +280,38 @@
   <script>
     function sendEmail() {
       // Get form field values
-    var fullName = $('#fname').val();
-    var companyName = $('#cname').val();
-    var email = $('#email').val();
-    var message = $('#msg').val();
+      var fullName = $('#fname').val();
+      var companyName = $('#cname').val();
+      var email = $('#email').val();
+      var message = $('#msg').val();
 
-    // Send AJAX request to PHP script
-    $.ajax({
-      url: 'send_email.php',
-      method: 'POST',
-      data: {
-        fullName: fullName,
-        companyName: companyName,
-        email: email,
-        message: message
-      },
-      success: function(response) {
-        // Display success message or perform any other action
-        alert('Email sent successfully!');
-        // Optionally, clear form fields
-        $('#fname').val('');
-        $('#cname').val('');
-        $('#email').val('');
-        $('#msg').val('');
-      },
-      error: function(xhr, status, error) {
-        // Display error message or handle errors
-        alert('Error sending email: ' + error);
-      }
-    });
+      // Send AJAX request to PHP script
+      $.ajax({
+        url: 'send_email.php',
+        method: 'POST',
+        data: {
+          fullName: fullName,
+          companyName: companyName,
+          email: email,
+          message: message
+        },
+        success: function (response) {
+          // Display success message or perform any other action
+          alert('Email sent successfully!');
+          // Optionally, clear form fields
+          $('#fname').val('');
+          $('#cname').val('');
+          $('#email').val('');
+          $('#msg').val('');
+        },
+        error: function (xhr, status, error) {
+          // Display error message or handle errors
+          alert('Error sending email: ' + error);
+        }
+      });
     }
   </script>
-  
+
 </body>
 
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MOCART - 404</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./images/logo.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div id="loadingpage">
+        <h1>Loading ... </h1>
+      </div>
+      <nav>
+        <a href="index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
+        <ul>
+          <li><a href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+        </ul>
+        <div id="contactEL" >
+          <a  onclick="showpopup()">Contact us</a>
+        </div>
+        <div onclick="togglenav()" id="hamburger">
+          <diV id="hamburger1"></diV>
+          <diV id="hamburger2"></diV>
+          <diV id="hamburger3"></diV>
+        </div>
+      </nav>
+      <div id="resnav" class="resnav" style="display: none;">
+        <ul>
+          <li><a  href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+        </ul>
+        <div id="contactEL">
+          <a style="color: black;" onclick="showpopup()" >Contact us</a>
+        </div>
+      </div>
+  <div class="fortyfor">
+
+    <div class="textone clipbgpurple">404</div>
+    <div class="texttwo">Oops! Something wrong</div>
+        <div class="textthree">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</div>
+        <button onclick="location.href='index.html'" > GO BACK TO HOME PAGE</button>
+
+    </div>
+
+
+    <footer class="footer">
+      <div class="footerLeft">
+        <div class="footerLeft1">Let’s stay connected! <br>
+          send us an email and we will talk<br> to you shortly</div>
+        <div class="footerLeft2">
+          <input />
+          <button style="background-color: #0f488d;"> Send</button>
+        </div>
+      </div>
+      <div class="footerRight">
+        <ul>
+          <li><a href="our_platform.html">Platform</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="aboutus.html">About us</a></li>
+        </ul>
+        <div class="footerRightIcons">
+          <!-- <div><img width="30px" height="auto" src="./images/tw.png" /></div>
+          <div><img width="30px" height="auto" src="./images/facebook.png" /></div>
+          <div><img width="30px" height="auto" src="./images/twitch.png" /></div>
+          <div><img width="30px" height="auto" src="./images/youtube.png" /></div> -->
+          <div><a href="https://www.linkedin.com/company/mocartvr/" target="_blank"><img width="110px" height="auto"
+                src="./images/LI-Logo.png" /></a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/index.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();
+    const myCarouselElement = document.querySelector('#myCarousel')
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+      interval: 2000,
+      touch: false
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
