@@ -580,7 +580,7 @@ header button:hover {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; <--------- remove this line */
 }
 
 .ourClientsItemsItem {
