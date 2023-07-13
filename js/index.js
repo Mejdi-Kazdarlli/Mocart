@@ -18,8 +18,6 @@ window.addEventListener("scroll", function () {
   var nav = document.querySelector("nav");
   var myimg = document.getElementById("logoimg");
   var x = document.getElementById("resnav");
-
-  console.log(x.style.display == "none");
   if (x.style.display == "none") {
     nav.classList.toggle("sticky", window.scrollY > 200);
   }
@@ -68,8 +66,8 @@ const counting = () => {
 
 // mission side bar fucntion
 //window.addEventListener("scroll", function(event) {preventScroll(event);}, { passive: false });
-//window.addEventListener("wheel", function(event) {preventScroll(event);}, { passive: false });
-
+window.addEventListener("wheel", function(event) {preventScroll(event);}, { passive: false });
+let wheel=false
 let previousScrollPosition =
   window.scrollY || document.documentElement.scrollTop;
 let wheelCounter = 0;
@@ -82,30 +80,52 @@ function preventScroll(event) {
   if (currentScrollPosition > previousScrollPosition) {
     if (
       rect.bottom >= 0 &&
-      rect.bottom <=
-      (window.innerHeight || document.documentElement.clientHeight)
+      rect.bottom <=(window.innerHeight || document.documentElement.clientHeight)
     ) {
       if (wheelCounter < 3) {
-        event.preventDefault();
-        event.stopPropagation();
+        if(wheel===false)
+        {
+          event.preventDefault();
+          event.stopPropagation();
+        }
       }
       if (wheelCounter === 0) {
         side("inovation");
+        console.log("inovation");
       } else if (wheelCounter === 1) {
         side("empoyer");
+        console.log("empoyer");
       } else if (wheelCounter === 2) {
+        wheel=true
         side("experiences");
+        console.log("experiences");
       }
       wheelCounter = (wheelCounter + 1) % 3;
       return false;
     }
+  }else{
+    wheel=false
   }
-  // else {
-  //   if (rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)-100) {
+  //  else {
+  //   if (rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) {
   //     console.log("Scrolling up");
-  //     event.preventDefault();
-  //     event.stopPropagation();
-
+  //     if (wheelCounter < 3) {
+  //       if(wheel===false)
+  //       {
+  //         event.preventDefault();
+  //         event.stopPropagation();
+  //       }
+  //     }else{ wheel=false}
+  //     if (wheelCounter === 0) {
+  //       side("inovation");
+  //     } else if (wheelCounter === 1) {
+  //       side("empoyer");
+  //     } else if (wheelCounter === 2) {
+  //       wheel=true
+  //       side("experiences");
+  //     }
+    
+  //     wheelCounter = (wheelCounter + 1) % 3;
   //     return false;
   //   }
   // }
@@ -251,6 +271,38 @@ window.addEventListener('load', function() {
       loadingElement.style.display = 'none';
       x.style.overflowY = "scroll"
   }
+});
+
+
+$(document).ready(function() {
+  $('#emailForm').submit(function(e) {
+      e.preventDefault(); // Prevent the form from submitting normally
+
+      var to = $('#to').val();
+      var from = $('#fname').val();
+      var cname = $('#cname').val();
+      var email = $('#email').val();
+      var message = $('#msg').val();
+
+      // Send the data to the PHP script for sending email
+      $.ajax({
+          url: 'send_email.php',
+          type: 'POST',
+          data: {
+              to: to,
+              from: from,
+              cname: cname,
+              email: email,
+              message: message
+          },
+          success: function(response) {
+              alert(response); // Display the response message
+          },
+          error: function(xhr, status, error) {
+              console.log(xhr.responseText);
+          }
+      });
+  });
 });
 
 
