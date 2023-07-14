@@ -417,26 +417,27 @@
         </div>
         <div id="popupparent" class="popupparent">
             <div id="popup" class="popup">
-              <div onclick="hidepopup()" class="popup_x"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-              </svg></div>
-              <div class="popup_title"><span class="clipbgblue">Book</span> A Demo</div>
-              <div class="demo_form">
+              <div onclick="hidepopup()" class="popup_x"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                  fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg></div>
+              <div class="popup_title">Book A Demo</div>
+              <form id="emailForm" class="demo_form" method="post">
+                <input type="hidden" id="to" name="to" value="infomejdi@hotmail.com,fekherbakouch@gmail.com" required><br><br>
                 <div class="demo_form_row">
-                  <input id="fname" name="fname" placeholder="Full name" />
-                  <input id="cname" name="cname" placeholder="Company name" />
+                    <input id="fname" name="from" placeholder="Full name" required />
+                    <input id="cname" name="cname" placeholder="Company name" required />
                 </div>
                 <div class="demo_form_row">
-                  <input id="email" name="email" placeholder="Email" />
+                    <input id="email" name="email" placeholder="Email" required />
                 </div>
                 <div class="demo_form_row">
-                  <textarea rows="5" cols="50" id="msg" name="msg" placeholder="Your message"></textarea>
+                    <textarea rows="5" cols="50" id="msg" name="message" placeholder="Your message" required></textarea>
                 </div>
-              </div>
-              <button onclick="hidepopup()" id="popup_button"><span class="clipbgblue">Enter</span></button>
-              <!-- <button onclick="sendEmail()" id="popup_button"><span class="clipbgblue">Enter</span></button> -->
-        
+                <button type="submit" id="popup_button"><span class="clipbgblue">Enter</span></button>
+            </form>
             </div>
           </div>
           <footer class="footer">

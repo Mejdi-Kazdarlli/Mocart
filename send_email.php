@@ -1,5 +1,6 @@
 <?php
-$to = $_POST['to'];
+//$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
+$to = "infomejdi@hotmail.com";
 $from = $_POST['from'];
 $cname = $_POST['cname'];
 $email = $_POST['email'];
@@ -8,22 +9,36 @@ $to_array = explode(',', $to); // Split email addresses by commas into an array
 
 $headers = "Full name: $from\r\n";
 $headers .= "Company name: $cname\r\n";
-// $headers .= "Content-Type: text/html\r\n";
 
-foreach ($to_array as $email) {
-    $email = trim($email); // Trim any extra whitespace
+$success = true;
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        // Send email
-        $success = mail($email, $message, $headers);
+if (empty($from) || empty($cname) || empty($email) || empty($message)) {
+    $success = false;
+    echo "Please fill in all fields.";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $success = false;
+    echo "Invalid email address.";
+} else {
+    foreach ($to_array as $emailAddress) {
+        $emailAddress = trim($emailAddress); // Trim any extra whitespace
 
-        if ($success) {
-            echo "Email sent to: $cname<br>";
+        if (filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
+            // Send email
+            $success = mail($emailAddress,$headers, $message,);
+
+            if (!$success) {
+                echo "Failed to send email to: $emailAddress<br>";
+            }
         } else {
-            echo "Failed to send email to: $email<br>";
+            echo "Invalid email address: $emailAddress<br>";
         }
-    } else {
-        echo "Invalid email address: $email<br>";
     }
 }
+
+if ($success) {
+    echo "your email is successfully sent";
+} else {
+    echo "Failed to send email.";
+}
 ?>
+
