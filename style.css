@@ -307,8 +307,8 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 10% 2%;
+  justify-content: center;
+  padding: 4% 2% 2% 2%;
   z-index: -5;
   position: fixed;
   top: 0%;
@@ -316,33 +316,33 @@ header {
 
 header .textone {
   font-family: Montserrat Alternates;
-  font-size: 48px;
+  font-size: 3.8rem;
   font-weight: 800;
-  line-height: 1.5;
+  line-height: 1.3;
   letter-spacing: 0em;
   text-align: center;
 }
 
 header .texttwo {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 2;
   letter-spacing: 0em;
   text-align: center;
-  margin: 4% 2%;
+  margin: 2% 2%;
   font-family: Rubik;
 }
 
 header button {
   font-family: Montserrat Alternates;
-  font-size: 22px;
+  font-size: 1.2rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.3;
   letter-spacing: 0em;
   text-align: center;
   border: transparent;
   color: #fff;
-  padding: 8px 20%;
+  padding: 8px 10%;
   background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
   cursor: pointer;
   transition: all 0.3s ease-out;
@@ -352,43 +352,25 @@ header button:hover {
   background: #323232;
 }
 
-@media only screen and (min-width: 800px) {
+@media (max-width: 768px) {
   header .textone {
-    font-family: Montserrat Alternates;
-    font-size: 80px;
-    font-weight: 800;
-    line-height: 1.5;
-    letter-spacing: 0em;
-    text-align: center;
+    font-size: 2.5rem;
   }
 
   header .texttwo {
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0em;
-    text-align: center;
-    margin: 2rem;
+    font-size: 1.2rem;
+    margin: 1% 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  header .textone {
+    font-size: 2rem;
   }
 
-  header button {
-    font-family: Montserrat Alternates;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 2;
-    letter-spacing: 0em;
-    text-align: center;
-    border: transparent;
-    color: #fff;
-    padding: 2px 12%;
-    border-radius: 4px;
-    background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-  }
-
-  header button:hover {
-    background: #323232;
+  header .texttwo {
+    font-size: 1rem;
+    margin: 1% 2%;
   }
 }
 
@@ -580,6 +562,7 @@ header button:hover {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+   flex-wrap: wrap;
   /* flex-wrap: wrap; <--------- remove this line */
 }
 
@@ -587,7 +570,8 @@ header button:hover {
   width: auto;
   height: auto;
   display: flex;
-  flex: 25%;
+  flex: 33%;
+ 
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
@@ -1176,8 +1160,9 @@ header button:hover {
 
 .video_section_player {
   width: 100%;
-  height: 68vh;
+  height: auto;
   border-radius: 10px;
+  max-width: 100%;
 }
 
 .video_section p {
@@ -1537,6 +1522,7 @@ header button:hover {
 #popup_button {
   width: 100%;
   height: 60px;
+  margin-top: 10px;
   padding: 20px 60px 20px 60px;
   border-radius: 8px;
   font-family: Montserrat Alternates;
@@ -2254,6 +2240,8 @@ header button:hover {
 
   max-height: 100%;
   left: 50%;
+  width: 90%;
+  max-height: 60vh;
   transform: translateX(-50%);
 }
 
