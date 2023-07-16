@@ -41,4 +41,3 @@ if ($success) {
     echo "Failed to send email.";
 }
 ?>
-

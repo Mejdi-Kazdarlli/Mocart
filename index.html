@@ -18,7 +18,9 @@
 
 <body>
   <div id="loadingpage">
-    <h1>Loading ... </h1>
+    <div><img  src="./images/logo.png"></img></div>
+
+    <div id="loadingpageText" class="clipbgpurple" >Loading ... </div>
   </div>
   <nav>
     <a href="index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
@@ -50,7 +52,7 @@
     <video autoplay loop muted plays-inline poster="images/header-img.png" class="header-vid">
       <source src="images/header-vid-2.mp4" type="video/mp4">
     </video>
-    <div class="textone"><span class="clipbgpurple">Elevate your business </span> with 3D<br> virtual store</div>
+    <div class="textone"><span class="clipbgpurple">Elevate your business </span> with 3D virtual store</div>
     <h3 class="texttwo">Unleash the Potential of Visual experience</h3>
     <button onclick="showpopup()">Let's talk</button>
   </header>
@@ -91,9 +93,7 @@
         <div class="ourClientsItemsItem">
           <img src="images/b5.png" />
         </div>
-        <div class="ourClientsItemsItem">
-          <img src="images/b3.png" />
-        </div>
+      
         <div class="ourClientsItemsItem">
           <img src="images/b6.png" />
         </div>
@@ -162,7 +162,7 @@
         <div style="color: white;" class="counterItemText">More shoppers</div>
       </div>
     </div>
-   <div class="carousel">
+   <div class="carrousel">
       <div class="carrouselTitle">Our Clients say
       </div>
       <div id="carouselExample" class="carousel slide pointer-event">
@@ -184,10 +184,10 @@
               <div class="carrouselItemLeft">
                 <div class="carrouselItemLeft1">Mocart are working with us on several projects. They have the ability to convey information in a particularly innovative and efficient way”
                 </div>
-                <div class="carrouselItemLeft2">Avi Salmon, innovation dtp. manager</div>
+                <div class="carrouselItemLeft2">Mor Cohen, Director. TLI- Triumph Leadership</div>
               </div>
               <div class="carrouselItemRight">
-                <img src="./images/Avi-Salmon.jpeg" />
+                <img src="./images/cohen.jpeg" />
               </div>
             </div>
           </div>
@@ -229,13 +229,12 @@
           </svg></div>
         <div class="popup_title">Book A Demo</div>
         <form id="emailForm" class="demo_form" method="post">
-          <input type="hidden" id="to" name="to" value="infomejdi@hotmail.com,fekherbakouch@gmail.com" required><br><br>
           <div class="demo_form_row">
               <input id="fname" name="from" placeholder="Full name" required />
               <input id="cname" name="cname" placeholder="Company name" required />
           </div>
           <div class="demo_form_row">
-              <input id="email" type="email" name="email" placeholder="Email" required />
+              <input id="email" name="email" placeholder="Email" required />
           </div>
           <div class="demo_form_row">
               <textarea rows="5" cols="50" id="msg" name="message" placeholder="Your message" required></textarea>

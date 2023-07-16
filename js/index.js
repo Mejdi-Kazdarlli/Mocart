@@ -273,7 +273,6 @@ window.addEventListener('load', function() {
   }
 });
 
-
 $(document).ready(function() {
   $('#emailForm').submit(function(e) {
       e.preventDefault(); // Prevent the form from submitting normally
@@ -304,6 +303,7 @@ $(document).ready(function() {
       });
   });
 });
+
 
 
 

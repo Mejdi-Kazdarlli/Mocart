@@ -17,9 +17,11 @@
 </head>
 
 <body>
-    <div id="loadingpage">
-        <h1>Loading ... </h1>
-      </div>
+  <div id="loadingpage">
+    <div><img   src="./images/logo.png"></img></div>
+
+    <div id="loadingpageText" class="clipbgpurple" >Loading ... </div>
+  </div>
       <nav>
         <a href="index.html"><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
         <ul>
@@ -87,7 +89,7 @@
   <script>AOS.init();
     const myCarouselElement = document.querySelector('#myCarousel')
     const carousel = new bootstrap.Carousel(myCarouselElement, {
-      interval: 2000,
+      interval: 5000,
       touch: false
     })
   </script>
