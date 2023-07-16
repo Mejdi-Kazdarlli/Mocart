@@ -1,6 +1,5 @@
 <?php
-//$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
-$to = "infomejdi@hotmail.com";
+$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
 $from = $_POST['from'];
 $cname = $_POST['cname'];
 $email = $_POST['email'];
@@ -24,7 +23,7 @@ if (empty($from) || empty($cname) || empty($email) || empty($message)) {
 
         if (filter_var($emailAddress, FILTER_VALIDATE_EMAIL)) {
             // Send email
-            $success = mail($emailAddress,$headers, $message,);
+            $success = mail($emailAddress, $headers, $message);
 
             if (!$success) {
                 echo "Failed to send email to: $emailAddress<br>";
@@ -36,7 +35,7 @@ if (empty($from) || empty($cname) || empty($email) || empty($message)) {
 }
 
 if ($success) {
-    echo "your email is successfully sent";
+    echo "success"; // Notify the JavaScript code of success
 } else {
     echo "Failed to send email.";
 }

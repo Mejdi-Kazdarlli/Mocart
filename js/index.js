@@ -200,10 +200,15 @@ window.showpopup = () => {
 window.hidepopup = () => {
   const el = document.getElementById("popupparent");
   var x = document.getElementsByTagName("BODY")[0];
+  var form = document.getElementById('emailForm');
 
   el.style.opacity = "1";
   el.style.display = "none";
   x.style.overflowY = "scroll"
+
+  if (form) {
+    form.reset();
+  }
 
 };
 // function togglenav() {
@@ -273,6 +278,7 @@ window.addEventListener('load', function() {
   }
 });
 
+
 $(document).ready(function() {
   $('#emailForm').submit(function(e) {
       e.preventDefault(); // Prevent the form from submitting normally
@@ -295,7 +301,10 @@ $(document).ready(function() {
               message: message
           },
           success: function(response) {
-              alert(response); // Display the response message
+            if (response === "success") {
+              window.hidepopup(); // Call the hidepopup function when the email is successfully sent
+            }
+            // Alert or handle other responses if needed
           },
           error: function(xhr, status, error) {
               console.log(xhr.responseText);
@@ -303,7 +312,6 @@ $(document).ready(function() {
       });
   });
 });
-
 
 
 
