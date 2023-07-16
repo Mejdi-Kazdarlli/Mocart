@@ -299,7 +299,7 @@ nav ul li a:hover {
 }
 
 header {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.8)), url("images/headercover.jpg");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/header-img.png");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -313,7 +313,21 @@ header {
   position: fixed;
   top: 0%;
 }
-
+/* .headerplatform {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/ptaformHeader.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4% 2% 2% 2%;
+  z-index: -5;
+  position: fixed;
+  top: 0%;
+} */
 header .textone {
   font-family: Montserrat Alternates;
   font-size: 3.8rem;
@@ -657,19 +671,17 @@ header button:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
+  align-items: flex-end;
+ }
 
 .ourMissionSidebarItem {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 6px;
+  padding: 2px;
 }
 
-.ourMissionSidebarItemText {
-  width: 80%;
-  height: 20px;
-}
+
 
 .ourMissionSidebarItemButton {
   width: 16px;
@@ -791,6 +803,7 @@ header button:hover {
 @media only screen and (max-width: 500px) {
   .ourMissionSidebar {
     padding: 0%;
+    width: 100%;
   }
 
   .ourMissionSidebarItem {
@@ -817,7 +830,7 @@ header button:hover {
 .devices .carrouselTitle {
   font-size: 40px !important;
   font-weight: 800;
-  line-height: 52px;
+  line-height: 1;
   color: #000;
   text-align: center;
 }
@@ -885,15 +898,14 @@ header button:hover {
   background-color: white;
   color: #000;
   padding: 2% 0%;
-}
+  overflow-x: hidden;min-height: 80vh;}
 
 .carrouselTitle {
   font-size: 40px;
   font-weight: 800;
-  line-height: 70px;
+  line-height: 2;
   letter-spacing: 0em;
   text-align: center;
-  margin-bottom: 1%;
 }
 
 .carrouselItem {
@@ -2059,6 +2071,9 @@ header button:hover {
 
 /* some responsive fixes */
 @media screen and (max-width: 500px) {
+  #homevideo{
+    display: none;
+  }
   .whoweare,.ourvision{
     align-items: center !important;
   }

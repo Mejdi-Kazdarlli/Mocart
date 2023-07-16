@@ -66,7 +66,7 @@ const counting = () => {
 
 // mission side bar fucntion
 //window.addEventListener("scroll", function(event) {preventScroll(event);}, { passive: false });
-window.addEventListener("wheel", function(event) {preventScroll(event);}, { passive: false });
+//window.addEventListener("wheel", function(event) {preventScroll(event);}, { passive: false });
 let wheel=false
 let previousScrollPosition =
   window.scrollY || document.documentElement.scrollTop;
