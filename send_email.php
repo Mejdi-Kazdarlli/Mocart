@@ -1,5 +1,6 @@
 <?php
-$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
+//$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
+$to = "infomejdi@hotmail.com";
 $from = $_POST['from'];
 $cname = $_POST['cname'];
 $email = $_POST['email'];
@@ -8,6 +9,7 @@ $to_array = explode(',', $to); // Split email addresses by commas into an array
 
 $headers = "Full name: $from\r\n";
 $headers .= "Company name: $cname\r\n";
+$headers .= "Email from : $email\r\n";
 
 $success = true;
 
