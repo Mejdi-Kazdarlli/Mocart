@@ -1,6 +1,5 @@
 <?php
-//$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
-$to = "infomejdi@hotmail.com";
+$to = "infomejdi@hotmail.com,yoav@mocart.io,royal@mocart.io";
 $from = $_POST['from'];
 $cname = $_POST['cname'];
 $email = $_POST['email'];
