@@ -2107,8 +2107,9 @@ margin-left: 2rem;
 @media screen and (max-width: 500px) {
   .parallele_item_left_text_list li{
     position: relative;
-    left: 50%;
-    transform: translateX(-25%);
+    /* left: 50%;
+    transform: translateX(-25%); */
+    padding-left: 25%;
   }
   #homevideo{
     display: none;
@@ -2122,9 +2123,6 @@ margin-left: 2rem;
   }
   .carrouselItemLeft1 {
     font-size: 18px;
-
-
-
   }
   .video_section p{
     width: 100%;
@@ -2198,7 +2196,9 @@ margin-left: 2rem;
   .whowearecarousel {
     padding: 4%;
   }
-
+  #homevideo{
+    display: none;
+  }
 
 
 }
@@ -2216,7 +2216,9 @@ margin-left: 2rem;
     color: black !important;
     border-bottom: none !important;
   }
-
+  #homevideo{
+    display: none;
+  }
 
 
 }

@@ -188,11 +188,15 @@ window.side = (keyword) => {
   }
 };
 
-window.showpopup = () => {
+window.showpopup = (arg) => {
   const el = document.getElementById("popupparent");
   var x = document.getElementsByTagName("BODY")[0];
   x.style.overflowY = "hidden"
-
+  var title = document.querySelector(".popup_title");
+  if(arg==="contactEL")
+  {
+    title.innerHTML = "Contact us"
+  }
   el.style.opacity = "1";
   el.style.display = "block";
 };
@@ -201,7 +205,6 @@ window.hidepopup = () => {
   const el = document.getElementById("popupparent");
   var x = document.getElementsByTagName("BODY")[0];
   var form = document.getElementById('emailForm');
-
   el.style.opacity = "1";
   el.style.display = "none";
   x.style.overflowY = "scroll"
@@ -254,14 +257,14 @@ const ContactUs = document.getElementById("contactEL");
 ContactUs.addEventListener(
   "pointerdown",
   function () {
-    showpopup();
+    showpopup(this.id);
   },
   false
 );
 ContactUs.addEventListener(
   "touchend",
   function (e) {
-    showpopup();
+    showpopup(this.id);
   },
   false
 );
