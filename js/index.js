@@ -193,9 +193,13 @@ window.showpopup = (arg) => {
   var x = document.getElementsByTagName("BODY")[0];
   x.style.overflowY = "hidden"
   var title = document.querySelector(".popup_title");
-  if(arg==="contactEL")
-  {
-    title.innerHTML = "Contact us"
+  switch (arg) {
+    case "BookADemo":
+      title.innerHTML = "Book A Demo"
+    break;
+    case "contactUS":
+      title.innerHTML = "Contact us"
+    break;
   }
   el.style.opacity = "1";
   el.style.display = "block";
@@ -257,14 +261,14 @@ const ContactUs = document.getElementById("contactEL");
 ContactUs.addEventListener(
   "pointerdown",
   function () {
-    showpopup(this.id);
+    showpopup(this.dataset.title);
   },
   false
 );
 ContactUs.addEventListener(
   "touchend",
   function (e) {
-    showpopup(this.id);
+    showpopup(this.dataset.title);
   },
   false
 );

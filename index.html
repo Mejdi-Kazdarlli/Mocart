@@ -29,8 +29,8 @@
       <li><a href="industries ">Industries</a></li>
       <li><a href="aboutus ">About us</a></li>
     </ul>
-    <div id="contactEL">
-      <a onclick="showpopup()">Contact us</a>
+    <div data-title="contactUS" id="contactEL">
+      <a  onclick="showpopup()">Contact us</a>
     </div>
     <div onclick="togglenav()" id="hamburger">
       <diV id="hamburger1"></diV>
@@ -44,17 +44,17 @@
       <li><a href="industries ">Industries</a></li>
       <li><a href="aboutus ">About us</a></li>
     </ul>
-    <div id="contactEL">
+    <div data-title="contactUS" id="contactEL">
       <a style="color: black;" onclick="showpopup()">Contact us</a>
     </div>
   </div>
   <header>
     <video id="homevideo" autoplay loop muted plays-inline poster="images/header-img.png" class="header-vid">
-      <source src="images/header-vid-2.mp4" type="video/mp4">
+      <source src="images/header-vid-2.webm" type="video/mp4">
     </video>
     <div class="textone"><span class="clipbgpurple">Elevate your business </span> with a 3D <br>virtual store</div>
     <h3 class="texttwo">Unleash the potential of visual experience</h3>
-    <button onclick="showpopup()">Let's talk</button>
+    <button data-title="BookADemo" onclick="showpopup(this.dataset.title)">Book A Demo</button>
   </header>
 
   <div class="parralax">
