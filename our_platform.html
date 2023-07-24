@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="icon" type="image/x-icon" href="./images/logo.png">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -17,19 +17,19 @@
 
 <body>
   <div id="loadingpage">
-    <div><img src="./images/logo.png"></img></div>
+    <div data-aos="fade-in"><img src="./images/logo.png"></img></div>
 
-    <div id="loadingpageText" class="clipbgpurple">Loading ... </div>
+    <div data-aos="fade-in" id="loadingpageText" class="clipbgpurple">Loading ... </div>
   </div>
   <nav>
     <a href="index "><img id="logoimg" style="width:145px" height="auto" src="./images/mocartlogo.png"></img></a>
     <ul>
-      <li><a class=".activeLINK " href="our_platform ">Platform</a></li>
-      <li><a href="industries ">Industries</a></li>
-      <li><a href="aboutus ">About us</a></li>
+      <li ><a class="activeLINK" href="our_platform ">Platform</a></li>
+      <li ><a href="industries ">Industries</a></li>
+      <li><a  href="aboutus ">About us</a></li>
     </ul>
     <div data-title="contactUS" id="contactEL">
-      <a data-title="contactUS" onclick="showpopup(this.dataset.title)">Contact us</a>
+      <a data-title="contactUS"  onclick="showpopup(this.dataset.title)">Contact us</a>
     </div>
     <div onclick="togglenav()" id="hamburger">
       <diV id="hamburger1"></diV>
@@ -39,9 +39,9 @@
   </nav>
   <div id="resnav" class="resnav" style="display: none;">
     <ul>
-      <li><a class=".activeLINK " href="our_platform ">Platform</a></li>
-      <li><a href="industries ">Industries</a></li>
-      <li><a href="aboutus ">About us</a></li>
+      <li ><a class="activeLINK" href="our_platform ">Platform</a></li>
+      <li ><a href="industries ">Industries</a></li>
+      <li ><a  href="aboutus ">About us</a></li>
     </ul>
     <div data-title="contactUS" id="contactEL">
       <a data-title="contactUS" style="color: black;" onclick="showpopup(this.dataset.title)">Contact us</a>

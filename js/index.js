@@ -279,15 +279,21 @@ window.addEventListener('load', function() {
     var loadingElement = document.querySelector('#loadingpage');
     var x = document.getElementsByTagName("BODY")[0];
 
+ this.setTimeout(
+  ()=>{
     if (loadingElement) {
       loadingElement.style.display = 'none';
       x.style.overflowY = "scroll"
   }
+  },2000
+ )
 });
 
 
 $(document).ready(function() {
-  $('#emailForm').submit(function(e) {
+  // Check if the element with id 'emailForm' exists
+  if ($('#emailForm').length) {
+    $('#emailForm').submit(function(e) {
       e.preventDefault(); // Prevent the form from submitting normally
 
       var to = $('#to').val();
@@ -298,27 +304,29 @@ $(document).ready(function() {
 
       // Send the data to the PHP script for sending email
       $.ajax({
-          url: 'send_email.php',
-          type: 'POST',
-          data: {
-              to: to,
-              from: from,
-              cname: cname,
-              email: email,
-              message: message
-          },
-          success: function(response) {
-            if (response === "success") {
-              window.hidepopup(); // Call the hidepopup function when the email is successfully sent
-            }
-            // Alert or handle other responses if needed
-          },
-          error: function(xhr, status, error) {
-              console.log(xhr.responseText);
+        url: 'send_email.php',
+        type: 'POST',
+        data: {
+          to: to,
+          from: from,
+          cname: cname,
+          email: email,
+          message: message
+        },
+        success: function(response) {
+          if (response === "success") {
+            window.hidepopup(); // Call the hidepopup function when the email is successfully sent
           }
+          // Alert or handle other responses if needed
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr.responseText);
+        }
       });
-  });
+    });
+  }
 });
+
 
 
 

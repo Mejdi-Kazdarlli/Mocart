@@ -301,7 +301,7 @@ nav ul li a:hover {
 }
 
 header {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/header-img.png");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/header-img.webp");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -2132,9 +2132,7 @@ margin-left: 2rem;
     width: 360px;
   }
 
-  .activeLINK {
-    color: black !important;
-  }
+
 
   header {
     justify-content: center;
@@ -2207,14 +2205,12 @@ margin-left: 2rem;
 .activeLINK {
   color: white !important;
   border-bottom: 1px solid purple !important;
-
 }
 
 
 @media screen and (max-width: 750PX) {
   .activeLINK {
     color: black !important;
-    border-bottom: none !important;
   }
   #homevideo{
     display: none;
