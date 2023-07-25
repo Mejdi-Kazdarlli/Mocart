@@ -1604,6 +1604,14 @@ margin-left: 2rem;
 
 
 /*************************** industries Page *****************************/
+#platformbg{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/platformbg.webp");
+
+}
+#industriesbg{
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/industriesbg.jpg");
+
+}
 .blue {
   background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%);
   -webkit-background-clip: text;
@@ -2009,7 +2017,12 @@ margin-left: 2rem;
   text-align: LEFT;
   margin-bottom: 2%;
 }
+#aboutus_header{
+  background-image:  url("images/aboutus.jpg");
+  background-position: left;
+  background-size: cover;
 
+}
 .theteam {
   display: flex;
   background-color: white;

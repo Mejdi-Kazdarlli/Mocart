@@ -1,18 +1,4 @@
-// navbar scrolling function
-// window.addEventListener("scroll", function () {
-//   var nav = document.querySelector("nav");
-//   var myimg = document.getElementById("logoimg")
-//   nav.classList.toggle("sticky", window.scrollY > 200)
 
-//   if(window.scrollY > 200){
-//     myimg.src = "./images/mocartlogoblack.png";
-
-//   }else{
-//     myimg.src = "./images/mocartlogo.png";
-
-//   }
-
-// })
 
 window.addEventListener("scroll", function () {
   var nav = document.querySelector("nav");
@@ -64,10 +50,10 @@ const counting = () => {
   });
 };
 
-// mission side bar fucntion
+// mission side bar function
 //window.addEventListener("scroll", function(event) {preventScroll(event);}, { passive: false });
 //window.addEventListener("wheel", function(event) {preventScroll(event);}, { passive: false });
-let wheel=false
+let wheel = false
 let previousScrollPosition =
   window.scrollY || document.documentElement.scrollTop;
 let wheelCounter = 0;
@@ -80,11 +66,10 @@ function preventScroll(event) {
   if (currentScrollPosition > previousScrollPosition) {
     if (
       rect.bottom >= 0 &&
-      rect.bottom <=(window.innerHeight || document.documentElement.clientHeight)
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
     ) {
       if (wheelCounter < 3) {
-        if(wheel===false)
-        {
+        if (wheel === false) {
           event.preventDefault();
           event.stopPropagation();
         }
@@ -96,15 +81,15 @@ function preventScroll(event) {
         side("empoyer");
         console.log("empoyer");
       } else if (wheelCounter === 2) {
-        wheel=true
+        wheel = true
         side("experiences");
         console.log("experiences");
       }
       wheelCounter = (wheelCounter + 1) % 3;
       return false;
     }
-  }else{
-    wheel=false
+  } else {
+    wheel = false
   }
   //  else {
   //   if (rect.top >= 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) {
@@ -124,7 +109,7 @@ function preventScroll(event) {
   //       wheel=true
   //       side("experiences");
   //     }
-    
+
   //     wheelCounter = (wheelCounter + 1) % 3;
   //     return false;
   //   }
@@ -196,10 +181,10 @@ window.showpopup = (arg) => {
   switch (arg) {
     case "BookADemo":
       title.innerHTML = "Book A Demo"
-    break;
+      break;
     case "contactUS":
       title.innerHTML = "Contact us"
-    break;
+      break;
   }
   el.style.opacity = "1";
   el.style.display = "block";
@@ -274,26 +259,24 @@ ContactUs.addEventListener(
 );
 
 
-window.addEventListener('load', function() {
-  
-    var loadingElement = document.querySelector('#loadingpage');
-    var x = document.getElementsByTagName("BODY")[0];
+window.addEventListener('load', function () {
 
- this.setTimeout(
-  ()=>{
-    if (loadingElement) {
-      loadingElement.style.display = 'none';
-      x.style.overflowY = "scroll"
+  var loadingElement = document.querySelector('#loadingpage');
+  var x = document.getElementsByTagName("BODY")[0];
+
+
+  if (loadingElement) {
+    loadingElement.style.display = 'none';
+    x.style.overflowY = "scroll"
   }
-  },2000
- )
+
 });
 
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Check if the element with id 'emailForm' exists
   if ($('#emailForm').length) {
-    $('#emailForm').submit(function(e) {
+    $('#emailForm').submit(function (e) {
       e.preventDefault(); // Prevent the form from submitting normally
 
       var to = $('#to').val();
@@ -313,13 +296,13 @@ $(document).ready(function() {
           email: email,
           message: message
         },
-        success: function(response) {
+        success: function (response) {
           if (response === "success") {
             window.hidepopup(); // Call the hidepopup function when the email is successfully sent
           }
           // Alert or handle other responses if needed
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
           console.log(xhr.responseText);
         }
       });
