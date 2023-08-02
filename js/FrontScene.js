@@ -48,7 +48,7 @@ export class product3d {
         this.orbit.enableZoom = false;
         this.orbit.enablePan = false;
         this.orbit.autoRotate = true;
-        this.orbit.autoRotateSpeed = 10
+        this.orbit.autoRotateSpeed = -10
         // this.orbit.minDistance=20;
         // this.orbit.maxDistance=50;
         this.orbit.update();

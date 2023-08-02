@@ -3,3 +3,6 @@ function _(elm){return document.getElementById(elm)}
 const productScene = new product3d(_("viewer"));
 productScene.initScene("sauvage",'forgotten_miniland_512.hdr');
 productScene.animate();
+_("viewer").addEventListener( 'pointerdown', function () {
+    _("SVG360").style.display = "none"
+} );

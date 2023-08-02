@@ -122,15 +122,15 @@ window.side = (keyword) => {
   const els2 = document.getElementsByClassName("text2");
   const els3 = document.getElementsByClassName("text3");
 
-  const btn = document.getElementById("button1");
-  const btn2 = document.getElementById("button2");
-  const btn3 = document.getElementById("button3");
+  const emp = document.getElementById("Empower");
+  const ex = document.getElementById("Experiences");
+  const ino = document.getElementById("inovation");
   switch (keyword) {
     case "inovation":
-      btn.style.backgroundColor = "white";
-      btn2.style.backgroundColor = "white";
-      btn3.style.backgroundColor = "purple";
-
+      ino.style.borderBottom = "1.5px solid white"
+      ex.style.borderBottom = "none"
+      emp.style.borderBottom = "none"
+  
       for (const el of els) {
         el.style.display = "none";
       }
@@ -138,14 +138,14 @@ window.side = (keyword) => {
         el2.style.display = "none";
       }
       for (const el3 of els3) {
-        el3.style.display = "flex";
+        el3.style.display = "block";
       }
       break;
     case "empoyer":
-      btn.style.backgroundColor = "purple";
-      btn2.style.backgroundColor = "white";
-      btn3.style.backgroundColor = "white";
-
+    
+    ino.style.borderBottom = "none"
+    ex.style.borderBottom = "none"
+    emp.style.borderBottom = "1.5px solid white"
       for (const el of els) {
         el.style.display = "block";
       }
@@ -157,9 +157,9 @@ window.side = (keyword) => {
       }
       break;
     case "experiences":
-      btn.style.backgroundColor = "white";
-      btn2.style.backgroundColor = "purple";
-      btn3.style.backgroundColor = "white";
+      ino.style.borderBottom = "none"
+      ex.style.borderBottom = "1.5px solid white"
+      emp.style.borderBottom = "none"
 
       for (const el of els) {
         el.style.display = "none";
@@ -269,9 +269,21 @@ window.addEventListener('load', function () {
     loadingElement.style.display = 'none';
     x.style.overflowY = "scroll"
   }
-
+  
 });
 
+const videos = document.querySelectorAll('.industriesVideo');
+
+videos.forEach(video => {
+  video.addEventListener('mouseenter', () => {
+    video.play();
+  });
+  
+  video.addEventListener('mouseleave', () => {
+    video.pause();
+    //video.currentTime = currentTime;
+  });
+});
 
 $(document).ready(function () {
   // Check if the element with id 'emailForm' exists
