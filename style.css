@@ -1935,6 +1935,7 @@ margin-left: 2rem;
   .impactTitle {
     font-size: 1.8rem;
     line-height: 2;
+    align-self: center;
   }
 
   .impactDes {
@@ -2137,6 +2138,19 @@ margin: 2rem 0  0 1rem;
 
 /* some responsive fixes */
 @media screen and (max-width: 500px) {
+  header {
+    justify-content: center;
+    align-items: center;
+  }
+  .ourClients{
+    align-items: center;
+  }
+  .ourMission{
+    align-items: center;
+  }
+  .carrousel{
+    align-items: center;
+  }
   .parallele_item_left_text_list li{
     position: relative;
     /* left: 50%;
@@ -2151,10 +2165,19 @@ margin: 2rem 0  0 1rem;
     padding: 2% 4%;
   }
   .whoweareText,.ourvisionText{
-    text-align: justify;
+    text-align: center;
   }
   .carrouselItemLeft1 {
     font-size: 18px;
+    text-align: center;
+  }
+  .carrouselItemLeft1 {
+    font-size: 18px;
+    text-align: center;
+  }
+  .carrouselItemLeft2 {
+    line-height: 35px;
+    text-align: center;
   }
   .video_section p{
     width: 100%;
@@ -2163,12 +2186,11 @@ margin: 2rem 0  0 1rem;
   .popup {
     width: 360px;
   }
-
-
-
-  header {
-    justify-content: center;
+  .theteam{
+    align-items: center;
   }
+
+
 
   .textone,
   .texttwo {
