@@ -8,7 +8,10 @@
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
 }
-
+:root{
+  --paddingLeft-big-Screen:12%;
+  --paddingRight-big-Screen:13%;
+}
 body {
   background-color: grey;
   color: #fff !important;
@@ -17,8 +20,6 @@ body {
   -moz-osx-font-smoothing: grayscale !important;
   overflow-x: hidden !important;
   overflow-y: hidden;
-
-
 }
 
 #viewer {
@@ -28,10 +29,10 @@ body {
   background-color: transparent;
   cursor: pointer;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
-#viewer svg{
+#viewer img{
   position: absolute;
   width: 15%;
   height: auto;
@@ -300,7 +301,8 @@ nav ul li a:hover {
 }
 
 .clipbgpurple {
-  background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #022859, #022859) !important;
+  /* background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #022859, #022859) !important; */
+  background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%) !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
   color: transparent !important;
@@ -314,13 +316,16 @@ header {
   height: 100vh;
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 4% 2% 2% 4%;
+  padding-top: 4%;
   z-index: -5;
   position: fixed;
   top: 0%;
+}
+.headerHome{
+  align-items: flex-start
 }
 /* .headerplatform {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/ptaformHeader.jpg");
@@ -339,7 +344,7 @@ header {
 } */
 header .textone {
   font-family: Montserrat Alternates;
-  font-size: 3.8rem;
+  font-size: 3.95rem;
   font-weight: 800;
   line-height: 1.3;
   letter-spacing: 0em;
@@ -347,7 +352,7 @@ header .textone {
 }
 
 header .texttwo {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   font-weight: 400;
   line-height: 2;
   letter-spacing: 0em;
@@ -357,7 +362,7 @@ header .texttwo {
 }
 
 header button {
-  font-family: Montserrat Alternates;
+  /* font-family: Montserrat Alternates;
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.3;
@@ -368,7 +373,20 @@ header button {
   padding: 8px 10%;
   background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; */
+  font-family: Montserrat Alternates;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0em;
+    text-align: center;
+    border: transparent;
+    color: #fff;
+    padding: 15px 19%;
+    background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%);
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    border-radius: 5px;
 }
 
 header button:hover {
@@ -403,17 +421,17 @@ header button:hover {
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
   background: black;
   background-size: cover;
   background-position: right;
   color: #fff;
-  padding: 2% 4%;
+  padding-top: 2%;
 }
 
 .header2 .textone {
-  font-size: 85px;
+  font-size: 66px;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -423,12 +441,12 @@ header button:hover {
 }
 
 .header2 .texttwo {
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: left;
-  margin: 1rem 0;
+  margin: 3rem 0;
 }
 
 @media only screen and (max-width: 1030px) {
@@ -498,7 +516,7 @@ header button:hover {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 2% 4%;
+  padding-top: 2%;
 
 
 }
@@ -566,19 +584,19 @@ header button:hover {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: #0D0D0D;
+  background-color: #000000;
   flex-direction: column;
-  padding: 2% 4%;
+  padding-top: 2%;
 
 }
 
 .ourClientsTitle {
-  font-size: 40px;
+  font-size: 62px;
   font-weight: 800;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: #000;
   /* align-self: center; */
 }
@@ -626,20 +644,21 @@ header button:hover {
   align-items: flex-start;
   background-position: center;
   background-size: cover;
-  background-color: #0D0D0D;
+  background-color: black;
   z-index: 1;
   position: relative;
   color: white;
-  padding: 2% 4%;
+  padding-top: 2%;
 
 }
 
 .ourMissionTitle {
-  font-size: 40px;
+  font-size: 62px;
   font-weight: 800;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: left;
+  margin-bottom: 4%;
   /* align-self: center; */
   /* font-family: var(--extraBold); */
 }
@@ -647,7 +666,7 @@ header button:hover {
 .ourMissionTextone {
   width: 100%;
   font-family: Montserrat Alternates;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: bold;
   line-height: 2;
   letter-spacing: 0em;
@@ -659,7 +678,7 @@ header button:hover {
 
 .ourMissionTexttwo {
   font-family: Montserrat Alternates;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 500;
   width: 100%;
   line-height: 2;
@@ -681,26 +700,27 @@ header button:hover {
 .ourMissionSidebar {
   display: flex;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 2rem 0 0 0;
  }
 
 .ourMissionSidebarItem {
-  font-size: 1.5rem;
+  font-size: 2.35rem;
+  font-weight: 700;
   cursor: pointer;
-  border-bottom: 1.5px solid transparent;
+  border-bottom: 2px solid transparent;
   
 }
 .ourMissionSidebarItemText{
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .ourMissionSidebarItemText:hover{
-  border-bottom: 1.5px solid white;
+  border-bottom: 2px solid white;
   transition: transform 250ms ease-in-out;
 }
 #Empower{
-  border-bottom: 1.5px solid white;
+  border-bottom: 2px solid white;
 }
 
 /* Styles for small screens */
@@ -711,6 +731,7 @@ header button:hover {
     /* Adjust the font size or any other styles as needed */
     font-size: 18px;
     margin: 6% 0%;
+    width: 100%;
   }
 
   .ourMissionTexttwo div span {
@@ -727,10 +748,10 @@ header button:hover {
     position: relative;
   }
 
-  .ourMissionTexttwo,
+  /* .ourMissionTexttwo,
   .ourMissionTextone {
     width: 100%;
-  }
+  } */
 }
 
 /* Styles for medium screens */
@@ -744,7 +765,7 @@ header button:hover {
 }
 
 /* Styles for large screens */
-@media (min-width: 1025px) {
+/* @media (min-width: 1025px) {
   .ourMissionTextone {
     font-size: 45px;
   }
@@ -752,7 +773,7 @@ header button:hover {
   .ourMissionTexttwo {
     font-size: 27px;
   }
-}
+} */
 
 .counter {
   display: flex;
@@ -764,8 +785,8 @@ header button:hover {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 2% 4%;
-
+  padding: 4% 4%;
+margin-top: 4%;
 }
 
 .counterItem {
@@ -812,24 +833,7 @@ header button:hover {
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .ourMissionSidebarItem {
-font-size: 1rem;
 
-  }
-  .ourMissionSidebar {
-    padding: 0%;
-    width: 100%;
-  }
-
-  .ourMissionSidebarItem {
-    padding: 2%;
-  }
-
-  .counterItem {
-    width: 100%;
-  }
-}
 
 .devices {
   width: 100%;
@@ -838,14 +842,14 @@ font-size: 1rem;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: #0D0D0D;
-    padding: 2% 4%;
+  background-color: black;
+  padding: 2% 0%;
 
 }
 
 .devicesTitle,
 .devices .carrouselTitle {
-  font-size: 40px !important;
+  font-size: 62px !important;
   font-weight: 800;
   line-height: 1;
   color: #000;
@@ -855,9 +859,9 @@ font-size: 1rem;
 
 .devicesItems {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
-  margin: 4% 0 0;
+  margin: 6% 0 0;
 }
 
 .devicesItemsItem {
@@ -865,16 +869,16 @@ font-size: 1rem;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  width: 33%;
+  width: 22%;
 }
 
 .devicesItemsItemImg img {
-  width: 80px;
+  width:115px;
   height: auto;
 }
 
 .devicesItemsItemDes {
-  font-size: 1.2REM;
+  font-size: 2rem;
   font-weight: 500;
   line-height: 52px;
   letter-spacing: 0em;
@@ -884,6 +888,9 @@ font-size: 1rem;
 }
 
 @media only screen and (max-width: 939px) {
+  #carouselExample{
+    margin-top: 2rem;
+  }
   .carrouselTitle {
     font-size: 28px !important;
   }
@@ -904,6 +911,7 @@ font-size: 1rem;
     font-size: 1REM;
     white-space: nowrap;
   }
+
 }
 
 .carrousel {
@@ -912,26 +920,30 @@ font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
-  background-color: #0D0D0D;
+  justify-content: flex-start;
+  background-color: black;
   color: #fff;
-  padding: 2% 0% 0% 4%;
-  overflow-x: hidden;min-height: 80vh;}
+  padding-top: 2%;
+  overflow-x: hidden;
+  min-height: 60vh;
+}
 
 .carrouselTitle {
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 2;
-  letter-spacing: 0em;
-  text-align: left;
+  font-size: 62px;
+    font-weight: 800;
+    line-height: 2;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 0;
+    position: absolute;
 }
 
 .carrouselItem {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
+  padding: 5rem 0rem;
 }
 
 .carrouselItemLeft {
@@ -952,8 +964,8 @@ font-size: 1rem;
 }
 
 .carrouselItemLeft2 {
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.25rem;
+  font-weight: 500;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: left;
@@ -975,6 +987,7 @@ font-size: 1rem;
 }
 .carrousel .carousel-control-prev{
   justify-content: flex-start;
+  left: -3%;
 }
 @media only screen and (max-width: 1030px) {
   .carrouselItemLeft1 {
@@ -1049,7 +1062,7 @@ font-size: 1rem;
   margin-top: 100vh;
   z-index: 55555;
   background-color: black !important;
-
+  /* padding: 0% var(--paddingRight-big-Screen) 0%  var(--paddingLeft-big-Screen); */
 }
 
 .text2,
@@ -1170,11 +1183,11 @@ font-size: 1rem;
   width: 100%;
   background-color: #0D0D0D ;
   z-index: 5555;
-  padding: 2% 4%;
+  padding-top: 2% ;
 }
 
 .parallele_title {
-  font-size: 50px;
+  font-size: 62px;
   font-weight: 800;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -1204,7 +1217,7 @@ font-size: 1rem;
 
 .parallele_item_left_title {
   font-family: Montserrat Alternates;
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 800;
   line-height: 1.5; 
   letter-spacing: 0em;
@@ -1268,7 +1281,7 @@ margin-left: 2rem;
   text-align: center;
   border: transparent;
   color: #fff;
-  padding: 2px 12%;
+  padding: 2px 27%;
   border-radius: 4px;
   background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, #022859, #022859);
   cursor: pointer;
@@ -1524,15 +1537,17 @@ margin-left: 2rem;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: center;
-  color: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%);
+  /* color: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%); */
+  background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%) !important;
   padding: 0;
 }
 
 .clipbgblue {
-  background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%);
+  color: white;
+  /* background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
 }
 
 .hide {
@@ -1587,7 +1602,7 @@ margin-left: 2rem;
   top: 0px;
   color: black;
   font-family: Montserrat Alternates;
-  font-size: 40px;
+  font-size: 61px;
   font-weight: 700;
   line-height: 1.2;
   opacity: 0.9;
@@ -1608,7 +1623,7 @@ margin-left: 2rem;
   width: 100%;
   margin: 0% 2%;
   min-width: 33%;
-  height: 100vh;
+  height: auto;
   border: 1px solid black;
   margin: 1rem 0;
   display: flex;
@@ -1723,7 +1738,7 @@ margin-left: 2rem;
 .stickyscroll .boxTitle {
   font-family: Rubik;
   position: absolute;
-  font-size: 3.5rem;
+  font-size:2.8rem;
   font-weight: 800;
   line-height: 66px;
   letter-spacing: 0em;
@@ -1774,7 +1789,7 @@ margin-left: 2rem;
     font-size: 22px;
   }
   .stickyscroll .boxTitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .blackbarTitle {
     font-size: 32px !important;
@@ -1796,8 +1811,7 @@ margin-left: 2rem;
 }
 
 .blackbarTitle {
-  font-family: Rubik;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
   color: white;
   line-height: 2;
@@ -1821,8 +1835,8 @@ margin-left: 2rem;
 
 .impactTitle {
   font-family: Montserrat Alternates;
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 3.6rem;
+  font-weight: 900;
   line-height: 3;
   letter-spacing: 0em;
   text-align: center;
@@ -1869,7 +1883,8 @@ margin-left: 2rem;
   width: 45px;
   height: 45px;
   border-radius: 100%;
-  background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #022859, #022859) !important;
+  /* background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #022859, #022859) !important; */
+  background: linear-gradient(268.12deg, #8c48e2 5%, #8c48e2 50%, #01a2fe 95%) !important;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -1966,11 +1981,11 @@ margin-left: 2rem;
   color: #fff;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 2% 4%;
+  /* padding: 2% 4%; */
 }
 
 .whoweareTitle {
-  font-size: 2.6rem;
+  font-size: 4.1rem;
   font-weight: 800;
   line-height: 70px;
   letter-spacing: 0em;
@@ -1979,7 +1994,6 @@ margin-left: 2rem;
 }
 
 .whoweareText {
-  font-family: Rubik;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 2.5;
@@ -1995,16 +2009,16 @@ margin-left: 2rem;
 
 .ourvision {
   display: flex;
-  background-color: #0D0D0D;
+  background-color: black;
   flex-direction: column;
   color: white;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 2% 4%;
+  /* padding: 2% 4%; */
 }
 
 .ourvisionTitle {
-  font-size: 2.6rem;
+  font-size: 4.1rem;
   font-weight: 800;
   line-height: 70px;
   letter-spacing: 0em;
@@ -2029,16 +2043,16 @@ margin-left: 2rem;
 }
 .theteam {
   display: flex;
-  background-color: #0D0D0D;
+  background-color: black;
   flex-direction: column;
   color: #fff;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 2% 4%;
+  /* padding: 2% 4%; */
 }
 
 .theteamTitle {
-  font-size: 2.6rem;
+  font-size: 4.1rem;
   font-weight: 800;
   line-height: 70px;
   letter-spacing: 0em;
@@ -2047,7 +2061,7 @@ margin-left: 2rem;
 }
 .theteamSubTitle{
   font-family: Montserrat Alternates;
-font-size: 1.5rem;
+font-size: 2.15rem;
 font-weight: 600;
 line-height: 1;
 border-bottom: 1.5px solid white;
@@ -2060,7 +2074,7 @@ margin: 2rem 0  0 1rem;
 .theteamrow1 {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-self: flex-start;
 }
@@ -2411,3 +2425,44 @@ margin: 2rem 0  0 1rem;
 
 }
 
+.padding{
+  padding-right:var(--paddingRight-big-Screen);
+  padding-left: var(--paddingLeft-big-Screen) ;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+@media only screen and (max-width: 500px) {
+  .ourMissionSidebarItem {
+font-size: 1rem;
+
+  }
+  .ourMissionSidebar {
+    padding: 0%;
+    width: 100%;
+  }
+
+  .ourMissionSidebarItem {
+    padding: 2%;
+  }
+
+  .counterItem {
+    width: 100%;
+  }
+  .carrousel .carousel-control-prev {
+    left: 1%;
+}
+.clipbgpurple{
+  font-size: 30px;
+}
+.parallele_item_left_text_list{
+  width: 100vw;
+}
+.ourMission {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.ourMissionTextone,.ourMissionTexttwo
+{
+  text-align: center;
+}
+}
