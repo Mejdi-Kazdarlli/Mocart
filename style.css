@@ -615,8 +615,7 @@ header button:hover {
   height: auto;
   display: flex;
   flex: 20%;
- 
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
 }
@@ -666,7 +665,7 @@ header button:hover {
 .ourMissionTextone {
   width: 100%;
   font-family: Montserrat Alternates;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: bold;
   line-height: 2;
   letter-spacing: 0em;
@@ -958,7 +957,7 @@ margin-top: 4%;
 .carrouselItemLeft1 {
   font-size: 1.1rem;
   font-weight: 500;
-  line-height: 52px;
+  line-height: 45px;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -966,7 +965,7 @@ margin-top: 4%;
 .carrouselItemLeft2 {
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 52px;
+  line-height: 45px;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -2466,3 +2465,15 @@ font-size: 1rem;
   text-align: center;
 }
 }
+@media screen and (min-width: 1400px) and (max-width: 1900px) {
+.carrousel .carousel-control-next {
+  right: 0;
+  justify-content: flex-end;
+}
+}
+@media screen and (min-width: 950px) and (max-width: 1400px) {
+  .carrousel .carousel-control-next {
+    right: -35px;
+    justify-content: flex-end;
+  }
+  }
