@@ -281,7 +281,7 @@ nav ul li a:hover {
   box-shadow: 1px 3px 22px 2px transparent;
 -webkit-box-shadow: 1px 3px 22px 2px transparent;
 -moz-box-shadow: 1px 3px 22px 2px transparent;
-
+transition: all 0.3s linear;
 }
 
 #contactEL:hover {
@@ -922,12 +922,18 @@ header button:hover {
 
   .devicesItemsItem {
     margin: 1rem;
+    align-items: center;
   }
 
   .devicesItemsItemDes {
     font-size: 1REM;
     white-space: nowrap;
   }
+  .devicesItemsItemImg img {
+    width: 80px;
+    height: auto;
+    padding-left: 10%;
+}
 
 }
 
@@ -1181,7 +1187,11 @@ header button:hover {
   color: #fff;
   padding: 2px 12%;
   border-radius: 4px;
-  background: #323232;
+  background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%) !important;
+  
+  box-shadow: 1px 3px 22px 2px transparent;
+-webkit-box-shadow: 1px 3px 22px 2px transparent;
+-moz-box-shadow: 1px 3px 22px 2px transparent;
   /* background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%); */
   cursor: pointer;
   transition: all 0.3s ease-out;
@@ -1189,7 +1199,11 @@ header button:hover {
 
 .video_section button:hover {
   /* background: #323232; */
-  background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%);
+  /* background: linear-gradient(88.84deg, #0b3dc8 -2.81%, #4e91ea 103.9%); */
+  
+  box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
 }
 
 .parallele {
@@ -1561,11 +1575,18 @@ margin-left: 2rem;
   line-height: 52px;
   letter-spacing: 0em;
   text-align: center;
-  /* color: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%); */
+  box-shadow: 1px 3px 22px 2px transparent;
+-webkit-box-shadow: 1px 3px 22px 2px transparent;
+-moz-box-shadow: 1px 3px 22px 2px transparent;
   background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%) !important;
   padding: 0;
+  transition: all 0.3s linear;
 }
-
+#popup_button:hover {
+  box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+}
 .clipbgblue {
   color: white;
   /* background: linear-gradient(88.84deg, #0B3DC8 -2.81%, #4E91EA 103.9%);
