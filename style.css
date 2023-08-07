@@ -29,13 +29,14 @@ body {
   background-color: transparent;
   cursor: pointer;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 #viewer img{
   position: absolute;
   width: 15%;
   height: auto;
+  margin-top: 10%;
 }
 #carousel-indicators button {
   border: 10px solid white;
@@ -102,7 +103,7 @@ nav {
   display: flex;
   justify-content: space-between;
   transition: 0.6s;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 5555;
 
   align-items: center;
@@ -277,17 +278,23 @@ nav ul li a:hover {
   width: fit-content;
   font-weight: 400;
   transition: all 0.2s ease-in;
+  box-shadow: 1px 3px 22px 2px transparent;
+-webkit-box-shadow: 1px 3px 22px 2px transparent;
+-moz-box-shadow: 1px 3px 22px 2px transparent;
 
 }
 
 #contactEL:hover {
-  background: grey;
+  background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%);
   color: white;
+  box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
 
 }
 
 .sticky {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(0, 0, 0, 1);
   height: 80px;
   display: flex;
   align-items: center;
@@ -296,7 +303,7 @@ nav ul li a:hover {
 
 .sticky ul a,
 .sticky #contactEL {
-  color: #000 !important;
+  color: #ffffff !important;
   font-weight: 400;
 }
 
@@ -381,6 +388,10 @@ header button {
     letter-spacing: 0em;
     text-align: center;
     border: transparent;
+    box-shadow: 1px 3px 22px 2px transparent;
+-webkit-box-shadow: 1px 3px 22px 2px transparent;
+-moz-box-shadow: 1px 3px 22px 2px transparent;
+    /* border: 3px solid transparent; */
     color: #fff;
     padding: 15px 19%;
     background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%);
@@ -390,7 +401,11 @@ header button {
 }
 
 header button:hover {
-  background: #323232;
+  /* background: #323232; */
+  /* border: 3px solid white; */
+  box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
 }
 
 @media (max-width: 768px) {
@@ -785,7 +800,7 @@ header button:hover {
   background-position: center;
   background-attachment: fixed;
   padding: 4% 4%;
-margin-top: 4%;
+/* margin-top: 4%; */
 }
 
 .counterItem {
@@ -842,7 +857,7 @@ margin-top: 4%;
   align-items: center;
   justify-content: space-between;
   background-color: black;
-  padding: 2% 0%;
+  /* padding: 2% 0%; */
 
 }
 
@@ -858,22 +873,25 @@ margin-top: 4%;
 
 .devicesItems {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  margin: 6% 0 0;
+  padding-top: 2% !important;
+  /* margin: 0% 0 0; */
 }
 
 .devicesItemsItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
   flex-direction: column;
   width: 22%;
+  margin-right: 12%;
 }
 
 .devicesItemsItemImg img {
-  width:115px;
+  width: 100px;
   height: auto;
+  padding-left: 30%;
 }
 
 .devicesItemsItemDes {
@@ -957,7 +975,7 @@ margin-top: 4%;
 .carrouselItemLeft1 {
   font-size: 1.1rem;
   font-weight: 500;
-  line-height: 45px;
+  line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
 }
@@ -965,9 +983,10 @@ margin-top: 4%;
 .carrouselItemLeft2 {
   font-size: 1.25rem;
   font-weight: 500;
-  line-height: 45px;
+  line-height: 34px;
   letter-spacing: 0em;
   text-align: left;
+  margin-top: 20px;
 }
 
 .carrouselItemRight {
@@ -1196,10 +1215,10 @@ margin-top: 4%;
 
 .parallele_item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 
 }
 
@@ -1216,7 +1235,7 @@ margin-top: 4%;
 
 .parallele_item_left_title {
   font-family: Montserrat Alternates;
-  font-size: 2.6rem;
+  font-size: 62px;
   font-weight: 800;
   line-height: 1.5; 
   letter-spacing: 0em;
@@ -1285,10 +1304,16 @@ margin-left: 2rem;
   background: linear-gradient(268.12deg, #883de7 4.53%, #9d60db 48.08%, #384fcd 92.55%), linear-gradient(0deg, #ffffff, #ffffff), linear-gradient(0deg, #022859, #022859);
   cursor: pointer;
   transition: all 0.3s ease-out;
+  
+  box-shadow: 1px 3px 22px 2px transparent;
+-webkit-box-shadow: 1px 3px 22px 2px transparent;
+-moz-box-shadow: 1px 3px 22px 2px transparent;
 }
 
 .parallele_item button:hover {
-  background: #323232;
+  box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-webkit-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
+-moz-box-shadow: 1px 3px 22px 2px rgba(255,255,255,0.75);
 }
 
 @media only screen and (max-width: 939px) {
@@ -2153,7 +2178,7 @@ margin: 2rem 0  0 1rem;
 @media screen and (max-width: 500px) {
   header {
     justify-content: center;
-    align-items: center;
+    align-items: center !important;
   }
   .ourClients{
     align-items: center;
@@ -2256,6 +2281,9 @@ margin: 2rem 0  0 1rem;
   .impactContainerItemRight {
     font-size: 16px !important;
     margin-left: 8px !important;
+  }
+  .ourClientsItemsItem{
+    align-items: center;
   }
 }
 

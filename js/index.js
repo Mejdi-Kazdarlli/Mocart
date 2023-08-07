@@ -7,13 +7,13 @@ window.addEventListener("scroll", function () {
   if (x.style.display == "none") {
     nav.classList.toggle("sticky", window.scrollY > 200);
   }
-  if (window.scrollY > 200) {
-    myimg.src = "./images/mocartlogoblack.png";
-  } else if (window.scrollY < 200) {
-    if (x.style.display == "none") {
-      myimg.src = "./images/mocartlogo.png";
-    }
-  }
+  // if (window.scrollY > 200) {
+  //   myimg.src = "./images/mocartlogoblack.png";
+  // } else if (window.scrollY < 200) {
+  //   if (x.style.display == "none") {
+  //     myimg.src = "./images/mocartlogo.png";
+  //   }
+  // }
 });
 
 let isFunctionExecuted = false;
