@@ -23,16 +23,20 @@ switch (htmlPageName) {
     if(isMobile)
     {
       PivotPainter_vid.src = "images/Pivot-Painter_mob.webm"
-      document.getElementById("PivotPainter_poster").poster = "images/PivotPainter_mob.webp"
+      //document.getElementById("PivotPainter_poster").poster = "images/PivotPainter_mob.webp"
+      document.getElementById("PivotPainter_poster").poster = ""
 
       ArtGallery_vid.src = "images/ArtGallery_mob.webm"
-      document.getElementById("ArtGallery_poster").poster = "images/ArtGallery_mob.webp"
+      //document.getElementById("ArtGallery_poster").poster = "images/ArtGallery_mob.webp"
+      document.getElementById("ArtGallery_poster").poster = ""
 
       TLI_vid.src = "images/TLI-3D_mob.webm"
-      document.getElementById("TLI_poster").poster = "images/TLI-3d_mob.webp"
+      //document.getElementById("TLI_poster").poster = "images/TLI-3d_mob.webp"
+      document.getElementById("TLI_poster").poster = ""
 
       Fashion_vid.src = "images/Fashion_CLIP_mob.webm"
-      document.getElementById("Fashion_poster").poster = "images/Fashion_CLIP_mob.webp"
+      //document.getElementById("Fashion_poster").poster = "images/Fashion_CLIP_mob.webp"
+      document.getElementById("Fashion_poster").poster = ""
 
       industriesVideo.load();
     }
