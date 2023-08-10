@@ -23,20 +23,16 @@ switch (htmlPageName) {
     if(isMobile)
     {
       PivotPainter_vid.src = "images/Pivot-Painter_mob.webm"
-      //document.getElementById("PivotPainter_poster").poster = "images/PivotPainter_mob.webp"
-      document.getElementById("PivotPainter_poster").poster = ""
+      document.getElementById("PivotPainter_poster").poster = "images/PivotPainter_mob.webp"
 
       ArtGallery_vid.src = "images/ArtGallery_mob.webm"
-      //document.getElementById("ArtGallery_poster").poster = "images/ArtGallery_mob.webp"
-      document.getElementById("ArtGallery_poster").poster = ""
+      document.getElementById("ArtGallery_poster").poster = "images/ArtGallery_mob.webp"
 
       TLI_vid.src = "images/TLI-3D_mob.webm"
-      //document.getElementById("TLI_poster").poster = "images/TLI-3d_mob.webp"
-      document.getElementById("TLI_poster").poster = ""
+      document.getElementById("TLI_poster").poster = "images/TLI-3d_mob.webp"
 
       Fashion_vid.src = "images/Fashion_CLIP_mob.webm"
-      //document.getElementById("Fashion_poster").poster = "images/Fashion_CLIP_mob.webp"
-      document.getElementById("Fashion_poster").poster = ""
+      document.getElementById("Fashion_poster").poster = "images/Fashion_CLIP_mob.webp"
 
       industriesVideo.load();
     }
@@ -71,6 +67,33 @@ switch (htmlPageName) {
       
       break;
 }
+
+const videos = document.querySelectorAll('.industriesVideo');
+let currentlyPlayingVideo = null;
+let currentVideoTime = 0; // Store the current time of the video
+
+videos.forEach(video => {
+  if (isMobile) {
+    video.addEventListener('pointerdown', () => {
+      if (currentlyPlayingVideo && currentlyPlayingVideo !== video) {
+        currentlyPlayingVideo.pause();
+        currentVideoTime = currentlyPlayingVideo.currentTime;
+      }
+      video.currentTime = currentVideoTime; // Set the stored time
+      video.play();
+      currentlyPlayingVideo = video;
+    });
+  } else {
+    video.addEventListener('mouseenter', () => {
+      currentVideoTime = video.currentTime; // Store the current time
+      video.play();
+    });
+    video.addEventListener('mouseleave', () => {
+      video.pause();
+    });
+  }
+});
+
 
 
 window.addEventListener("scroll", function () {
@@ -345,20 +368,7 @@ window.addEventListener('load', function () {
   
 });
 
-const videos = document.querySelectorAll('.industriesVideo');
-let currentlyPlayingVideo = null;
-videos.forEach(video => {
-  if (isMobile) {
-    video.addEventListener('pointerdown', () => {
-      if (currentlyPlayingVideo) {currentlyPlayingVideo.pause();}
-      video.play();
-      currentlyPlayingVideo = video;
-    });
-  } else {
-    video.addEventListener('mouseenter', () => {video.play();});
-    video.addEventListener('mouseleave', () => {video.pause();});
-  }
-});
+
 
 
 $(document).ready(function () {
