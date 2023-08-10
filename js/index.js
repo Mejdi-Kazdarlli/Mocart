@@ -342,17 +342,20 @@ window.addEventListener('load', function () {
 });
 
 const videos = document.querySelectorAll('.industriesVideo');
-
+let currentlyPlayingVideo = null;
 videos.forEach(video => {
-  video.addEventListener('mouseenter', () => {
-    video.play();
-  });
-  
-  video.addEventListener('mouseleave', () => {
-    video.pause();
-    //video.currentTime = currentTime;
-  });
+  if (isMobile) {
+    video.addEventListener('pointerdown', () => {
+      if (currentlyPlayingVideo) {currentlyPlayingVideo.pause();}
+      video.play();
+      currentlyPlayingVideo = video;
+    });
+  } else {
+    video.addEventListener('mouseenter', () => {video.play();});
+    video.addEventListener('mouseleave', () => {video.pause();});
+  }
 });
+
 
 $(document).ready(function () {
   // Check if the element with id 'emailForm' exists
