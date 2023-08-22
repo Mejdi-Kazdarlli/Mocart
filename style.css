@@ -9,8 +9,10 @@
   -moz-osx-font-smoothing: grayscale !important;
 }
 :root{
-  --paddingLeft-big-Screen:12%;
-  --paddingRight-big-Screen:13%;
+  --paddingLeft-big-Screen:11vw;
+  --paddingRight-big-Screen:13vw;
+  --paddingTop-big-Screen:4vh;
+  --paddingBottom-big-Screen:4vh;
 }
 body {
   background-color: grey;
@@ -99,17 +101,19 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   transition: 0.6s;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 5555;
-
   align-items: center;
-  padding: 2% 6%;
+  padding: 2vh 6vw;
 }
-
+#logoimg{
+  width: 8vw;
+  height: auto;
+}
 nav #hamburger {
   display: none;
   height: 30px;
@@ -148,6 +152,7 @@ nav ul {
   align-items: center;
   margin-bottom: 0 !important;
   padding-left: 0 !important;
+  font-size: 1vw;
 }
 
 nav ul li {
@@ -224,7 +229,8 @@ nav ul li a:hover {
     display: none;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 18px;
+    padding: 1vh 1vw;
+    font-size: 0.8vw;
     border: 2px solid grey;
     border-radius: 5px;
     cursor: pointer;
@@ -295,7 +301,7 @@ transition: all 0.3s linear;
 
 .sticky {
   background-color: rgba(0, 0, 0, 1);
-  height: 80px;
+  /* height: 80px; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -778,8 +784,24 @@ header button:hover {
     /* Adjust the font size or any other styles as needed */
     font-size: 28px;
   }
+  .ourMissionSidebarItem {
+    font-size: 1.8rem;
+      }
 }
+@media (min-width: 580px) and (max-width: 800px) {
 
+  .ourMissionSidebarItem {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+      }
+}
+@media (min-width: 500px) and (max-width: 580px) {
+
+  .ourMissionSidebarItem {
+    font-size: 1.35rem;
+    padding: 0.5rem;
+      }
+}
 /* Styles for large screens */
 /* @media (min-width: 1025px) {
   .ourMissionTextone {
@@ -2480,12 +2502,13 @@ margin: 2rem 0  0 1rem;
 .padding{
   padding-right:var(--paddingRight-big-Screen);
   padding-left: var(--paddingLeft-big-Screen) ;
-  padding-top: 4%;
-  padding-bottom: 4%;
+  padding-top: var(--paddingTop-big-Screen);
+  padding-bottom: var(--paddingBottom-big-Screen);
 }
 @media only screen and (max-width: 500px) {
   .ourMissionSidebarItem {
 font-size: 1rem;
+padding: 2%;
 
   }
   .ourMissionSidebar {
@@ -2493,9 +2516,6 @@ font-size: 1rem;
     width: 100%;
   }
 
-  .ourMissionSidebarItem {
-    padding: 2%;
-  }
 
   .counterItem {
     width: 100%;
