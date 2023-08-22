@@ -429,7 +429,6 @@ header button:hover {
   header .textone {
     font-size: 1.55rem;
   }
-
   header .texttwo {
     font-size: 1rem;
     margin: 1% 2%;
@@ -2221,6 +2220,9 @@ margin: 2rem 0  0 1rem;
 
 /* some responsive fixes */
 @media screen and (max-width: 500px) {
+  #logoimg {
+    width: 35vw;
+}
   header {
     justify-content: center;
     align-items: center !important;
@@ -2342,7 +2344,9 @@ margin: 2rem 0  0 1rem;
   #homevideo{
     display: none;
   }
-
+  #logoimg {
+    width: 15vw;
+}
 
 }
 
@@ -2506,6 +2510,9 @@ margin: 2rem 0  0 1rem;
   padding-bottom: var(--paddingBottom-big-Screen);
 }
 @media only screen and (max-width: 500px) {
+  #logoimg {
+    width: 35vw;
+}
   .ourMissionSidebarItem {
 font-size: 1rem;
 padding: 2%;
