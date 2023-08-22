@@ -357,7 +357,8 @@ header {
 } */
 header .textone {
   font-family: Montserrat Alternates;
-  font-size: 3.95rem;
+  font-size: 9vh;
+  padding-top: 35vh;
   font-weight: 800;
   line-height: 1.3;
   letter-spacing: 0em;
@@ -365,7 +366,7 @@ header .textone {
 }
 
 header .texttwo {
-  font-size: 2.25rem;
+  font-size: 5vh;
   font-weight: 400;
   line-height: 2;
   letter-spacing: 0em;
@@ -399,7 +400,7 @@ header button {
 -moz-box-shadow: 1px 3px 22px 2px transparent;
     /* border: 3px solid transparent; */
     color: #fff;
-    padding: 15px 19%;
+    padding: 15px 14vw;
     background: linear-gradient(90deg, #01a2fe 17%, #8c48e2 50%);
     cursor: pointer;
     transition: all 0.3s ease-out;
