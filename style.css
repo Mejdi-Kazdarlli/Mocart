@@ -452,7 +452,7 @@ header button:hover {
 }
 
 .header2 .textone {
-  font-size: 66px;
+  font-size: 8vh;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0em;
@@ -462,7 +462,7 @@ header button:hover {
 }
 
 .header2 .texttwo {
-  font-size: 34px;
+  font-size: 2.5vw;
   font-weight: 700;
   line-height: 52px;
   letter-spacing: 0em;
@@ -614,9 +614,9 @@ header button:hover {
 }
 
 .ourClientsTitle {
-  font-size: 62px;
+  font-size: 10.3vh;
   font-weight: 800;
-  line-height: 52px;
+  line-height: 10.3vh;
   letter-spacing: 0em;
   text-align: center;
   margin-bottom: 4rem;
@@ -675,9 +675,9 @@ header button:hover {
 }
 
 .ourMissionTitle {
-  font-size: 62px;
+  font-size: 10.3vh;
   font-weight: 800;
-  line-height: 52px;
+  line-height: 10.3vh;
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 4%;
@@ -688,7 +688,7 @@ header button:hover {
 .ourMissionTextone {
   width: 100%;
   font-family: Montserrat Alternates;
-  font-size: 36px;
+  font-size: 5vh;
   font-weight: bold;
   line-height: 2;
   letter-spacing: 0em;
@@ -700,7 +700,7 @@ header button:hover {
 
 .ourMissionTexttwo {
   font-family: Montserrat Alternates;
-  font-size: 24px;
+  font-size: 3.4vh;
   font-weight: 500;
   width: 100%;
   line-height: 2;
@@ -727,7 +727,7 @@ header button:hover {
  }
 
 .ourMissionSidebarItem {
-  font-size: 2.35rem;
+  font-size: 6vh;
   font-weight: 700;
   cursor: pointer;
   border-bottom: 2px solid transparent;
@@ -887,7 +887,7 @@ header button:hover {
 
 .devicesTitle,
 .devices .carrouselTitle {
-  font-size: 62px !important;
+  font-size: 10.3vh;
   font-weight: 800;
   line-height: 1;
   color: #000;
@@ -897,7 +897,7 @@ header button:hover {
 
 .devicesItems {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   padding-top: 2% !important;
   /* margin: 0% 0 0; */
@@ -905,17 +905,17 @@ header button:hover {
 
 .devicesItemsItem {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-around;
   flex-direction: column;
   width: 22%;
-  margin-right: 12%;
+  /* margin-right: 12%; */
 }
 
 .devicesItemsItemImg img {
   width: 100px;
   height: auto;
-  padding-left: 30%;
+  /* padding-left: 30%; */
 }
 
 .devicesItemsItemDes {
@@ -976,7 +976,7 @@ header button:hover {
 }
 
 .carrouselTitle {
-  font-size: 62px;
+  font-size: 10.3vh;
     font-weight: 800;
     line-height: 2;
     letter-spacing: 0em;
@@ -1270,10 +1270,12 @@ header button:hover {
   justify-content: space-between;
   align-self: center;
 }
-
+.parallele .parallele_item_left_title{
+  font-size: 9vh;
+}
 .parallele_item_left_title {
   font-family: Montserrat Alternates;
-  font-size: 62px;
+  font-size: 10.3vh;
   font-weight: 800;
   line-height: 1.5; 
   letter-spacing: 0em;
