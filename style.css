@@ -1108,6 +1108,7 @@ header button:hover {
   display: flex;
 }
 /*************************** industries Page *****************************/
+
 #platformbg {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(2, 2, 2, 0.5)), url("images/platformbg.webp");
 
@@ -1257,6 +1258,10 @@ header button:hover {
   position: relative;
   padding-bottom: 2%;
   object-fit: cover;
+}
+.stickyscroll .ArtGallerySRC{
+  position: relative;
+  z-index: 3;
 }
 .stickyscroll .boxTitle {
   font-family: Rubik;
