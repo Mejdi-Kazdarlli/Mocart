@@ -560,7 +560,7 @@ header button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: #323232;
 }
 .devicesTitle,
 .devices .carrouselTitle {
@@ -613,11 +613,11 @@ header button:hover {
 .carrouselTitle {
   font-size: 10.3vh;
   font-weight: 800;
-  line-height: 2;
+  /* line-height: 2; */
   letter-spacing: 0em;
   text-align: left;
   margin-top: 0;
-  position: absolute;
+  position: relative;
 }
 .carrouselItem {
   width: 100%;
@@ -960,7 +960,7 @@ header button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  max-width: 90%;
+  max-width: 100%;
 }
 .demo_form_row {
   width: 100%;
@@ -1018,7 +1018,7 @@ header button:hover {
 }
 .popupparent {
   display: none;
-  position: fixed;
+  position: absolute;
   z-index: 1111111111111111111111111111111111111111111111;
   padding-top: 100px;
   left: 0;
@@ -1053,8 +1053,8 @@ header button:hover {
 }
 .popup_x {
   position: absolute;
-  top: 5%;
-  left: 90%;
+  top: 1%;
+  left: 92%;
   cursor: pointer;
 }
 .popup_title {
@@ -1430,8 +1430,8 @@ header button:hover {
 }
 #aboutus_header {
   background-image: url("images/aboutus.jpg");
-  background-position: left;
-  background-size: cover;
+  /* background-position: left;
+  background-size: cover; */
 }
 .theteam {
   display: flex;
@@ -1632,8 +1632,68 @@ header button:hover {
   padding-top: var(--paddingTop-big-Screen);
   padding-bottom: var(--paddingBottom-big-Screen);
 }
-
-
+.ourClient{
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+}
+.ourClient .ourClient-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.ourClient .container{
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  margin: 0%;
+  padding: 2% 0% 0% 0%;
+  justify-content: left;
+}
+.ourClient .container .item{
+  position: relative;
+  display: flex;
+  width: 23vw;
+  height: 250px;
+  background-color: #323232;
+  border-radius: 6px;
+  margin: 0% 1%;
+  padding: 2% 0% 2% 0%;
+}
+.ourClient .container .itemLeft{
+  margin: 0% 3%;
+}
+.ourClient .container .itemLeft img{
+  width: 106px;
+  height: auto;
+  border-radius: 50%;
+}
+.ourClient .container .itemRight{
+  margin: 0% 3%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.ourClient .container .itemRight h1 {
+  font-size: 1rem;
+  font-weight: 100;
+  position: relative;
+  margin: 0;
+  line-height:1.3rem;
+  padding-bottom: 1rem;
+}
+.ourClient .container .itemRight h2 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  margin: 0;
+  line-height:1.1rem;
+}
 
 
 
@@ -1767,11 +1827,14 @@ header button:hover {
 }
 
 @media only screen and (max-width: 480px) {
+  .popup_title {
+    font-size: 9vw;
+  }
   .theteamrow1{
     justify-content: center;
   }
   .demo_form{
-    width: 90%;
+    width: 100%;
   }
   .demo_form_row{
     flex-direction: column;
