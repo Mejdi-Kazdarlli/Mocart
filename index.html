@@ -8,6 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="google-site-verification" content="3XGaS6yCAzhtxNzFiYg9Vccx8HiZxdFuVHrRJbKgwU0"   />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" type="image/x-icon" href="./images/logo.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -57,7 +58,7 @@
     <button data-title="BookADemo" onclick="showpopup(this.dataset.title)">Book A Demo</button>
   </header>
 
-  <div class="parralax">
+  <div class="parralax ">
 
 
     <div class="header2 padding">
@@ -144,7 +145,7 @@
         </div>
 
       </div>
-      <div class="counter" id="counter">
+      <div class="counter padding" id="counter">
         <div class="counterItem">
           <div class="counterItemNumber ">+<span class="num" data-val="400">000</span>%</div>
           <div style="color: white;" class="counterItemText">Enagement time</div>
@@ -162,35 +163,37 @@
           <div style="color: white;" class="counterItemText">More shoppers</div>
         </div>
       </div>
-      <div class="ourClient padding">
+      <div class="ourClient padding " id="padding1">
         <div class="ourClient-container">
           <div class="carrouselTitle clipbgpurple">Our Clients say</div>
-          <div class="container">
-            <div class="item">
-              <div class="itemLeft">
-                <img alt="Mor Cohen, Director. TLI- Triumph Leadership" src="./images/Einat-Nemirovski.jpeg" />
+          <div class="container" id="testimonials">
+            <!-- <i class="fa arrowLeft fa-arrow-left" aria-hidden="true"></i> -->
+              <div class="item">
+                <div class="itemLeft">
+                  <img alt="Mor Cohen, Director. TLI- Triumph Leadership" src="./images/Einat-Nemirovski.jpeg" />
+                </div>
+                <div class="itemRight">
+                  <h1>
+                    At "TECH&TALK", Matam Gav Yam community we always want to be
+                    innovative. Mocart came to us like a glove, their creativity and the value they bring, created for us
+                    a whole world of possibilities.
+                  </h1>
+                  <h2 class="clipbgpurple">Einat Nemirovski <br>Cummunity and innovation center manager</h2>
+                </div>
               </div>
-              <div class="itemRight">
-                <h1>
-                  At "TECH&TALK", Matam Gav Yam community we always want to be
-                      innovative. Mocart came to us like a glove, their creativity and the value they bring, created for us
-                      a whole world of possibilities.
-                </h1>
-                <h2 class="clipbgpurple">Einat Nemirovski <br>Cummunity and innovation center manager</h2>
-              </div>
-          </div>
-          <div class="item">
-            <div class="itemLeft">
-              <img alt="Mor Cohen, Director. TLI- Triumph Leadership" src="./images/cohen.jpeg" />
-            </div>
-            <div class="itemRight">
-              <h1>
-                Mocart are working with us on several projects. They have the ability to
+              <div class="item">
+                <div class="itemLeft">
+                  <img alt="Mor Cohen, Director. TLI- Triumph Leadership" src="./images/cohen.jpeg" />
+                </div>
+                <div class="itemRight">
+                  <h1>
+                    Mocart are working with us on several projects. They have the ability to
                     convey information in a particularly innovative and efficient way”
-              </h1>
-              <h2 class="clipbgpurple">Mor Cohen<br>Director. TLI- Triumph Leadership</h2>
-            </div>
-        </div>
+                  </h1>
+                  <h2 class="clipbgpurple">Mor Cohen<br>Director. TLI- Triumph Leadership</h2>
+                </div>
+              </div>
+              <!-- <i class="fa arrowRight fa-arrow-right" aria-hidden="true"></i> -->
           </div>
         </div>
       </div>
